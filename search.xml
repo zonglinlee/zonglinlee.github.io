@@ -42,6 +42,44 @@
     
     
     <entry>
+      <title>hexo博客点击特效</title>
+      <link href="/hexo%E5%8D%9A%E5%AE%A2%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88/"/>
+      <url>/hexo%E5%8D%9A%E5%AE%A2%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> coreSocialistValues = [<span class="string">"富强"</span>, <span class="string">"民主"</span>, <span class="string">"文明"</span>, <span class="string">"和谐"</span>, <span class="string">"自由"</span>, <span class="string">"平等"</span>, <span class="string">"公正"</span>, <span class="string">"法治"</span>, <span class="string">"爱国"</span>, <span class="string">"敬业"</span>, <span class="string">"诚信"</span>, <span class="string">"友善"</span>],</span><br><span class="line">    index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * coreSocialistValues.length);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">document</span>.body.addEventListener(<span class="string">'click'</span>,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//过滤a标签</span></span><br><span class="line">        <span class="keyword">if</span> (e.target.tagName == <span class="string">'A'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> x = e.pageX,</span><br><span class="line">        y = e.pageY,</span><br><span class="line">        span = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line">        span.textContent = coreSocialistValues[index];</span><br><span class="line">        index = (index + <span class="number">1</span>) % coreSocialistValues.length;</span><br><span class="line">        span.style.cssText = [<span class="string">'z-index: 9999999; position: absolute; font-weight: bold; color: #ff6651; top: '</span>, y - <span class="number">20</span>, <span class="string">'px; left: '</span>, x, <span class="string">'px;'</span>].join(<span class="string">''</span>);</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(span);</span><br><span class="line">        animate(span);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js</title>
+      <link href="/js/"/>
+      <url>/js/</url>
+      
+        <content type="html"><![CDATA[<h2 id="function-作用"><a href="#function-作用" class="headerlink" title="!function(){}() 作用"></a><code>!function(){}()</code> 作用</h2><p>跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数</p><h2 id="noscript-标签"><a href="#noscript-标签" class="headerlink" title="noscript 标签"></a>noscript 标签</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>node-sql-install</title>
       <link href="/node-sql-install/"/>
       <url>/node-sql-install/</url>
