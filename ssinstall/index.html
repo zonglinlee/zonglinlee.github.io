@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Xshell6 远程登录 vps (OS:CentOS8) 检测pipwhereis pip pip: &#x2F;usr&#x2F;bin&#x2F;pip3.6这个版本支持 chacha20-ietf-poly1305加密方式 pip3.6 install https:&#x2F;&#x2F;github.com&#x2F;shadowsocks&#x2F;shadowsocks&#x2F;archive&#x2F;master.zip -U 安装 libsodium 包现在ss服">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ssinstall">
-<meta property="og:url" content="http://yoursite.com/ssinstall/index.html">
+<meta property="og:title" content="How to install ss">
+<meta property="og:url" content="https://tumbleweed.top/ssinstall/index.html">
 <meta property="og:site_name" content="风滚草">
 <meta property="og:description" content="Xshell6 远程登录 vps (OS:CentOS8) 检测pipwhereis pip pip: &#x2F;usr&#x2F;bin&#x2F;pip3.6这个版本支持 chacha20-ietf-poly1305加密方式 pip3.6 install https:&#x2F;&#x2F;github.com&#x2F;shadowsocks&#x2F;shadowsocks&#x2F;archive&#x2F;master.zip -U 安装 libsodium 包现在ss服">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-29T17:28:15.639Z">
-<meta property="article:modified_time" content="2020-01-29T17:28:15.639Z">
+<meta property="article:published_time" content="2013-07-14T09:01:34.000Z">
+<meta property="article:modified_time" content="2020-01-30T07:49:56.296Z">
 <meta property="article:author" content="lee">
 <meta property="article:tag" content="ss">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>ssinstall</title>
+    <title>How to install ss</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -65,11 +65,9 @@
          
           <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">关于</a></li>
-         
           <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">项目</a></li>
+          <li><a href="/about/">关于</a></li>
          
           <li><a href="/search/">搜索</a></li>
         
@@ -79,10 +77,8 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/node-sql-install/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/gitbookinstall/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        
-        <li><a class="icon" href="/tar-unzip/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -95,17 +91,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/ssinstall/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/ssinstall/&text=ssinstall" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/ssinstall/&is_video=false&description=ssinstall" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=ssinstall&body=Check out this article: http://yoursite.com/ssinstall/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/ssinstall/&name=ssinstall&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/ssinstall/&t=ssinstall" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/ssinstall/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/ssinstall/&text=How to install ss" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/ssinstall/&is_video=false&description=How to install ss" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How to install ss&body=Check out this article: https://tumbleweed.top/ssinstall/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/ssinstall/&name=How to install ss&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/ssinstall/&t=How to install ss" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -122,7 +118,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        ssinstall
+        How to install ss
     </h1>
 
 
@@ -134,7 +130,7 @@
       
     <div class="postdate">
       
-        <time datetime="2020-01-29T17:28:15.639Z" itemprop="datePublished">2020-01-30</time>
+        <time datetime="2013-07-14T09:01:34.000Z" itemprop="datePublished">2013-07-14</time>
         
       
     </div>
@@ -163,7 +159,7 @@
 <h2 id="检测pip"><a href="#检测pip" class="headerlink" title="检测pip"></a>检测pip</h2><p>whereis pip <br><br>pip: /usr/bin/pip3.6<br><br>这个版本支持 chacha20-ietf-poly1305加密方式</p>
 <p><code>pip3.6 install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U</code></p>
 <h2 id="安装-libsodium-包"><a href="#安装-libsodium-包" class="headerlink" title="安装 libsodium 包"></a><a href="https://www.24kplus.com/linux/287.html" target="_blank" rel="noopener">安装 libsodium 包</a></h2><p>现在ss服务端还启动不了，需要安装libsodium</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /home&lt;br&gt;</span><br><span class="line">wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz</span><br><span class="line">tar -zxf libsodium-1.0.18-stable.tar.gz</span><br><span class="line">cd libsodium-stable</span><br><span class="line"><span class="meta">#</span><span class="bash">编译安装</span></span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make &amp;&amp; make check</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz</span><br><span class="line">tar -zxf libsodium-1.0.18-stable.tar.gz</span><br><span class="line">cd libsodium-stable</span><br><span class="line"><span class="meta">#</span><span class="bash">编译安装</span></span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make &amp;&amp; make check</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
 
 <p>解决错误一： configure: error: no acceptable C compiler found in $PATH </p>
 <p>yum install gcc</p>
@@ -233,11 +229,9 @@
          
           <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">关于</a></li>
-         
           <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">项目</a></li>
+          <li><a href="/about/">关于</a></li>
          
           <li><a href="/search/">搜索</a></li>
         
@@ -250,17 +244,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/ssinstall/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/ssinstall/&text=ssinstall" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/ssinstall/&is_video=false&description=ssinstall" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=ssinstall&body=Check out this article: http://yoursite.com/ssinstall/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/ssinstall/&title=ssinstall" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/ssinstall/&name=ssinstall&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/ssinstall/&t=ssinstall" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/ssinstall/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/ssinstall/&text=How to install ss" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/ssinstall/&is_video=false&description=How to install ss" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=How to install ss&body=Check out this article: https://tumbleweed.top/ssinstall/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/ssinstall/&title=How to install ss" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/ssinstall/&name=How to install ss&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/ssinstall/&t=How to install ss" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -286,11 +280,9 @@
          
           <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">关于</a></li>
-         
           <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/projects_url">项目</a></li>
+          <li><a href="/about/">关于</a></li>
          
           <li><a href="/search/">搜索</a></li>
         
