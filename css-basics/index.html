@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="site.data在source&#x2F;_data文件夹下的 YAML or JSON files比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property  &lt;% for (var link in site.data.menu) { %&gt;   &lt;%&#x3D; link %&gt; &lt;% } %&gt; hexo new [layout] po">
+    <meta name="description" content="css盒模型中以 top-left为坐标原点  css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0  CSS object modelThere are four standard coordinate systems  Offset ：the mouse event’s off">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo参数">
-<meta property="og:url" content="https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/index.html">
+<meta property="og:title" content="css-basics">
+<meta property="og:url" content="https://tumbleweed.top/css-basics/index.html">
 <meta property="og:site_name" content="风滚草">
-<meta property="og:description" content="site.data在source&#x2F;_data文件夹下的 YAML or JSON files比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property  &lt;% for (var link in site.data.menu) { %&gt;   &lt;%&#x3D; link %&gt; &lt;% } %&gt; hexo new [layout] po">
+<meta property="og:description" content="css盒模型中以 top-left为坐标原点  css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0  CSS object modelThere are four standard coordinate systems  Offset ：the mouse event’s off">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-31T06:55:19.879Z">
 <meta property="article:modified_time" content="2020-01-31T06:55:19.879Z">
@@ -36,7 +36,7 @@
         
     
     <!-- title -->
-    <title>hexo参数</title>
+    <title>css-basics</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -76,10 +76,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/hexo%E5%8D%9A%E5%AE%A2%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/js-basics/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/git/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/node-sql-install/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -92,17 +92,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&text=hexo参数" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&is_video=false&description=hexo参数" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=hexo参数&body=Check out this article: https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&name=hexo参数&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&t=hexo参数" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/css-basics/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/css-basics/&text=css-basics" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/css-basics/&is_video=false&description=css-basics" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=css-basics&body=Check out this article: https://tumbleweed.top/css-basics/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/css-basics/&name=css-basics&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/css-basics/&t=css-basics" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -119,7 +119,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        hexo参数
+        css-basics
     </h1>
 
 
@@ -147,14 +147,23 @@
 
   <div class="content" itemprop="articleBody">
     <ul>
-<li>site.data<br>在source/_data文件夹下的 YAML or JSON files<br>比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property</li>
+<li><p>css盒模型中以 top-left为坐标原点</p>
+</li>
+<li><p>css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0</p>
+</li>
+<li><p>CSS object model<br>There are four standard coordinate systems</p>
+<ul>
+<li>Offset ：the mouse event’s offsetX and offsetY properties</li>
+<li>Client : the MouseEvent.clientX and MouseEvent.clientY</li>
+<li>Page :Mouse events’ pageX and pageY properties </li>
+<li>Screen :The MouseEvent.screenX and MouseEvent.screenY properties </li>
 </ul>
-<p>&lt;% for (var link in site.data.menu) { %&gt;<br>  <a href="<%= site.data.menu[link] %>"> &lt;%= link %&gt; </a><br>&lt;% } %&gt;</p>
-<p>hexo new [layout] <title><br>post is the default layout<br>There are three default layouts in Hexo: post, page and draft.<br>layout 存在于根目录下的 Scaffolds 文件夹中，里面默认有page.md/post.md/draft.md 三个</p>
-<p>type=”image/x-icon” 是什么</p>
-<p>theme 文件夹<br>.<br>├── _config.yml<br>├── languages<br>├── layout   //模板字符串文件夹<br>├── scripts //hexo 初始化时候会自动加载这个文件夹的js文件<br>└── source  //js/css 等直接copy到根目录下的public文件夹 ，会忽略隐藏文件和以_开头的文件</p>
-<p>网站部署的时候根目录是生成的public文件夹<br>page ：Page specific information and custom variables set in front-matter.<br>page.content：The full processed content of the article</p>
-<p><code>Hexo</code> has special <code>page</code> called <code>post</code>.</p>
+</li>
+<li><p>base-line: align-items:base-line;//所有flex items 第一行文字底部对齐</p>
+</li>
+<li><p>hover,active顺序<br>a:hover,a:focus{<br>  //这两个最好一块写<br>  color:pink;<br>}</p>
+</li>
+</ul>
 
   </div>
 </article>
@@ -191,17 +200,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&text=hexo参数" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&is_video=false&description=hexo参数" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=hexo参数&body=Check out this article: https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&title=hexo参数" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&name=hexo参数&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/hexo%E5%8F%82%E6%95%B0/&t=hexo参数" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/css-basics/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/css-basics/&text=css-basics" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/css-basics/&is_video=false&description=css-basics" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=css-basics&body=Check out this article: https://tumbleweed.top/css-basics/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/css-basics/&title=css-basics" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/css-basics/&name=css-basics&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/css-basics/&t=css-basics" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="容器块级元素自适应 12345678910111213.container&amp;#123;    width:70%;&#x2F;&#x2F;    宽度自适应屏幕，70%    max-width:980px; &#x2F;&#x2F; 限定最大宽度    min-width:320px; &#x2F;&#x2F;    margin: 0 auto; &#x2F;&#x2F;居中    img&amp;#123;        width:100%;         &#x2F;&#x2F;自适应父元">
+<meta property="og:type" content="article">
+<meta property="og:title" content="responsive web design">
+<meta property="og:url" content="https://tumbleweed.top/responsive-web-design/index.html">
+<meta property="og:site_name" content="风滚草">
+<meta property="og:description" content="容器块级元素自适应 12345678910111213.container&amp;#123;    width:70%;&#x2F;&#x2F;    宽度自适应屏幕，70%    max-width:980px; &#x2F;&#x2F; 限定最大宽度    min-width:320px; &#x2F;&#x2F;    margin: 0 auto; &#x2F;&#x2F;居中    img&amp;#123;        width:100%;         &#x2F;&#x2F;自适应父元">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-31T01:31:49.000Z">
+<meta property="article:modified_time" content="2020-01-31T06:55:19.879Z">
+<meta property="article:author" content="lee">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>responsive web design</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/tar-unzip/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/gitbookinstall/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/responsive-web-design/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/responsive-web-design/&text=responsive web design" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/responsive-web-design/&is_video=false&description=responsive web design" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=responsive web design&body=Check out this article: https://tumbleweed.top/responsive-web-design/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/responsive-web-design/&name=responsive web design&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/responsive-web-design/&t=responsive web design" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        responsive web design
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">风滚草</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-01-31T01:31:49.000Z" itemprop="datePublished">2020-01-31</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <ul>
+<li><p>容器块级元素自适应</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    width:70%;//    宽度自适应屏幕，70%</span><br><span class="line">    max-width:980px; // 限定最大宽度</span><br><span class="line">    min-width:320px; //</span><br><span class="line">    margin: 0 auto; //居中</span><br><span class="line">    <span class="selector-tag">img</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>:<span class="number">100%</span>; </span><br><span class="line">        //自适应父元素container,图片高度会自己调节，但是当宽度大于图片自身尺寸之后，会拉伸图片，所以推荐写成max-width:100%;这样当宽度超过图片自身宽度时图片不再变宽，就不会降低图片显示质量，它也能很好的自适应屏幕尺寸变小的情况。</span><br><span class="line">        <span class="selector-tag">display</span><span class="selector-pseudo">:block</span>;</span><br><span class="line">        //图片默认inline</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>rem 单位：继承自html元素的font-size，一般默认16px</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">62.5%</span>; </span><br><span class="line">    //默认字体如果16px,则html元素的font-size现在为10px;</span><br><span class="line">    //不推荐</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>em 单位：如果父元素没有规定font-size，它会一直往上搜素直到body元素,继承body元素的font-size，一般默认16px.</p>
+</li>
+<li><p>如何选择字体单位<br>  general rule of thumb:</p>
+<ul>
+<li>font-size: rem;</li>
+<li>padding and margin: em; //这里有一个坑，就是em一般是参考父元素的font-size，但当涉及到padding和margin的时候，它是以自身元素的font-size为基准的。</li>
+<li>width：em or percentage</li>
+</ul>
+</li>
+<li><p>media query</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">syntax</span>:<span class="keyword">@media</span> media-type <span class="keyword">and</span> (media-features)&#123; ... &#125;</span><br><span class="line">// 媒体查询顺序很重要，以下写法会导致 第一个媒体查询不起作用，会被后一个覆盖掉。</span><br><span class="line">当<span class="selector-tag">resize</span>了之后，<span class="selector-tag">css</span>会重新进行渲染，从头至尾走一步<span class="selector-tag">css</span>,只要规则匹配，后面的就会覆盖掉前面的，所以媒体查询一般都写在最后面。</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">600px</span>)&#123;</span><br><span class="line">    //当屏幕宽度大于等于600px时候</span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>:pink;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span><span class="number">400px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>:orange;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>UI设计先从移动端开始，小屏幕到大屏幕考虑。小屏幕都是竖着从上往下排列，等到屏幕宽度变大之后来一个 media query(min-width) 即可，这样可以少些好多代码</p>
+</li>
+<li><p>如果页面最先展现 图片 ，小标题来展现一些 info 信息，html 结构也应该先写标题，段落(用于展现info)，保证在没有css加载的时候逻辑顺序正确，通过css flex-box 中的order调整视觉上的布局。</p>
+</li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://tumbleweed.top/responsive-web-design/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://tumbleweed.top/responsive-web-design/&text=responsive web design" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tumbleweed.top/responsive-web-design/&is_video=false&description=responsive web design" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=responsive web design&body=Check out this article: https://tumbleweed.top/responsive-web-design/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://tumbleweed.top/responsive-web-design/&title=responsive web design" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://tumbleweed.top/responsive-web-design/&name=responsive web design&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://tumbleweed.top/responsive-web-design/&t=responsive web design" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 lee
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+<script type="text/javascript">
+  $(function () {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function (trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str, it) => str + it.innerText + '\n', '')
+      }
+    });
+    clip.on('success', function (e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+</script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<script type="text/javascript">
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?2e7de9cccefd4d06dbf4cdbd5b8b863c";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+  var disqus_shortname = 'tumbleweed-top';
+
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+<!-- click effect -social_value -->
+
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+    let coreSocialistValues = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善"]
+    let colors = ["#11f0e5","#e815d3","#f7f30f","#e8270e","#15eb59","#881df2","#fa9120"]
+    let index = Math.floor(Math.random() * coreSocialistValues.length);
+    $('body').click(function (e) {
+      //过滤a标签
+      if (e.target.tagName == 'A') {
+        return;
+      }
+      let $i = $("<span />").text(coreSocialistValues[index]);
+      index = (index + 1) % coreSocialistValues.length;
+      let color_index = Math.floor(Math.random() * colors.length);
+      let color = colors[color_index]
+      let x = e.pageX,
+        y = e.pageY;
+      $i.css({
+        "z-index": 999999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": color
+      });
+      $("body").append($i);
+      $i.animate({
+        "top": y - 180,
+        "opacity": 0
+      },
+        1500,
+        function () {
+          $i.remove();
+        });
+    })
+  })
+</script>
+
+<!-- click effect -love_heart -->
+</body>
+</html>
