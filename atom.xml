@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>风滚草</title>
+  
+  <subtitle>tumbleweed.top</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://tumbleweed.top/"/>
+  <updated>2020-02-04T16:55:58.889Z</updated>
+  <id>https://tumbleweed.top/</id>
+  
+  <author>
+    <name>zonglinlee</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js-basics</title>
+    <link href="https://tumbleweed.top/js-basics/"/>
+    <id>https://tumbleweed.top/js-basics/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;DOMTokenList-interface&quot;&gt;&lt;a href=&quot;#DOMTokenList-interface&quot; class=&quot;headerlink&quot; title=&quot;DOMTokenList interface&quot;&gt;&lt;/a&gt;DOMTokenList
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>tar-unzip</title>
+    <link href="https://tumbleweed.top/tar-unzip/"/>
+    <id>https://tumbleweed.top/tar-unzip/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z&lt;br&gt;其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2&lt;br&gt;unzip filename.zip&lt;br&gt;事实上,
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <link href="https://tumbleweed.top/git/"/>
+    <id>https://tumbleweed.top/git/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;submodule&quot;&gt;&lt;a href=&quot;#submodule&quot; class=&quot;headerlink&quot; title=&quot;submodule&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.phpgao.com/git_submodule.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="git" scheme="https://tumbleweed.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>node-sql-install</title>
+    <link href="https://tumbleweed.top/node-sql-install/"/>
+    <id>https://tumbleweed.top/node-sql-install/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CentOS8-install-node&quot;&gt;&lt;a href=&quot;#CentOS8-install-node&quot; class=&quot;headerlink&quot; title=&quot;CentOS8 install node&quot;&gt;&lt;/a&gt;CentOS8 install
+        
+      
+    
+    </summary>
+    
+    
+      <category term="CentOS8" scheme="https://tumbleweed.top/categories/CentOS8/"/>
+    
+      <category term="Install" scheme="https://tumbleweed.top/categories/CentOS8/Install/"/>
+    
+    
+      <category term="部署" scheme="https://tumbleweed.top/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="CentOS" scheme="https://tumbleweed.top/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客点击特效</title>
+    <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
+    <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot; language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://tumbleweed.top/categories/Hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://tumbleweed.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo参数</title>
+    <link href="https://tumbleweed.top/hexo-can-shu/"/>
+    <id>https://tumbleweed.top/hexo-can-shu/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;site.data&lt;br&gt;在source/_data文件夹下的 YAML or JSON files&lt;br&gt;比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;% for
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>css-basics</title>
+    <link href="https://tumbleweed.top/css-basics/"/>
+    <id>https://tumbleweed.top/css-basics/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;css盒模型中以 top-left为坐标原点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50%
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js</title>
+    <link href="https://tumbleweed.top/js/"/>
+    <id>https://tumbleweed.top/js/</id>
+    <published>2020-02-04T16:55:58.889Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;function-作用&quot;&gt;&lt;a href=&quot;#function-作用&quot; class=&quot;headerlink&quot; title=&quot;!function(){}() 作用&quot;&gt;&lt;/a&gt;&lt;code&gt;!function(){}()&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>build-hexo-theme</title>
+    <link href="https://tumbleweed.top/build-hexo-theme/"/>
+    <id>https://tumbleweed.top/build-hexo-theme/</id>
+    <published>2020-02-01T13:23:35.000Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;iconfont应用&quot;&gt;&lt;a href=&quot;#iconfont应用&quot; class=&quot;headerlink&quot; title=&quot;iconfont应用&quot;&gt;&lt;/a&gt;iconfont应用&lt;/h2&gt;&lt;p&gt;下载的iconfont在style中引入&lt;br&gt;&lt;code&gt;@import
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>responsive web design</title>
+    <link href="https://tumbleweed.top/responsive-web-design/"/>
+    <id>https://tumbleweed.top/responsive-web-design/</id>
+    <published>2020-01-31T09:31:49.000Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;容器块级元素自适应&lt;pre class=&quot; language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gitbookinstall</title>
+    <link href="https://tumbleweed.top/gitbookinstall/"/>
+    <id>https://tumbleweed.top/gitbookinstall/</id>
+    <published>2014-07-14T17:01:34.000Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Gitbook安装&quot;&gt;&lt;a href=&quot;#Gitbook安装&quot; class=&quot;headerlink&quot; title=&quot;Gitbook安装&quot;&gt;&lt;/a&gt;Gitbook安装&lt;/h1&gt;&lt;h2 id=&quot;gitbook-简介&quot;&gt;&lt;a href=&quot;#gitbook-简介&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Tools" scheme="https://tumbleweed.top/categories/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>How to install ss</title>
+    <link href="https://tumbleweed.top/ssinstall/"/>
+    <id>https://tumbleweed.top/ssinstall/</id>
+    <published>2013-07-14T17:01:34.000Z</published>
+    <updated>2020-02-04T16:55:58.889Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Xshell6 远程登录 vps (OS:CentOS8)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="CentOS8" scheme="https://tumbleweed.top/categories/CentOS8/"/>
+    
+      <category term="Install" scheme="https://tumbleweed.top/categories/CentOS8/Install/"/>
+    
+    
+      <category term="ss" scheme="https://tumbleweed.top/tags/ss/"/>
+    
+  </entry>
+  
+</feed>
