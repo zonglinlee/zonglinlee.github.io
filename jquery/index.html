@@ -4,12 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="How to install ss, 风滚草">
+    <meta name="keywords" content="jquery, 风滚草">
     <meta name="description" content="
-Xshell6 远程登录 vps (OS:CentOS8)
-
-检测pipwhereis pip pip: /usr/bin/pip3.6这个版本支持 chacha20-ietf-poly1305加密方式
-pip3.6 install ht">
+jQuery�����������飬����ÿ��Ԫ�ض���һ��������DOM�ڵ�Ķ���
+jQuery��ѡ�������᷵��undefined����null
+jQuery�����DOM����֮����Ի���ת��v">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@ pip3.6 install ht">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>How to install ss | 风滚草</title>
+    <title>jquery | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -273,13 +272,13 @@ pip3.6 install ht">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        How to install ss
+                        jquery
                     </div>
                 </div>
             </div>
@@ -369,29 +368,12 @@ pip3.6 install ht">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/ss/" target="_blank">
-                                <span class="chip bg-color">ss</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
-                                CentOS8
-                            </a>
-                        
-                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
-                                Install
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -399,21 +381,21 @@ pip3.6 install ht">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2013-07-14
+                    2020-02-07
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.1k
+                        438
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        5 Min
+                        2 Min
                     </div>
                     
                 
@@ -429,174 +411,63 @@ pip3.6 install ht">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
-<p>Xshell6 远程登录 vps (OS:CentOS8)</p>
-<a id="more"></a>
-<h2 id="检测pip"><a href="#检测pip" class="headerlink" title="检测pip"></a>检测pip</h2><p>whereis pip <br><br>pip: /usr/bin/pip3.6<br><br>这个版本支持 chacha20-ietf-poly1305加密方式</p>
-<p><code>pip3.6 install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U</code></p>
-<h2 id="安装-libsodium-包"><a href="#安装-libsodium-包" class="headerlink" title="安装 libsodium 包"></a><a href="https://www.24kplus.com/linux/287.html" target="_blank" rel="noopener">安装 libsodium 包</a></h2><p>现在ss服务端还启动不了，需要安装libsodium</p>
-<pre class=" language-shell"><code class="language-shell">cd /home
-wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz
-tar -zxf libsodium-1.0.18-stable.tar.gz
-cd libsodium-stable
-#编译安装
-./configure --prefix=/usr
-make && make check
-sudo make install
-sudo ldconfig
-</code></pre>
-<p>解决错误一： configure: error: no acceptable C compiler found in $PATH </p>
-<p>yum install gcc</p>
-<p>解决错误二： config.status: error: Something went wrong bootstrapping makefile fragments for automatic dependency tracking. </p>
-<p>yum install make -y</p>
-<h2 id="配置ss服务端"><a href="#配置ss服务端" class="headerlink" title="配置ss服务端"></a>配置ss服务端</h2><p>whereis ssserver<br><br>ssserver: /usr/local/bin/ssserver<br></p>
-<h3 id="创建shadowsocks启动配置文件"><a href="#创建shadowsocks启动配置文件" class="headerlink" title="创建shadowsocks启动配置文件"></a>创建shadowsocks启动配置文件</h3><p>vim /etc/shadowsocks.conf</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"server"</span><span class="token operator">:</span><span class="token string">"0.0.0.0"</span><span class="token punctuation">,</span> 
-    <span class="token property">"server_port"</span><span class="token operator">:</span><span class="token number">10443</span><span class="token punctuation">,</span>
-    <span class="token property">"local_port"</span><span class="token operator">:</span><span class="token number">1080</span><span class="token punctuation">,</span>
-    <span class="token property">"password"</span><span class="token operator">:</span><span class="token string">"password"</span><span class="token punctuation">,</span>
-    <span class="token property">"timeout"</span><span class="token operator">:</span><span class="token number">60</span><span class="token punctuation">,</span>
-    <span class="token property">"method"</span><span class="token operator">:</span><span class="token string">"chacha20-ietf-poly1305"</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>server_port:服务器监听端口</p>
-<p>password:要和客户端ss密码一致</p>
-<p>method:加密方式和客户端一致</p>
-<h3 id="开启端口号"><a href="#开启端口号" class="headerlink" title="开启端口号"></a>开启端口号</h3><pre class=" language-shell"><code class="language-shell">firewall-cmd --zone=public --permanent --add-port=10443/tcp 
-firewall-cmd --reload
-
-#查看开启的端口号
-firewall-cmd --zone=public --permanent --list-ports</code></pre>
-<h3 id="将ss添加到Systemd-服务管理中"><a href="#将ss添加到Systemd-服务管理中" class="headerlink" title="将ss添加到Systemd 服务管理中"></a>将ss添加到Systemd 服务管理中</h3><p>vim /etc/systemd/system/shadowsocks.service</p>
-<pre class=" language-service"><code class="language-service">[Unit]
-Description=shadowsocks daemon
-[Service]
-ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks.conf Restart=always
-[Install]
-WantedBy=graphical.target</code></pre>
-<p>开启服务<br><br>systemctl enable shadowsocks</p>
-<p>启动服务<br><br>systemctl start shadowsocks</p>
-<p>检查 shadowsocks 服务是否已成功启动<br><br>systemctl status shadowsocks -l</p>
-<h2 id="CentOS8-开启-BBR"><a href="#CentOS8-开启-BBR" class="headerlink" title="CentOS8 开启 BBR"></a><a href="https://nodeedge.com/centos8-bbr.html" target="_blank" rel="noopener">CentOS8 开启 BBR</a></h2><p>开启bbr</p>
-<pre class=" language-shell"><code class="language-shell">echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sysctl -p
-验证bbr
-sysctl -n net.ipv4.tcp_congestion_control
-lsmod | grep bbr</code></pre>
-<h2 id="安装net-speeder"><a href="#安装net-speeder" class="headerlink" title="安装net-speeder"></a><a href="https://github.com/snooda/net-speeder" target="_blank" rel="noopener">安装net-speeder</a></h2><p>wget <a href="https://github.com/snooda/net-speeder/archive/master.zip" target="_blank" rel="noopener">https://github.com/snooda/net-speeder/archive/master.zip</a><br><br>unzip master.zip</p>
-<p>安装epel 包<br><br>wget <a href="http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm" target="_blank" rel="noopener">http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</a><br><br>rpm -ivh epel-release-6-8.noarch.rpm</p>
-<p>yum install libnet libpcap libnet-devel libpcap-devel</p>
-<p>libpcap-devel现有的yum源匹配不到，到 <a href="https://centos.pkgs.org/8/centos-powertools-x86_64/libpcap-devel-1.9.0-3.el8.i686.rpm.html" target="_blank" rel="noopener">centos.pkgs.org</a> 可以找到安装<br>直接执行 <code>dnf --enablerepo=PowerTools install libpcap-devel</code> 即可安装</p>
-<p>编译前还要安装一个包</p>
-<pre class=" language-shell"><code class="language-shell">yum install libnet-devel
-编译
-cd net-speeder-master/
-sh build.sh
-查看网卡信息(ens3)
-ip address
-关闭tso
-ethtool -K ens3 tso off</code></pre>
-<p>开启单边加速(前台运行)<br><br>./net_speeder ens3 “ip”</p>
-<p>开启单边加速(后台运行)<br>vim /etc/systemd/system/netspeeder.service</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
-Description=netspeeder
-
-<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
-TimeoutStartSec=<span class="token number">0</span>
-ExecStart=/home/net-speeder-master/net_speeder ens3  <span class="token string">"ip"</span> 
-
-<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
-WantedBy=multi-user.target
-</code></pre>
-<p>systemctl enable netspeeder<br><br>启动服务<br><br>systemctl start netspeeder<br><br>systemctl status netspeeder</p>
-<h2 id="vps上安装kcptun"><a href="#vps上安装kcptun" class="headerlink" title="vps上安装kcptun"></a><a href="https://blog.kuoruan.com/102.html" target="_blank" rel="noopener">vps上安装kcptun</a></h2><p>服务端和客户端用同一个版本<br>在GitHub releas上找到kcptun包，使用wget命令下载到vps上</p>
-<pre class=" language-shell"><code class="language-shell">cd /home
-mkdir kcptun
-cd kcptun 
-wget https://github.com/xtaci/kcptun/releases/download/v20200103/kcptun-linux-amd64-20200103.tar.gz
-# 解压
-tar -zxf kcptun-linux-amd64-20200103.tar.gz</code></pre>
-<p>创建启动配置文件<br>vim kcptun.conf</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"crypt"</span><span class="token operator">:</span> <span class="token string">"salsa20"</span><span class="token punctuation">,</span>
-    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"password"</span><span class="token punctuation">,</span>
-    <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"fast2"</span><span class="token punctuation">,</span>
-    <span class="token property">"listen"</span><span class="token operator">:</span>"<span class="token operator">:</span><span class="token number">29900</span>"<span class="token punctuation">,</span>
-    <span class="token property">"target"</span><span class="token operator">:</span><span class="token string">"127.0.0.1:10443"</span><span class="token punctuation">,</span>
-    <span class="token property">"nocomp"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token property">"datashard"</span><span class="token operator">:</span> <span class="token number">70</span><span class="token punctuation">,</span>
-    <span class="token property">"parityshard"</span><span class="token operator">:</span> <span class="token number">30</span>
-<span class="token punctuation">}</span></code></pre>
-<p>上面的配置一定要和客户端的一致，key是密码，listen是客户端访问服务端时候监听的端口<br>target是要加速的vps上的服务，它通信的是vps上的ss，所以ip为127.0.0.1，端口号就是ss服务监听的的端口号<br>服务端kcptun 和 ss 各自提供自己的服务，各自监听自己的端口 ，kcptun 提供 ss端口的加速服务</p>
-<h3 id="开启端口号-这个用udp协议"><a href="#开启端口号-这个用udp协议" class="headerlink" title="开启端口号(这个用udp协议)"></a>开启端口号(这个用udp协议)</h3><p> firewall-cmd –zone=public –permanent –add-port=29900/udp <br><br> firewall-cmd –reload</p>
-<p>创建服务脚本<br>vim /etc/systemd/system/kcptun.service</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
-Description=kcptun
-
-<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
-TimeoutStartSec=<span class="token number">0</span>
-ExecStart=/home/kcptun/server_linux_amd64 -c  /home/kcptun/kcptun.conf
-
-
-<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
-WantedBy=multi-user.target
-</code></pre>
-<p>systemctl enable kcptun<br><br>启动服务<br><br>systemctl start kcptun<br><br>systemctl status kcptun</p>
-<h2 id="客户端-windows7-安装kcptun"><a href="#客户端-windows7-安装kcptun" class="headerlink" title="客户端(windows7)安装kcptun"></a>客户端(windows7)安装kcptun</h2><p>由于没有提供GUI图形界面，解压出来的只有.exe文件，直接执行没有办法传入配置<br>客户端 ss 访问 kcptun客户端，然后kcptun 访问vps上的kcptun server端</p>
-<h3 id="创建客户端exe文件的控制VBScript脚本"><a href="#创建客户端exe文件的控制VBScript脚本" class="headerlink" title="创建客户端exe文件的控制VBScript脚本"></a>创建客户端exe文件的控制VBScript脚本</h3><p>vim run.vbs</p>
-<pre class=" language-vbs"><code class="language-vbs">Dim RunKcptun
-Set fso = CreateObject("Scripting.FileSystemObject")
-Set WshShell = WScript.CreateObject("WScript.Shell")
-'获取文件路径
-currentPath = fso.GetFile(Wscript.ScriptFullName).ParentFolder.Path & "\"
-'配置文件路径
-configFile = currentPath & "client-config.json"
-'日志文件
-logFile = currentPath & "kcptun.log"
-'软件运行参数
-exeConfig = currentPath & "client_windows_amd64.exe -c " & configFile
-'拼接命令行
-cmdLine = "cmd /c " & exeConfig & " > " & logFile & " 2>&1"
-'启动软件
-WshShell.Run cmdLine, 0, False
-'等待1秒
-'WScript.Sleep 1000
-'打印运行命令
-'Wscript.echo cmdLine
-Set WshShell = Nothing
-Set fso = Nothing
-'退出脚本
-WScript.quit</code></pre>
-<p>创建启动配置脚本</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"localaddr"</span><span class="token operator">:</span> "<span class="token operator">:</span><span class="token number">12948</span>"<span class="token punctuation">,</span>
-    <span class="token property">"remoteaddr"</span><span class="token operator">:</span> <span class="token string">"10.10.10.10:29900"</span><span class="token punctuation">,</span>
-    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"password"</span><span class="token punctuation">,</span>
-    <span class="token property">"crypt"</span><span class="token operator">:</span> <span class="token string">"salsa20"</span><span class="token punctuation">,</span>
-    <span class="token property">"mode"</span><span class="token operator">:</span> <span class="token string">"fast2"</span><span class="token punctuation">,</span>
-    <span class="token property">"conn"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token property">"autoexpire"</span><span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
-    <span class="token property">"mtu"</span><span class="token operator">:</span> <span class="token number">1350</span><span class="token punctuation">,</span>
-    <span class="token property">"sndwnd"</span><span class="token operator">:</span> <span class="token number">128</span><span class="token punctuation">,</span>
-    <span class="token property">"rcvwnd"</span><span class="token operator">:</span> <span class="token number">1024</span><span class="token punctuation">,</span>
-    <span class="token property">"datashard"</span><span class="token operator">:</span> <span class="token number">70</span><span class="token punctuation">,</span>
-    <span class="token property">"parityshard"</span><span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
-    <span class="token property">"dscp"</span><span class="token operator">:</span> <span class="token number">46</span><span class="token punctuation">,</span>
-    <span class="token property">"nocomp"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token property">"acknodelay"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token property">"nodelay"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    <span class="token property">"interval"</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
-    <span class="token property">"resend"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    <span class="token property">"nc"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-    <span class="token property">"sockbuf"</span><span class="token operator">:</span> <span class="token number">4194304</span><span class="token punctuation">,</span>
-    <span class="token property">"keepalive"</span><span class="token operator">:</span> <span class="token number">10</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>localaddr为 :12948,本地监听端口，供ss访问<br><br>key为password,需和服务端保持一致<br><br>remoteaddr为vps的ip地址以及vps上kcptun监听的端口<br></p>
-<h3 id="客户端ss配置"><a href="#客户端ss配置" class="headerlink" title="客户端ss配置"></a>客户端ss配置</h3><p>服务器 IP 填写本机：127.0.0.1<br><br>服务器端口填写：12948</p>
-<p>双击run.vbs启动测试。</p>
+                <ul>
+<li>jQuery�����������飬����ÿ��Ԫ�ض���һ��������DOM�ڵ�Ķ���</li>
+<li>jQuery��ѡ�������᷵��undefined����null</li>
+<li>jQuery�����DOM����֮����Ի���ת��<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// jQuery����</span>
+<span class="token keyword">var</span> divDom <span class="token operator">=</span> div<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// �������div����ȡ��1��DOMԪ��</span>
+<span class="token keyword">var</span> another <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span>divDom<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ���°�DOM��װΪjQuery����</span></code></pre>
+</li>
+<li>���Բ���ͬʱ����red��green�Ľڵ�<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.red.green'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// ע��û�пո�</span>
+<span class="token keyword">var</span> email <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'[name=email]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// �ҳ�&lt;??? name="email"></span>
+<span class="token keyword">var</span> emailInput <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input[name=email]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+����tag��<span class="token keyword">class</span>����ϲ���Ҳ�ܳ�����
+<span class="token keyword">var</span> tr <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'tr.red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</li>
+<li>$(‘ancestor descendant’)</li>
+<li>��ѡ����$(‘parent&gt;child’)</li>
+<li>��������Filter��������һ�㲻����ʹ�ã���ͨ��������ѡ�����ϣ��������Ǹ���ȷ�ض�λԪ�ء�last-child/first-child/even/odd/nth-child</li>
+<li>��Ա���Ԫ�أ�jQuery����һ�������ѡ����<br>:enabled/:disabled/:file/:radio/:focus</li>
+</ul>
+<h2 id="���Һ͹���"><a href="#���Һ͹���" class="headerlink" title="���Һ͹���"></a>���Һ͹���</h2><p>ͨ�������ѡ��������ֱ�Ӷ�λ��������Ҫ��Ԫ�أ����ǣ��������õ�һ��jQuery����󣬻��������������Ϊ��׼�����в��Һ͹��ˡ�</p>
+<p>����Ĳ�������ĳ���ڵ�������ӽڵ��в��ң�ʹ��find()�������������ֽ���һ�������ѡ���������Ҫ�ӵ�ǰ�ڵ㿪ʼ���ϲ��ң�ʹ��parent()����parent() ����λ��ͬһ�㼶�Ľڵ㣬����ͨ��next()��prev()����</p>
+<p>���˷�����filter()�������Թ��˵�������ѡ���������Ľڵ㣻map()������һ��jQuery�������������DOM�ڵ�ת��Ϊ�������󣻴��⣬һ��jQuery������������˲�ֹһ��DOM�ڵ㣬first()��last()��slice()�������Է���һ���µ�jQuery���󣬰Ѳ���Ҫ��DOM�ڵ�ȥ��<br>���˷����д���һ��������Ҫ�ر�ע�⺯���ڲ���this����ΪDOM���󣬲���jQuery����</p>
+<h2 id="����DOM"><a href="#����DOM" class="headerlink" title="����DOM"></a>����DOM</h2><p>jQuery�����text()��html()�����ֱ��ȡ�ڵ���ı���ԭʼHTML�ı���jQuery��API��Ʒǳ�����޲�������text()�ǻ�ȡ�ı�����������ͱ�������ı���HTMLҲ�����Ʋ���</p>
+<p>һ��jQuery������԰���0���������DOM�������ķ���ʵ���ϻ������ڶ�Ӧ��ÿ��DOM�ڵ���</p>
+<h2 id="�޸�CSS"><a href="#�޸�CSS" class="headerlink" title="�޸�CSS"></a>�޸�CSS</h2><p>jQuery�����С��������������ص㣬�������޸�CSSʵ����̫������<br>$(‘#test-css li.dy&gt;span’).css(‘background-color’, ‘#ffd351’).css(‘color’, ‘red’);<br>Ϊ�˺�JavaScript����һ�£�CSS���Կ�����’background-color’��’backgroundColor’���ָ�ʽ��</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#test-div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span><span class="token function">hasClass</span><span class="token punctuation">(</span><span class="token string">'highlight'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false�� class�Ƿ����highlight</span>
+div<span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">'highlight'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ����highlight���class</span>
+div<span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">'highlight'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ɾ��highlight���class</span></code></pre>
+<h2 id="��ʾ������DOM"><a href="#��ʾ������DOM" class="headerlink" title="��ʾ������DOM"></a>��ʾ������DOM</h2><p>Ҫ����һ��DOM�����ǿ�������CSS��display����Ϊnone������css()�����Ϳ���ʵ�֡�������Ҫ��ʾ���DOM����Ҫ�ָ�ԭ�е�display���ԣ���͵��ȼ�����ԭ�е�display���Ե�����block����inline���Ǳ��ֵ��</p>
+<p>���ǵ���ʾ������DOMԪ��ʹ�÷ǳ��ձ飬jQueryֱ���ṩshow()��hide()����</p>
+<h2 id="��ȡDOM��Ϣ"><a href="#��ȡDOM��Ϣ" class="headerlink" title="��ȡDOM��Ϣ"></a>��ȡDOM��Ϣ</h2><p>����jQuery��������ɷ���������ֱ�ӿ��Ի�ȡDOM�ĸ߿�����Ϣ����������Բ�ͬ�������д�ض����룺</p>
+<p>// ��������Ӵ��ڴ�С:<br>$(window).width(); // 800<br>$(window).height(); // 600</p>
+<p>// HTML�ĵ���С:<br>$(document).width(); // 800<br>$(document).height(); // 3500</p>
+<p>attr()��removeAttr()�������ڲ���DOM�ڵ������<br>prop()������attr()����<br>attr()��prop()��������checked����������ͬ��</p>
+<p>var radio = $(‘#test-radio’);<br>radio.attr(‘checked’); // ‘checked’<br>radio.prop(‘checked’); // true<br>prop()����ֵ������һЩ����������is()�����жϸ��ã�</p>
+<p>var radio = $(‘#test-radio’);<br>radio.is(‘:checked’); // true<br>���Ƶ����Ի���selected������ʱ�����is(‘:selected’)��</p>
+<h2 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h2><p>���ڱ���Ԫ�أ�jQuery����ͳһ�ṩval()������ȡ�����ö�Ӧ��value����,һ��val()��ͳһ�˸���������ȡֵ�͸�ֵ������</p>
+<h2 id="�޸�DOM�u"><a href="#�޸�DOM�u" class="headerlink" title="�޸�DOM�ṹ"></a>�޸�DOM�ṹ</h2><p>ֱ��ʹ��������ṩ��API��DOM�ṹ�����޸ģ��������븴�ӣ�����Ҫ��������д��ͬ�Ĵ��롣</p>
+<ul>
+<li>����ͨ��jQuery��html()���ֱ��������⣬��������append()����<br>ul.append(‘<li><span>Haskell</span></li>‘);<br>���˽����ַ�����append()�����Դ���ԭʼ��DOM����jQuery����ͺ�������<br>���뺯��ʱ��Ҫ�󷵻�һ���ַ�����DOM�������jQuery������ΪjQuery��append()����������һ��DOM�ڵ㣬ֻ�д��뺯���������ÿ��DOM���ɲ�ͬ���ӽڵ㡣</li>
+</ul>
+<p>append()��DOM���ӵ����prepend()���DOM���ӵ���ǰ��<br>����ע�⣬���Ҫ���ӵ�DOM�ڵ��Ѿ�������HTML�ĵ��У��������ȴ��ĵ��Ƴ���Ȼ�������ӣ�Ҳ����˵����append()��������ƶ�һ��DOM�ڵ㡣</p>
+<p>���Ҫ���½ڵ���뵽ָ��λ��after(),Ҳ����˵��ͬ���ڵ������after()����before()����</p>
+<p>ɾ���ڵ�<br>Ҫɾ��DOM�ڵ㣬�õ�jQuery�����ֱ�ӵ���remove()�����Ϳ����ˡ����jQuery�����������DOM�ڵ㣬ʵ���Ͽ���һ��ɾ�����DOM�ڵ�</p>
+<h2 id="�¼�"><a href="#�¼�" class="headerlink" title="�¼�"></a>�¼�</h2><p>��������д���ȼۣ����߸�����</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#test-link'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Hello!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Hello!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>����¼���mousemove�������DOM�ڲ��ƶ�ʱ������ hover����������˳�ʱ���������������൱��mouseenter����mouseleave��<br>ready�¼���������document��������ready�¼���DOM��ɳ�ʼ���󴥷�����ֻ����һ�Σ����Էǳ��ʺ�����д�����ĳ�ʼ�����롣</p>
+<p>$(function () {<br>    // init…<br>});<br>����д����Ϊ���������������$(function () {…})����ʽ���μ�����document�����ready�¼��������������Է������¼��������������ǻ�����ִ��<br>ȡ����<br>һ���ѱ��󶨵��¼����Խ���󶨣�ͨ��off(‘click’, function)ʵ��<br>����ʹ��off(‘click’)һ�����Ƴ��Ѱ󶨵�click�¼������д���������<br>ͬ�����޲�������off()һ�����Ƴ��Ѱ󶨵��������͵��¼���������<br>�������ȫ����<br>��������У���ЩJavaScript����ֻ�����û������²���ִ�У����磬window.open()����</p>
+<p>��дjQuery���<br>��jQuery�����һ���·�����ͨ����չ$.fn����ʵ�ֵ�<br>$.fn.highlight1 = function () {<br>    // this�Ѱ�Ϊ��ǰjQuery����:<br>    this.css(‘backgroundColor’, ‘#fffceb’).css(‘color’, ‘#d85030’);<br>    return this;<br>}<br>ע�⵽�����ڲ���this�ڵ���ʱ����ΪjQuery�������Ժ����ڲ��������������������jQuery����ķ�����</p>
+<p>���գ����ǵó���дһ��jQuery�����ԭ��</p>
+<p>��$.fn�󶨺�����ʵ�ֲ���Ĵ����߼���<br>����������Ҫreturn this;��֧����ʽ���ã�<br>�������Ҫ��Ĭ��ֵ������$.fn.<pluginName>.defaults�ϣ�<br>�û��ڵ���ʱ�ɴ����趨ֵ�Ա㸲��Ĭ��ֵ��</p>
 
             </div>
             <hr/>
@@ -737,7 +608,7 @@ WScript.quit</code></pre>
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/ssinstall/" class="b-link-green">How to install ss</a>
+                    <a href="/jquery/" class="b-link-green">jquery</a>
                 </p>
             </div>
         </div>
@@ -758,9 +629,9 @@ WScript.quit</code></pre>
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/ssinstall/';
-        this.page.identifier = '/ssinstall/';
-        this.page.title = 'How to install ss';
+        this.page.url = 'https://tumbleweed.top/jquery/';
+        this.page.identifier = '/jquery/';
+        this.page.title = 'jquery';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -783,37 +654,38 @@ WScript.quit</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/gitbookinstall/">
+                <a href="/jquery/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="gitbookinstall">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="jquery">
                         
-                        <span class="card-title">gitbookinstall</span>
+                        <span class="card-title">jquery</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Gitbook安装gitbook 简介GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书，GitBook 并非关于 Git 的教程。GitBook支持输出多种文档</div>
+                    <div class="summary">
+jQuery�����������飬����ÿ��Ԫ�ض���һ��������DOM�ڵ�Ķ���
+jQuery��ѡ�������᷵��undefined����null
+jQuery�����DOM����֮����Ի���ת��v</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2014-07-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-07
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Tools/" class="post-category" target="_blank">
-                                    Tools
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            zonglinlee
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -821,50 +693,37 @@ WScript.quit</code></pre>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/ssinstall/">
+                <a href="/bfc/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="How to install ss">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="formatting contexts">
                         
-                        <span class="card-title">How to install ss</span>
+                        <span class="card-title">formatting contexts</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-Xshell6 远程登录 vps (OS:CentOS8)
-
-检测pipwhereis pip pip: /usr/bin/pip3.6这个版本支持 chacha20-ietf-poly1305加密方式
-pip3.6 install ht</div>
+                    <div class="summary">formatting contexts typesEverything on a page is part of a formatting context, or an area which has been defined to lay </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2013-07-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
-                                    CentOS8
-                                </a>
-                            
-                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
-                                    Install
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            zonglinlee
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ss/" target="_blank">
-                        <span class="chip bg-color">ss</span>
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
