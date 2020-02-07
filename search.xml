@@ -17,11 +17,30 @@
     
     
     <entry>
-      <title>tar-unzip</title>
-      <link href="/tar-unzip/"/>
-      <url>/tar-unzip/</url>
+      <title>formatting contexts</title>
+      <link href="/bfc/"/>
+      <url>/bfc/</url>
       
-        <content type="html"><![CDATA[<p>Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z<br>其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2<br>unzip filename.zip<br>事实上, 从1.15版本开始tar就可以自动识别压缩的格式,故不需人为区分压缩格式就能正确解压<br>tar -xvf filename.tar.gz<br>tar -xvf filename.tar.bz2<br>tar -xvf filename.tar.xz<br>tar -xvf filename.tar.Z</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="formatting-contexts-types"><a href="#formatting-contexts-types" class="headerlink" title="formatting contexts types"></a>formatting contexts types</h2><p>Everything on a page is part of a formatting context, or an area which has been defined to lay out content in a particular way. A block formatting context (BFC) will lay child elements out according to block layout rules, a flex formatting context will lay its children out as flex items, etc. Each formatting context has specific rules about how layout behaves when in that context.</p><ul><li>block formatting contexts</li><li>inline formatting contexts</li><li>flex formatting contexts</li></ul><h2 id="Creating-a-new-block-formatting-context"><a href="#Creating-a-new-block-formatting-context" class="headerlink" title="Creating a new block formatting context"></a>Creating a new block formatting context</h2><p>html 元素是最外层初始的一个 block formatting contexts.This means that every element inside the <html> element’s block is laid out according to normal flow following the rules for block and inline layout.</p><ul><li>elements made to float using float</li><li>absolutely positioned elements (including position: fixed or position: sticky)</li><li>elements with display: inline-block</li><li>block elements where overflow has a value other than visible</li><li>elements with display: flow-root or display: flow-root list-item</li><li>flex items</li><li>grid items</li></ul><h2 id="Explicitly-creating-a-BFC-using-display-flow-root"><a href="#Explicitly-creating-a-BFC-using-display-flow-root" class="headerlink" title="Explicitly creating a BFC using display: flow-root"></a>Explicitly creating a BFC using display: flow-root</h2><h2 id="Inline-formatting-contexts"><a href="#Inline-formatting-contexts" class="headerlink" title="Inline formatting contexts"></a>Inline formatting contexts</h2><p>Inline formatting contexts exist inside other formatting contexts and can be thought of as the context of a paragraph. </p><p>css盒模型并不完全适用于inline formatting contets, In a horizontal writing mode line, horizontal padding, borders and margin will be applied to the element and push the text away left and right. However, margins above and below the element will not be applied. Vertical padding and borders will be applied but may  overlap content above and below as, in the inline formatting context, the line boxes will not be pushed apart by padding and borders.</p><h2 id="In-Flow-and-Out-of-Flow"><a href="#In-Flow-and-Out-of-Flow" class="headerlink" title="In Flow and Out of Flow"></a>In Flow and Out of Flow</h2><h3 id="Taking-an-item-out-of-flow"><a href="#Taking-an-item-out-of-flow" class="headerlink" title="Taking an item out of flow"></a>Taking an item out of flow</h3><p>All elements are in-flow apart from:</p><ul><li>floated items</li><li>items with position: absolute (including position: fixed which acts in the same way)</li><li>the root element (html)</li></ul><p>Out of flow items create a new Block Formatting Context (BFC) and therefore everything inside them can be seen as a mini layout, separate from the rest of the page. The root element therefore is out of flow, as the container for everything in our document, and establishes the Block Formatting Context for the document.</p><h2 id="the-display-css-property"><a href="#the-display-css-property" class="headerlink" title="the display css  property"></a>the <code>display</code> css  property</h2><p>Formally, the display property sets an element’s inner and outer display types. The outer type sets an element’s participation in flow layout; the inner type sets the layout of children.</p><p>The Level 3 specification details two values for the display property — enabling the specification of the outer and inner display type explicitly — but this is not yet well-supported by browsers.<br>The <display-legacy> methods allow the same results with single keyword values, and should be favoured by developers until the two keyword values are better supported. For example, using two values you might specify an inline flex container as follows:</p><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.container</span> </span><span class="token punctuation">{</span>  <span class="token property">display</span><span class="token punctuation">:</span> inline flex<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token selector">//This can currently be specified using a single value.<span class="token class">.container</span> </span><span class="token punctuation">{</span>  <span class="token property">display</span><span class="token punctuation">:</span> inline-flex<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css-basics</title>
+      <link href="/css-basics/"/>
+      <url>/css-basics/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>css盒模型中以 top-left为坐标原点</p></li><li><p>css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0</p></li><li><p>CSS object model<br>There are four standard coordinate systems</p><ul><li>Offset ：the mouse event’s offsetX and offsetY properties</li><li>Client : the MouseEvent.clientX and MouseEvent.clientY</li><li>Page :Mouse events’ pageX and pageY properties </li><li>Screen :The MouseEvent.screenX and MouseEvent.screenY properties </li></ul></li><li><p>base-line: align-items:base-line;//所有flex items 第一行文字底部对齐</p></li><li><p>hover,active顺序<br>a:hover,a:focus{<br>  //这两个最好一块写<br>  color:pink;<br>}</p></li><li><p>如果父元素display:flex,子元素display：none; position:absolute都不算在flex-items里面</p></li></ul><p>The unset CSS keyword resets a property to its inherited value if it inherits from its parent, and to its initial value if not.</p><p>The initial CSS keyword applies the initial (or default) value of a property to an element. This initial value is set by the browser. </p><p>The inherit CSS keyword causes the element for which it is specified to take the computed value of the property from its parent element.</p><p>display:none<br>Turns off the display of an element so that it has no effect on layout (the document is rendered as though the element did not exist). All descendant elements also have their display turned off.<br>To have an element take up the space that it would normally take, but without actually rendering anything, use the visibility property instead.</p>]]></content>
       
       
       
@@ -49,29 +68,13 @@
     
     
     <entry>
-      <title>node-sql-install</title>
-      <link href="/node-sql-install/"/>
-      <url>/node-sql-install/</url>
+      <title>tar-unzip</title>
+      <link href="/tar-unzip/"/>
+      <url>/tar-unzip/</url>
       
-        <content type="html"><![CDATA[<h1 id="CentOS8-install-node"><a href="#CentOS8-install-node" class="headerlink" title="CentOS8 install node"></a>CentOS8 install node</h1><h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><pre class=" language-shell"><code class="language-shell">cd /homewget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xztar -Jxvf node-v12.14.1-linux-x64.tar.xzln -s /home/node-v12.14.1-linux-x64/bin/node /usr/local/binln -s /home/node-v12.14.1-linux-x64/bin/npm  /usr/local/binln -s /home/node-v12.14.1-linux-x64/bin/npx  /usr/local/binnode -v</code></pre><h2 id="开放80端口"><a href="#开放80端口" class="headerlink" title="开放80端口"></a>开放80端口</h2><p><code>firewall-cmd --zone=public --permanent --add-port=80/tcp &amp;&amp; firewall-cmd --reload</code></p><h2 id="node-后台运行"><a href="#node-后台运行" class="headerlink" title="node 后台运行"></a>node 后台运行</h2><p>vim /etc/systemd/system/http1.service</p><pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>Description=http1 daemon<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>ExecStart=/usr/local/bin/node  /home/my-server/app.jsRestart=always<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>WantedBy=graphical.target</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> CentOS8 </category>
-          
-          <category> Install </category>
-          
-      </categories>
+        <content type="html"><![CDATA[<p>Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z<br>其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2<br>unzip filename.zip<br>事实上, 从1.15版本开始tar就可以自动识别压缩的格式,故不需人为区分压缩格式就能正确解压<br>tar -xvf filename.tar.gz<br>tar -xvf filename.tar.bz2<br>tar -xvf filename.tar.xz<br>tar -xvf filename.tar.Z</p>]]></content>
       
       
-        <tags>
-            
-            <tag> 部署 </tag>
-            
-            <tag> CentOS </tag>
-            
-        </tags>
       
     </entry>
     
@@ -116,13 +119,29 @@
     
     
     <entry>
-      <title>css-basics</title>
-      <link href="/css-basics/"/>
-      <url>/css-basics/</url>
+      <title>node-sql-install</title>
+      <link href="/node-sql-install/"/>
+      <url>/node-sql-install/</url>
       
-        <content type="html"><![CDATA[<ul><li><p>css盒模型中以 top-left为坐标原点</p></li><li><p>css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0</p></li><li><p>CSS object model<br>There are four standard coordinate systems</p><ul><li>Offset ：the mouse event’s offsetX and offsetY properties</li><li>Client : the MouseEvent.clientX and MouseEvent.clientY</li><li>Page :Mouse events’ pageX and pageY properties </li><li>Screen :The MouseEvent.screenX and MouseEvent.screenY properties </li></ul></li><li><p>base-line: align-items:base-line;//所有flex items 第一行文字底部对齐</p></li><li><p>hover,active顺序<br>a:hover,a:focus{<br>  //这两个最好一块写<br>  color:pink;<br>}</p></li><li><p>如果父元素display:flex,子元素display：none; position:absolute都不算在flex-items里面</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="CentOS8-install-node"><a href="#CentOS8-install-node" class="headerlink" title="CentOS8 install node"></a>CentOS8 install node</h1><h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><pre class=" language-shell"><code class="language-shell">cd /homewget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xztar -Jxvf node-v12.14.1-linux-x64.tar.xzln -s /home/node-v12.14.1-linux-x64/bin/node /usr/local/binln -s /home/node-v12.14.1-linux-x64/bin/npm  /usr/local/binln -s /home/node-v12.14.1-linux-x64/bin/npx  /usr/local/binnode -v</code></pre><h2 id="开放80端口"><a href="#开放80端口" class="headerlink" title="开放80端口"></a>开放80端口</h2><p><code>firewall-cmd --zone=public --permanent --add-port=80/tcp &amp;&amp; firewall-cmd --reload</code></p><h2 id="node-后台运行"><a href="#node-后台运行" class="headerlink" title="node 后台运行"></a>node 后台运行</h2><p>vim /etc/systemd/system/http1.service</p><pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>Description=http1 daemon<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>ExecStart=/usr/local/bin/node  /home/my-server/app.jsRestart=always<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>WantedBy=graphical.target</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> CentOS8 </category>
+          
+          <category> Install </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 部署 </tag>
+            
+            <tag> CentOS </tag>
+            
+        </tags>
       
     </entry>
     
@@ -136,6 +155,25 @@
         <content type="html"><![CDATA[<h2 id="function-作用"><a href="#function-作用" class="headerlink" title="!function(){}() 作用"></a><code>!function(){}()</code> 作用</h2><p>跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数</p><h2 id="noscript-标签"><a href="#noscript-标签" class="headerlink" title="noscript 标签"></a>noscript 标签</h2>]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Z-index</title>
+      <link href="/z-index/"/>
+      <url>/z-index/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CSS-Z-index"><a href="#CSS-Z-index" class="headerlink" title="CSS Z-index"></a>CSS Z-index</h1><h2 id="当没有定义z-index属性时"><a href="#当没有定义z-index属性时" class="headerlink" title="当没有定义z-index属性时"></a>当没有定义z-index属性时</h2><p>When no z-index property is specified, elements are rendered on the default rendering layer 0 (zero).<br>从下倒上依次是：</p><ul><li>The background and borders of the root element</li><li>Descendant non-positioned blocks, in order of appearance in the HTML</li><li>Descendant positioned elements, in order of appearance in the HTML</li></ul><p>当flex-items的order属性改变了HTML的显示顺序之后，它同样会影响stacking context的顺序</p><h2 id="The-stacking-context（层叠上下文）"><a href="#The-stacking-context（层叠上下文）" class="headerlink" title="The stacking context（层叠上下文）"></a>The stacking context（层叠上下文）</h2><p>它是一个假象的三维空间，垂直于视口，HTML 元素基于其元素属性按照优先级顺序占据这个空间</p><h3 id="如何产生一个层叠上下文"><a href="#如何产生一个层叠上下文" class="headerlink" title="如何产生一个层叠上下文"></a>如何产生一个层叠上下文</h3><ul><li>html元素本身</li><li>position为absolute/relative，并且z-index不为auto</li><li>position为fixed/sticky</li><li>flex items,并且z-index不为auto</li><li>grid items, 并且z-index不为auto</li><li>Element with a opacity value less than 1 </li><li>Element with a mix-blend-mode value other than normal.</li><li>Element with any of the following properties with value other than none:<pre><code>  - transform  - filter  - perspective  - clip-path  - mask / mask-image / mask-border</code></pre><h3 id="层叠上下文如何工作"><a href="#层叠上下文如何工作" class="headerlink" title="层叠上下文如何工作"></a>层叠上下文如何工作</h3>在同一个层叠上下文，子元素按照没有z-index时的顺序叠加，如果子元素有z-index属性，它是相对于在本层叠上下文中的其他子元素而言的，它整体的z-index是由父元素决定的。父元素和子元素属于不同的层叠上下文，其z-index没有比较性可言。</li></ul><p>HTML的层次结构和层叠上下文的层次结构是不同的。在层叠上下文的层次结构中，没有创建层叠上下文的元素同其父级处于一个层叠上下文。创建了层叠上下文的会跳离父元素的HTML结构限制，自成一个层叠上下文。</p><h2 id="Stacking-with-floated-blocks"><a href="#Stacking-with-floated-blocks" class="headerlink" title="Stacking with floated blocks"></a>Stacking with floated blocks</h2><p>For floated blocks, the stacking order is a bit different. Floating blocks are placed between non-positioned blocks and positioned blocks</p><ul><li>The background and borders of the root element</li><li>Descendant non-positioned blocks, in order of appearance in the HTML</li><li>Floating blocks</li><li>Descendant positioned elements, in order of appearance in the HTML</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
       
     </entry>
     

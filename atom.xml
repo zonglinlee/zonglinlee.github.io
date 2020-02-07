@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tumbleweed.top/"/>
-  <updated>2020-02-04T16:55:58.889Z</updated>
+  <updated>2020-02-07T05:15:05.000Z</updated>
   <id>https://tumbleweed.top/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>js-basics</title>
     <link href="https://tumbleweed.top/js-basics/"/>
     <id>https://tumbleweed.top/js-basics/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -40,11 +40,11 @@
   </entry>
   
   <entry>
-    <title>tar-unzip</title>
-    <link href="https://tumbleweed.top/tar-unzip/"/>
-    <id>https://tumbleweed.top/tar-unzip/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <title>formatting contexts</title>
+    <link href="https://tumbleweed.top/bfc/"/>
+    <id>https://tumbleweed.top/bfc/</id>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -52,7 +52,35 @@
       
         
         
-          &lt;p&gt;Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z&lt;br&gt;其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2&lt;br&gt;unzip filename.zip&lt;br&gt;事实上,
+          &lt;h2 id=&quot;formatting-contexts-types&quot;&gt;&lt;a href=&quot;#formatting-contexts-types&quot; class=&quot;headerlink&quot; title=&quot;formatting contexts types&quot;&gt;&lt;/a&gt;formatting
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css-basics</title>
+    <link href="https://tumbleweed.top/css-basics/"/>
+    <id>https://tumbleweed.top/css-basics/</id>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;css盒模型中以 top-left为坐标原点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50%
         
       
     
@@ -66,8 +94,8 @@
     <title>git</title>
     <link href="https://tumbleweed.top/git/"/>
     <id>https://tumbleweed.top/git/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -88,11 +116,87 @@
   </entry>
   
   <entry>
+    <title>tar-unzip</title>
+    <link href="https://tumbleweed.top/tar-unzip/"/>
+    <id>https://tumbleweed.top/tar-unzip/</id>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z&lt;br&gt;其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2&lt;br&gt;unzip filename.zip&lt;br&gt;事实上,
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客点击特效</title>
+    <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
+    <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot; language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://tumbleweed.top/categories/Hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://tumbleweed.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo参数</title>
+    <link href="https://tumbleweed.top/hexo-can-shu/"/>
+    <id>https://tumbleweed.top/hexo-can-shu/</id>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;site.data&lt;br&gt;在source/_data文件夹下的 YAML or JSON files&lt;br&gt;比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;% for
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>node-sql-install</title>
     <link href="https://tumbleweed.top/node-sql-install/"/>
     <id>https://tumbleweed.top/node-sql-install/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -119,90 +223,11 @@
   </entry>
   
   <entry>
-    <title>hexo博客点击特效</title>
-    <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
-    <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot; language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://tumbleweed.top/categories/Hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://tumbleweed.top/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo参数</title>
-    <link href="https://tumbleweed.top/hexo-can-shu/"/>
-    <id>https://tumbleweed.top/hexo-can-shu/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;site.data&lt;br&gt;在source/_data文件夹下的 YAML or JSON files&lt;br&gt;比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;% for
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>css-basics</title>
-    <link href="https://tumbleweed.top/css-basics/"/>
-    <id>https://tumbleweed.top/css-basics/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;css盒模型中以 top-left为坐标原点&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50%
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>js</title>
     <link href="https://tumbleweed.top/js/"/>
     <id>https://tumbleweed.top/js/</id>
-    <published>2020-02-04T16:55:58.889Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -221,11 +246,36 @@
   </entry>
   
   <entry>
+    <title>Z-index</title>
+    <link href="https://tumbleweed.top/z-index/"/>
+    <id>https://tumbleweed.top/z-index/</id>
+    <published>2020-02-07T05:15:05.000Z</published>
+    <updated>2020-02-07T05:15:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CSS-Z-index&quot;&gt;&lt;a href=&quot;#CSS-Z-index&quot; class=&quot;headerlink&quot; title=&quot;CSS Z-index&quot;&gt;&lt;/a&gt;CSS Z-index&lt;/h1&gt;&lt;h2 id=&quot;当没有定义z-index属性时&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>build-hexo-theme</title>
     <link href="https://tumbleweed.top/build-hexo-theme/"/>
     <id>https://tumbleweed.top/build-hexo-theme/</id>
     <published>2020-02-01T13:23:35.000Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -248,7 +298,7 @@
     <link href="https://tumbleweed.top/responsive-web-design/"/>
     <id>https://tumbleweed.top/responsive-web-design/</id>
     <published>2020-01-31T09:31:49.000Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -272,7 +322,7 @@
     <link href="https://tumbleweed.top/gitbookinstall/"/>
     <id>https://tumbleweed.top/gitbookinstall/</id>
     <published>2014-07-14T17:01:34.000Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
@@ -297,7 +347,7 @@
     <link href="https://tumbleweed.top/ssinstall/"/>
     <id>https://tumbleweed.top/ssinstall/</id>
     <published>2013-07-14T17:01:34.000Z</published>
-    <updated>2020-02-04T16:55:58.889Z</updated>
+    <updated>2020-02-07T05:15:05.000Z</updated>
     
     <summary type="html">
     
