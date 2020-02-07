@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tumbleweed.top/"/>
-  <updated>2020-02-07T13:32:20.377Z</updated>
+  <updated>2020-02-07T13:38:09.853Z</updated>
   <id>https://tumbleweed.top/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>jquery</title>
     <link href="https://tumbleweed.top/jquery/"/>
     <id>https://tumbleweed.top/jquery/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -30,9 +30,9 @@
         
         
           &lt;ul&gt;
-&lt;li&gt;jQuery�����������飬����ÿ��Ԫ�ض���һ��������DOM�ڵ�Ķ���&lt;/li&gt;
-&lt;li&gt;jQuery��ѡ�������᷵��undefined����null&lt;/li&gt;
-&lt;li&gt;jQuery�����DOM����֮����Ի�
+&lt;li&gt;jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。&lt;/li&gt;
+&lt;li&gt;jQuery的选择器不会返回undefined或者null&lt;/li&gt;
+&lt;li&gt;jQuery对象和DOM对象之间可以互相转化&lt;pre class=&quot;
         
       
     
@@ -46,8 +46,8 @@
     <title>formatting contexts</title>
     <link href="https://tumbleweed.top/bfc/"/>
     <id>https://tumbleweed.top/bfc/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -71,8 +71,8 @@
     <title>Z-index</title>
     <link href="https://tumbleweed.top/z-index/"/>
     <id>https://tumbleweed.top/z-index/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -96,8 +96,8 @@
     <title>css-basics</title>
     <link href="https://tumbleweed.top/css-basics/"/>
     <id>https://tumbleweed.top/css-basics/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -122,8 +122,8 @@
     <title>git</title>
     <link href="https://tumbleweed.top/git/"/>
     <id>https://tumbleweed.top/git/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -147,8 +147,8 @@
     <title>tar-unzip</title>
     <link href="https://tumbleweed.top/tar-unzip/"/>
     <id>https://tumbleweed.top/tar-unzip/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -170,8 +170,8 @@
     <title>hexo博客点击特效</title>
     <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
     <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -197,8 +197,8 @@
     <title>hexo参数</title>
     <link href="https://tumbleweed.top/hexo-can-shu/"/>
     <id>https://tumbleweed.top/hexo-can-shu/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -223,8 +223,8 @@
     <title>bootstrap 入门</title>
     <link href="https://tumbleweed.top/bootstrap/"/>
     <id>https://tumbleweed.top/bootstrap/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -246,8 +246,8 @@
     <title>js-basics</title>
     <link href="https://tumbleweed.top/js-basics/"/>
     <id>https://tumbleweed.top/js-basics/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -269,8 +269,8 @@
     <title>js</title>
     <link href="https://tumbleweed.top/js/"/>
     <id>https://tumbleweed.top/js/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -292,8 +292,8 @@
     <title>node-sql-install</title>
     <link href="https://tumbleweed.top/node-sql-install/"/>
     <id>https://tumbleweed.top/node-sql-install/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -323,8 +323,8 @@
     <title>前端常用工具简介</title>
     <link href="https://tumbleweed.top/qian-duan-gong-ju-he-ji/"/>
     <id>https://tumbleweed.top/qian-duan-gong-ju-he-ji/</id>
-    <published>2020-02-07T13:32:20.377Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <published>2020-02-07T13:38:09.853Z</published>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -347,7 +347,7 @@
     <link href="https://tumbleweed.top/build-hexo-theme/"/>
     <id>https://tumbleweed.top/build-hexo-theme/</id>
     <published>2020-02-01T13:23:35.000Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -370,7 +370,7 @@
     <link href="https://tumbleweed.top/responsive-web-design/"/>
     <id>https://tumbleweed.top/responsive-web-design/</id>
     <published>2020-01-31T09:31:49.000Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -394,7 +394,7 @@
     <link href="https://tumbleweed.top/gitbookinstall/"/>
     <id>https://tumbleweed.top/gitbookinstall/</id>
     <published>2014-07-14T17:01:34.000Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
@@ -419,7 +419,7 @@
     <link href="https://tumbleweed.top/ssinstall/"/>
     <id>https://tumbleweed.top/ssinstall/</id>
     <published>2013-07-14T17:01:34.000Z</published>
-    <updated>2020-02-07T13:32:20.377Z</updated>
+    <updated>2020-02-07T13:38:09.853Z</updated>
     
     <summary type="html">
     
