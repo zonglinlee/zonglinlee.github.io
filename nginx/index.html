@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="js-basics, 风滚草">
-    <meta name="description" content="DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by E">
+    <meta name="keywords" content="nginx, 风滚草">
+    <meta name="description" content="windows nginx指南http://nginx.org/en/docs/windows.html新手指引http://nginx.org/en/docs/beginners_guide.htmlhttp://nginx.org/en">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js-basics | 风滚草</title>
+    <title>nginx | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -269,13 +269,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js-basics
+                        nginx
                     </div>
                 </div>
             </div>
@@ -385,14 +385,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        32
+                        1.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        1 Min
+                        5 Min
                     </div>
                     
                 
@@ -408,10 +408,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="DOMTokenList-interface"><a href="#DOMTokenList-interface" class="headerlink" title="DOMTokenList interface"></a>DOMTokenList interface</h2><p>The DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by <code>Element.classList</code>.</p>
-<div class="class1 class2"></div>
-原生dom方法来toggle一个类：`div.classList.toggle("class1")`
-<hr>
+                <h3 id="windows-nginx指南"><a href="#windows-nginx指南" class="headerlink" title="windows nginx指南"></a>windows nginx指南</h3><p><a href="http://nginx.org/en/docs/windows.html" target="_blank" rel="noopener">http://nginx.org/en/docs/windows.html</a><br>新手指引<br><a href="http://nginx.org/en/docs/beginners_guide.html" target="_blank" rel="noopener">http://nginx.org/en/docs/beginners_guide.html</a><br><a href="http://nginx.org/en/docs/" target="_blank" rel="noopener">http://nginx.org/en/docs/</a><br>nginx配置常见误区<br><a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/" target="_blank" rel="noopener">https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/</a><br>配置指南<br><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/" target="_blank" rel="noopener">https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/</a></p>
+<p>一定要结合日志查看nginx 服务运行状况<br>access.log error.log 这两个文件很重要<br>windows下载nginx目录中开启cmd窗口<br>start nginx.exe<br>nginx.exe -s stop  //暴力退出<br>nginx.exe -s quit  //优雅退出<br>nginx.exe -s reload  //重新加载配置文件<br>nginx.exe -V   //查看各个目录<br>nginx.exe -t   //检查配置文件是否正确 </p>
+<h3 id="Linux下安装nginx"><a href="#Linux下安装nginx" class="headerlink" title="Linux下安装nginx"></a>Linux下安装nginx</h3><p>yum install nginx -y</p>
+<p>RPM (Red Hat Package Manager) is an default open source and most popular package management utility for Red Hat based systems like (RHEL, CentOS and Fedora).The tool allows system administrators and users to install, update, uninstall, query, verify and manage system software packages in Unix/Linux operating systems. The RPM formerly known as .rpm file, that includes compiled software programs and libraries needed by the packages. This utility only works with packages that built on .rpm format.</p>
+<p>rpm -ql nginx #查看配置文件和目录</p>
+<p>nginx http 中server模块的配置<br>root是服务器的根目录，可以在server字段中配置，location中可以覆盖<br>index 字段在server中配置，location中也可以覆盖<br>The index variable tells NGINX which file to serve if none is specified.</p>
+<h3 id="location-修饰符"><a href="#location-修饰符" class="headerlink" title="location 修饰符"></a>location 修饰符</h3><ul>
+<li><p>The = modifier<br>The requested document URI must match the specified pattern exactly(只能严格匹配一个字符串路径)，不能使用正则</p>
+</li>
+<li><p>No modifier<br>The requested document URI must begin with the specified pattern.不能使用正则</p>
+</li>
+<li><p>The ^~ modifier (类似于没有修饰符情况，它比正则匹配享有优先权)<br>Similar to the no-symbol behavior, the location URI must begin with the specified pattern.<br>The difference is that if the pattern is matched, Nginx stops searching for other patterns</p>
+</li>
+<li><p>The ~ modifier (uri大小写敏感)<br>The requested URI must be a case-sensitive match to the specified regular expression</p>
+</li>
+<li><p>The ~* modifier (uri大小写不敏感)<br>The requested URI must be a case-insensitive match to the specified regular expression</p>
+<h3 id="location的匹配顺序-Search-order-and-priority"><a href="#location的匹配顺序-Search-order-and-priority" class="headerlink" title="location的匹配顺序(Search order and priority)"></a>location的匹配顺序(Search order and priority)</h3><p>location 的匹配和先后顺序无关。<br>Nginx will search for matching patterns in a specific order:</p>
+</li>
+<li><p>location blocks with the = modifier: If the specified string exactly matches the<br>requested URI, Nginx retains the location block.</p>
+</li>
+<li><p>location blocks with no modifier: If the specified string exactly matches the<br>requested URI, Nginx retains the location block.</p>
+</li>
+<li><p>location blocks with the ^~ modifier: If the specified string matches the beginning<br>of the requested URI, Nginx retains the location block.</p>
+</li>
+<li><p>location blocks with ~ or ~* modifier: If the regular expression matches the<br>requested URI, Nginx retains the location block.</p>
+</li>
+<li><p>location blocks with no modifier: If the specified string matches the beginning of<br>the requested URI, Nginx retains the location block.</p>
+</li>
+</ul>
+<h3 id="会导致内部重定向的几个命令"><a href="#会导致内部重定向的几个命令" class="headerlink" title="会导致内部重定向的几个命令"></a><a href="https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms" target="_blank" rel="noopener">会导致内部重定向的几个命令</a></h3><p>Some directives that can lead to this type of internal redirect are:</p>
+<ul>
+<li>index</li>
+<li>try_files</li>
+<li>rewrite</li>
+<li>error_page</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">        root         /usr/share/nginx/html/data;
+        index index.html;
+        location  /a {
+            root /home;
+            #这里如果要留在这个block中可以使用 try_files $uri $uri.html $uri/
+            #它会依次匹配/a文件  /a.html文件  /a/目录   
+
+        }
+        error_page 404 /404.html;
+        location = /40x.html {
+        }</code></pre>
+<p>情况1：假设根目录下只有/home<br>如果有一个请求 /a 过来，nginx会先匹配第一个location block，此时进入block之后，会重新定义根目录，即 /home ,然后就没有然后了，在access.log中会报404状态码，表示未找到页面，在error.log中它会记录 open() “/home/a” failed (2: No such file or directory)，接着它会走error_page ，导航到/404.html , nginx会匹配 /404.html 这个URI，此时相当于重新寻找要走的block，此时相当于以 / 开头，即根目录，它会去/usr/share/nginx/html/data下寻找404.html<br>情况2： 根目录下只有/home/a ，a文件夹里面什么都没有<br>此时nginx会进入a目录，access.log中报”GET /a/ HTTP/1.1” 403 ，error.log中报 directory index of “/home/a/“ is forbidden<br>情况3： a中新建一个index.html文件<br>access.log 中状态码 200，返回的是a文件夹中的index.html. 它会默认index index.html.</p>
+<h3 id="index-字段"><a href="#index-字段" class="headerlink" title="index 字段"></a>index 字段</h3><p>Context: http, server, location. Variables are accepted.(即这几个http server,location 中都存在index字段。默认 index.html)<br>This defines the default page that Nginx will serve if no filename is specified in the<br>request (in other words, the index page). You may specify multiple filenames, and the first<br>file to be found will be served. If none of the specified files are found, and if the<br>autoindex directive is enabled (check the HTTP Autoindex module), Nginx will attempt to<br>generate an automatic index of the files. Otherwise, it will return a 403 Forbidden error<br>page. Optionally, you may insert an absolute filename (such as /page.html, based from<br>the document root directory) but only as the last argument of the directive.<br>Syntax: index file1 [file2…] [absolute_file];<br>Default value: index.html</p>
+<p>HTTP 304 未改变说明无需再次传输请求的内容，也就是说可以使用缓存的内容</p>
 
             </div>
             <hr/>
@@ -552,7 +598,7 @@
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/js-basics/" class="b-link-green">js-basics</a>
+                    <a href="/nginx/" class="b-link-green">nginx</a>
                 </p>
             </div>
         </div>
@@ -573,9 +619,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/js-basics/';
-        this.page.identifier = '/js-basics/';
-        this.page.title = 'js-basics';
+        this.page.url = 'https://tumbleweed.top/nginx/';
+        this.page.identifier = '/nginx/';
+        this.page.title = 'nginx';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -598,26 +644,26 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/js-basics/">
+                <a href="/js/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js-basics">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js">
                         
-                        <span class="card-title">js-basics</span>
+                        <span class="card-title">js</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by E</div>
+                    <div class="summary">!function(){}() 作用跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数
+noscript 标签</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -626,7 +672,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -637,25 +682,35 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/bfc/">
+                <a href="/node-sql-install/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="formatting contexts">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="node-sql-install">
                         
-                        <span class="card-title">formatting contexts</span>
+                        <span class="card-title">node-sql-install</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">formatting contexts typesEverything on a page is part of a formatting context, or an area which has been defined to lay </div>
+                    <div class="summary">CentOS8 install node安装nodecd /home
+wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
+tar -Jxvf node-v</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            zonglinlee
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
+                                    CentOS8
+                                </a>
+                            
+                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
+                                    Install
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -663,8 +718,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/" target="_blank">
+                        <span class="chip bg-color">部署</span>
+                    </a>
+                    
+                    <a href="/tags/CentOS/" target="_blank">
+                        <span class="chip bg-color">CentOS</span>
                     </a>
                     
                 </div>

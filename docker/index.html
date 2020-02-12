@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="js-basics, 风滚草">
-    <meta name="description" content="DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by E">
+    <meta name="keywords" content="docker, 风滚草">
+    <meta name="description" content="docker架构Linux 容器（Linux Containers，缩写为 LXC）。docker 是基于 Linux容器的一种封装docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js-basics | 风滚草</title>
+    <title>docker | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -269,13 +269,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js-basics
+                        docker
                     </div>
                 </div>
             </div>
@@ -385,14 +385,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        32
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        1 Min
+                        4 Min
                     </div>
                     
                 
@@ -408,10 +408,88 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="DOMTokenList-interface"><a href="#DOMTokenList-interface" class="headerlink" title="DOMTokenList interface"></a>DOMTokenList interface</h2><p>The DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by <code>Element.classList</code>.</p>
-<div class="class1 class2"></div>
-原生dom方法来toggle一个类：`div.classList.toggle("class1")`
-<hr>
+                <p>docker架构<br>Linux 容器（Linux Containers，缩写为 LXC）。<br>docker 是基于 Linux容器的一种封装<br>docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker containers和docker images)<br>docker container 是由 docker image 实例化产生的，比如有一个node镜像(image),可以从这个node镜像同时生成多个实例(container)</p>
+<p>阿里 centos7 按时付费 下安装 docker<br>yum install -y docker-io<br>systemctl start docker (启动本地docker服务)<br>docker info<br>docker search node   (搜寻node的docker镜像)<br>docker pull node (从官网docker镜像仓库中拉取镜像到服务器)<br>docker run node (会运行node这个镜像名,生成一个不完整的Linux运行环境)<br>docker ps -a (查看所有运行的container)<br>docker exec -it containerID  /bin/bash (进入docker容器)</p>
+<p>端口映射：比如我们的vps主机上运行了一个nginx的docker container，我们<code>curl http://localhost</code>是访问的此vps上的80端口，但是vps本身没有启动nginx服务，我们需要将请求映射到docker container中，即当有请求访问80端口的时候，我们转交给docker 中的nginx服务来处理</p>
+<h2 id="制作docker-image"><a href="#制作docker-image" class="headerlink" title="制作docker image"></a>制作docker image</h2><p>docker image是一层层加上去的，你可以基于别人的镜像叠加创建你自己的image<br>docker inspect node (查看镜像)</p>
+<p>Dockerfile 文件(文件名就叫做Dockerfile,docker 打包的时候就会找这个文件，根据里面的配置来打包)<br>比如我们在vps 上创建了一个app文件夹<br>|_ _ <em>app(文件夹)<br>|       |</em> <em>server.js(一个express服务器)<br>|       |</em> <em>package.json<br>|</em> _ _Dockerfile</p>
+<pre class=" language-shell"><code class="language-shell">#Dockerfile文件内容
+FROM node   (由node镜像演变而来)
+COPY ./app /app  (将当前目录下的app文件夹内的文件拷贝到镜像中根目录下的app文件夹中)
+WORKDIR /app    (定义镜像中的工作目录)
+RUN npm install  (打包阶段会执行此命令，安装项目依赖并打包到镜像中)
+EXPOSE 3000     (暴露镜像中的端口)
+CMD node server.js (运行镜像实例时候会执行此命令)</code></pre>
+<p>在当前目录下执行<code>docker build -t zonglinlee/node-server:latest  .</code><br>打包镜像，-t 用来指定镜像名称， . 表示在当前目录下找Dockerfile文件</p>
+<p>打包完成之后运行镜像<br><code>docker run -p 80:3000 -it zonglinlee/node-server</code></p>
+<h2 id="发布image"><a href="#发布image" class="headerlink" title="发布image"></a>发布image</h2><p>docker login  (登录docker服务器仓库)<br>docker push zonglinlee/node-server (只会将新添加的层推送到服务器，其余的是基于node扩展的，node的部分不会推送)</p>
+<h2 id="指定数据盘"><a href="#指定数据盘" class="headerlink" title="指定数据盘"></a>指定数据盘</h2><p>在执行 <code>docker rm containerID</code> 之后，会销毁容器，此时容器中的所有数据就丢失了<br>如果我们想在容器销毁之后还有数据备份在vps上，可以通过 -v 或 –volume 指定数据盘，此相当于一个硬链接，链接container中的一个文件夹到本地vps上，我们在所有container中更改的东西都会同样复制一份在vps上，并且container销毁后，本地主机上的还存在<br><code>docker run -v ~/logger:/mnt -it ubuntu /bin/bash</code><br>~/logger 指定的是vps上的文件夹<br>/mnt      指定的是container中的数据盘<br>此时如果执行 <code>docker inspect containerID</code><br>会看到有个 Mounts 属性里面有source和destination字段，分别指的是vps上的源目录和container中的目标目录，即source为 ~/logger,destination 为 /mnt</p>
+<pre class=" language-shell"><code class="language-shell">cd ~ 
+mkdir blog
+cd blog
+mkdir nodeserver
+mkdir nginx
+cd nodeserver
+vim Dockerfile
+# nodeserver 下的Dockerfile
+FROM node
+RUN npm i express-generator -g
+RUN express app
+WORKDIR app
+RUN npm install
+EXPOSE 3000
+CMD ["npm","start"]
+
+cd ../nginx
+vim nginx.conf
+# nginx.conf 文件
+events{  
+    use epoll;  
+}
+http {
+  server {
+    listen 80;                  #nginx监听80端口，转交 / 给blog服务，即http服务器。
+    location / {
+      proxy_pass http://blog:3000;   #这里的blog主机名就是docker-compose.yml中配置的服务
+    }
+  }
+}
+
+vim Dockerfile
+# nginx 下的Dockerfile
+FROM nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+
+
+cd ../
+
+vim docker-compose.yml 
+# docker-compose.yml文件
+#这个版本号很重要，它对应docker的版本，一定要去官网上查看，否则会报错。
+# https://docs.docker.com/compose/compose-file/
+version: '3.6'
+services:               #一共有两个服务  blog  和 nginx服务
+   blog:
+     build: nodeserver    #这个express会开启一个localhost:3000的http服务器
+     ports:
+      - "3000:3000"    #端口映射
+
+   nginx:
+     build: nginx
+     ports:
+      - "80:80"
+
+
+
+# 启动服务
+pip install docker-compose
+
+docker-compose up -d
+
+# 查看服务启动是否成功
+curl  http://locolhost:80  #会返回 `welcome to express` html
+</code></pre>
 
             </div>
             <hr/>
@@ -552,7 +630,7 @@
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/js-basics/" class="b-link-green">js-basics</a>
+                    <a href="/docker/" class="b-link-green">docker</a>
                 </p>
             </div>
         </div>
@@ -573,9 +651,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/js-basics/';
-        this.page.identifier = '/js-basics/';
-        this.page.title = 'js-basics';
+        this.page.url = 'https://tumbleweed.top/docker/';
+        this.page.identifier = '/docker/';
+        this.page.title = 'docker';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -598,26 +676,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/js-basics/">
+                <a href="/css-basics/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js-basics">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="css-basics">
                         
-                        <span class="card-title">js-basics</span>
+                        <span class="card-title">css-basics</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by E</div>
+                    <div class="summary">
+css盒模型中以 top-left为坐标原点
+
+css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0
+
+CSS objec</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -626,7 +708,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -637,17 +718,18 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/bfc/">
+                <a href="/git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="formatting contexts">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
                         
-                        <span class="card-title">formatting contexts</span>
+                        <span class="card-title">git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">formatting contexts typesEverything on a page is part of a formatting context, or an area which has been defined to lay </div>
+                    <div class="summary">submodulesubmodule中文件变更了,在主工作目录中是没有办法add并commit的，分而治之，主模块提交主模块的，子模块提交自己的，子模块提交后，主模块会感知到，从而再在主模块中提交即可
+添加 submodule将GitHub</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
@@ -663,8 +745,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>

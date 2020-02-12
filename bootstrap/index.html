@@ -378,21 +378,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-07
+                    2020-02-12
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.4k
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        6 Min
+                        9 Min
                     </div>
                     
                 
@@ -500,7 +500,24 @@
 <h3 id="Column-wrapping"><a href="#Column-wrapping" class="headerlink" title="Column wrapping"></a>Column wrapping</h3><p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
 <h3 id="Column-breaks"><a href="#Column-breaks" class="headerlink" title="Column breaks"></a><a href="https://getbootstrap.com/docs/4.4/layout/grid/#no-gutters" target="_blank" rel="noopener">Column breaks</a></h3><pre class=" language-html"><code class="language-html"> <span class="token comment" spellcheck="true">&lt;!-- Force next columns to break to new line --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-100<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="Reordering"><a href="#Reordering" class="headerlink" title="Reordering"></a>Reordering</h3>
+<h3 id="Reordering"><a href="#Reordering" class="headerlink" title="Reordering"></a>Reordering</h3><p>Use <code>.order-</code> classes for controlling the visual order of your content(<code>.order-1.order-md-2</code>), Includes support for 1 through 12 across all five grid tiers.<br>There are also responsive <code>.order-first</code> and <code>.order-last</code> classes that change the order of an element by applying order: -1 and order: 13 (order: $columns + 1), respectively.</p>
+<h3 id="Offsetting-columns"><a href="#Offsetting-columns" class="headerlink" title="Offsetting columns"></a>Offsetting columns</h3><p>Move columns to the right using <code>.offset-md-*</code> classes.<code>.offset-md-4</code> moves <code>.col-md-4</code>over four columns.</p>
+<h3 id="Margin-utilities"><a href="#Margin-utilities" class="headerlink" title="Margin utilities"></a>Margin utilities</h3><p>With the move to flexbox in v4, you can use margin utilities like <code>.mr-auto</code> to force sibling columns away from one another.</p>
+<h3 id="Customizing-the-grid"><a href="#Customizing-the-grid" class="headerlink" title="Customizing the grid"></a>Customizing the grid</h3><p>Using our built-in grid Sass variables and maps, it’s possible to completely customize the predefined grid classes. Change the number of tiers, the media query dimensions, and the container widths—then recompile.</p>
+<h2 id="Utilities-for-layout"><a href="#Utilities-for-layout" class="headerlink" title="Utilities for layout"></a><a href="https://getbootstrap.com/docs/4.4/layout/utilities-for-layout/" target="_blank" rel="noopener">Utilities for layout</a></h2><p>Bootstrap includes dozens of utility classes for showing, hiding, aligning, and spacing content.</p>
+<ul>
+<li>Changing display(Visible only on sm    <code>.d-none .d-sm-block .d-md-none</code>)</li>
+<li><a href="https://getbootstrap.com/docs/4.4/utilities/spacing/" target="_blank" rel="noopener">Margin and padding</a><br>Spacing utilities that apply to all breakpoints, from xs to xl, have no breakpoint abbreviation in them. </li>
+<li>Toggle visibility(.visible or .invisible )<h3 id="Flexbox-options"><a href="#Flexbox-options" class="headerlink" title="Flexbox options"></a>Flexbox options</h3>不是所有的元素都是display：flex;如果要开启弹性盒子，添加<code>.d-flex</code> or one of the responsive variants (<code>.d-sm-flex</code>  <code>.d-inline-flex.</code>).</li>
+</ul>
+<p><code>.flex-row .flex-row-reverse</code> <code>.flex-column .flex-column-reverse</code><br><code>justify-content-start .justify-content-end .justify-content-center</code><br><code>.justify-content-between.justify-content-around</code><br><code>.align-items-start.align-items-end.align-items-center</code><br><code>.align-items-baseline.align-items-stretch</code><br><code>.align-self-start.align-self-end.align-self-center</code><br><code>.align-self-baseline.align-self-stretch</code></p>
+<h4 id="Fill"><a href="#Fill" class="headerlink" title="Fill"></a>Fill</h4><p>Use the <code>.flex-fill</code> class on a series of sibling elements to force them into widths equal to their content </p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p><code>.flex-grow-*</code> <code>.flex-shrink-*</code> <code>.flex-{grow|shrink}-0 .flex-{grow|shrink}-1</code></p>
+<h4 id="Auto-margins"><a href="#Auto-margins" class="headerlink" title="Auto margins"></a>Auto margins</h4><p>Flexbox can do some pretty awesome things when you mix flex alignments with auto margins. Shown below are three examples of controlling flex items via auto margins: default (no auto margin), pushing two items to the right (<code>.mr-auto</code>), and pushing two items to the left (<code>.ml-auto</code>).</p>
+<h4 id="wrap"><a href="#wrap" class="headerlink" title="wrap"></a>wrap</h4><p><code>.flex-nowrap</code>, wrapping with <code>.flex-wrap</code> or reverse wrapping with <code>.flex-wrap-reverse</code>.</p>
+<h4 id="order"><a href="#order" class="headerlink" title="order"></a>order</h4><p><code>.order-0.order-1.order-2.order-3.order-4.order-5.order-6.order-7.order-8.order-9.order-10.order-11.order-12</code></p>
+<h4 id="Align-content"><a href="#Align-content" class="headerlink" title="Align content"></a>Align content</h4><p>Use align-content utilities on flexbox containers to align flex items together on the cross axis. Choose from start (browser default), end, center, between, around, or stretch. To demonstrate these utilities, we’ve enforced flex-wrap: wrap and increased the number of flex items.<br><code>This property has no effect on single rows of flex items.</code></p>
+
             </div>
             <hr/>
 
@@ -690,23 +707,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/hexo-can-shu/">
+                <a href="/tar-unzip/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="hexo参数">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="tar-unzip">
                         
-                        <span class="card-title">hexo参数</span>
+                        <span class="card-title">tar-unzip</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-site.data在source/_data文件夹下的 YAML or JSON files比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property
-
-&lt;% for (var link i</div>
+                    <div class="summary">Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2unzip filename.zip事实上, 从1.15版本开</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-07
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-12
                         </span>
                         <span class="publish-author">
                             
@@ -726,20 +740,20 @@ site.data在source/_data文件夹下的 YAML or JSON files比如在此文件夹�
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/js-basics/">
+                <a href="/build-hexo-theme/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js-basics">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="build-hexo-theme">
                         
-                        <span class="card-title">js-basics</span>
+                        <span class="card-title">build-hexo-theme</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by E</div>
+                    <div class="summary">iconfont应用下载的iconfont在style中引入@import &quot;iconfont/iconfont.css&quot;&lt;i class=&quot;iconfont icon-xxx&quot;&gt;&lt;</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-01
                             </span>
                         <span class="publish-author">
                             
@@ -856,7 +870,7 @@ site.data在source/_data文件夹下的 YAML or JSON files比如在此文件夹�
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">7.4k</span>
+                <span class="white-color">10k</span>
             
 
             
