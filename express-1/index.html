@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="tar-unzip, 风滚草">
-    <meta name="description" content="Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2unzip filename.zip事实上, 从1.15版本开">
+    <meta name="keywords" content="express(1), 风滚草">
+    <meta name="description" content="
+
+res.cookie(name, value [, options])这个API是express添加到res对象中的，node.js原生不提供此方法，服务器端写入cookie给http响应头部。options 中 expires 如果不">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>tar-unzip | 风滚草</title>
+    <title>express(1) | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,7 +277,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        tar-unzip
+                        express(1)
                     </div>
                 </div>
             </div>
@@ -385,7 +387,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        102
+                        275
                     </div>
                     
 
@@ -408,7 +410,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z<br>其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2<br>unzip filename.zip<br>事实上, 从1.15版本开始tar就可以自动识别压缩的格式,故不需人为区分压缩格式就能正确解压<br>tar -xvf filename.tar.gz<br>tar -xvf filename.tar.bz2<br>tar -xvf filename.tar.xz<br>tar -xvf filename.tar.Z</p>
+                <hr>
+<hr>
+<h3 id="res-cookie-name-value-options"><a href="#res-cookie-name-value-options" class="headerlink" title="res.cookie(name, value [, options])"></a>res.cookie(name, value [, options])</h3><p>这个API是express添加到res对象中的，node.js原生不提供此方法，服务器端写入cookie给http响应头部。<br>options 中 expires 如果不设置，则默认创建一个session cookie，即浏览器不关闭就一直生效。<br>httpOnly,默认false，此时可以在浏览器中通过 document.cookie读取到，设为true，就只能被服务器读取。<br>secure设置为true，Marks the cookie to be used with HTTPS only.<br>signed用来设置cookie是否被签名。</p>
+<p>浏览器发送到服务端的cookie如何读取，中间件 cookie-parser,Parse Cookie header and populate <code>req.cookies</code> with an object keyed by the cookie names.如果cookie 被signed ，可以用 <code>req.signedCookie</code> 来读取。</p>
+<h3 id="express-session"><a href="#express-session" class="headerlink" title="express-session"></a><a href="https://www.npmjs.com/package/express-session" target="_blank" rel="noopener">express-session</a></h3><p>session机制，客户端第一次访问服务器的时候，服务器会生成全局唯一的session_id,之后通过http的响应头set-cookie发给客户端，此后客户端会带着这个session_id来访问服务器，服务器会通过这个session_id来取出服务端保存的数据。<br>session的持久化保存:session-store.<br> connect-mongo A MongoDB-based session store<br> connect-redis A Redis-based session store.</p>
 
             </div>
             <hr/>
@@ -549,7 +555,7 @@
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/tar-unzip/" class="b-link-green">tar-unzip</a>
+                    <a href="/express-1/" class="b-link-green">express(1)</a>
                 </p>
             </div>
         </div>
@@ -570,9 +576,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/tar-unzip/';
-        this.page.identifier = '/tar-unzip/';
-        this.page.title = 'tar-unzip';
+        this.page.url = 'https://tumbleweed.top/express-1/';
+        this.page.identifier = '/express-1/';
+        this.page.title = 'express(1)';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -599,17 +605,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/z-index/">
+                <a href="/express-0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Z-index">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="express(0)">
                         
-                        <span class="card-title">Z-index</span>
+                        <span class="card-title">express(0)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">CSS Z-index当没有定义z-index属性时When no z-index property is specified, elements are rendered on the default rendering layer 0 </div>
+                    <div class="summary">expressexpress app.get()方法封装let http = require('http')
+let url = require('url')
+function createApplication() {
+    //app</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
@@ -623,14 +632,6 @@
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -640,17 +641,18 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/nginx/">
+                <a href="/git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="nginx">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
                         
-                        <span class="card-title">nginx</span>
+                        <span class="card-title">git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">windows nginx指南http://nginx.org/en/docs/windows.html新手指引http://nginx.org/en/docs/beginners_guide.htmlhttp://nginx.org/en</div>
+                    <div class="summary">submodulesubmodule中文件变更了,在主工作目录中是没有办法add并commit的，分而治之，主模块提交主模块的，子模块提交自己的，子模块提交后，主模块会感知到，从而再在主模块中提交即可
+添加 submodule将GitHub</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
@@ -662,6 +664,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
                 </div>
                 
             </div>

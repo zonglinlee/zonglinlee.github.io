@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="tar-unzip, 风滚草">
-    <meta name="description" content="Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2unzip filename.zip事实上, 从1.15版本开">
+    <meta name="keywords" content="express(0), 风滚草">
+    <meta name="description" content="expressexpress app.get()方法封装let http = require(&#39;http&#39;)
+let url = require(&#39;url&#39;)
+function createApplication() {
+    //app">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>tar-unzip | 风滚草</title>
+    <title>express(0) | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -269,13 +272,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        tar-unzip
+                        express(0)
                     </div>
                 </div>
             </div>
@@ -385,7 +388,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        102
+                        313
                     </div>
                     
 
@@ -408,7 +411,66 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z<br>其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2<br>unzip filename.zip<br>事实上, 从1.15版本开始tar就可以自动识别压缩的格式,故不需人为区分压缩格式就能正确解压<br>tar -xvf filename.tar.gz<br>tar -xvf filename.tar.bz2<br>tar -xvf filename.tar.xz<br>tar -xvf filename.tar.Z</p>
+                <h1 id="express"><a href="#express" class="headerlink" title="express"></a>express</h1><h2 id="express-app-get-方法封装"><a href="#express-app-get-方法封装" class="headerlink" title="express app.get()方法封装"></a>express app.get()方法封装</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'url'</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">createApplication</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//app是真正的请求监听函数</span>
+    <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> <span class="token punctuation">{</span> pathname <span class="token punctuation">}</span> <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> app<span class="token punctuation">.</span>routes<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> route <span class="token operator">=</span> app<span class="token punctuation">.</span>routes<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            <span class="token comment" spellcheck="true">//路由和方法都匹配成功后调用处理函数</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>method <span class="token operator">===</span> req<span class="token punctuation">.</span>method<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token operator">&amp;&amp;</span> pathname <span class="token operator">===</span> route<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> route<span class="token punctuation">.</span><span class="token function">handler</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//如果都不匹配</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Can not </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>req<span class="token punctuation">.</span>method<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>pathname<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//定义路由数组,保存服务器路由处理规则</span>
+    app<span class="token punctuation">.</span>routes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true">//启动一个服务器</span>
+    app<span class="token punctuation">.</span>listen <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//Returns a new instance of http.Server类,这个server类上会暴露listen函数</span>
+        <span class="token comment" spellcheck="true">//http.createServer([requestListener])</span>
+        <span class="token comment" spellcheck="true">//The requestListener is a function which is automatically </span>
+        <span class="token comment" spellcheck="true">//added to the 'request' event.它会绑定到request事件上面，每次有request事件触发，</span>
+        <span class="token comment" spellcheck="true">//都会调用requestListener</span>
+        <span class="token keyword">let</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+        server<span class="token punctuation">.</span>listen<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>server<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//app.get方法用来将路由和路由处理函数保存到app.routes中</span>
+    <span class="token comment" spellcheck="true">//app.get 只能处理get请求</span>
+    app<span class="token punctuation">.</span><span class="token keyword">get</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>path<span class="token punctuation">,</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span>routes<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            method<span class="token punctuation">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+            path<span class="token punctuation">,</span>
+            handler
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> app
+<span class="token punctuation">}</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> createApplication</code></pre>
+<p>使用</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token function">createApplication</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'server is running'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/hello'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>http.METHODS提供了所有的请求方法数组，遍历封装所有的app.get/app.post等方法</p>
+<pre class=" language-js"><code class="language-js">http<span class="token punctuation">.</span>METHODS<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>method <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    method <span class="token operator">=</span> method<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token punctuation">[</span>method<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>handler<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span>routes<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            method<span class="token punctuation">,</span>
+            path<span class="token punctuation">,</span>
+            handler
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
@@ -549,7 +611,7 @@
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/tar-unzip/" class="b-link-green">tar-unzip</a>
+                    <a href="/express-0/" class="b-link-green">express(0)</a>
                 </p>
             </div>
         </div>
@@ -570,9 +632,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/tar-unzip/';
-        this.page.identifier = '/tar-unzip/';
-        this.page.title = 'tar-unzip';
+        this.page.url = 'https://tumbleweed.top/express-0/';
+        this.page.identifier = '/express-0/';
+        this.page.title = 'express(0)';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -599,17 +661,17 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/z-index/">
+                <a href="/docker/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Z-index">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="docker">
                         
-                        <span class="card-title">Z-index</span>
+                        <span class="card-title">docker</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">CSS Z-index当没有定义z-index属性时When no z-index property is specified, elements are rendered on the default rendering layer 0 </div>
+                    <div class="summary">docker架构Linux 容器（Linux Containers，缩写为 LXC）。docker 是基于 Linux容器的一种封装docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker c</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
@@ -623,14 +685,6 @@
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -640,17 +694,19 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/nginx/">
+                <a href="/express-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="nginx">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="express(1)">
                         
-                        <span class="card-title">nginx</span>
+                        <span class="card-title">express(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">windows nginx指南http://nginx.org/en/docs/windows.html新手指引http://nginx.org/en/docs/beginners_guide.htmlhttp://nginx.org/en</div>
+                    <div class="summary">
+
+res.cookie(name, value [, options])这个API是express添加到res对象中的，node.js原生不提供此方法，服务器端写入cookie给http响应头部。options 中 expires 如果不</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
