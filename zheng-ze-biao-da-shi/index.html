@@ -379,21 +379,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-18
+                    2020-02-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.6k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        6 Min
+                        7 Min
                     </div>
                     
                 
@@ -452,6 +452,39 @@
 <h3 id="验证邮箱-简易"><a href="#验证邮箱-简易" class="headerlink" title="验证邮箱(简易)"></a>验证邮箱(简易)</h3><p>let reg = /^[\w.-]+@[0-9a-zA-Z]+(.[A-Za-z]{2,4}){1,2}$/</p>
 <h3 id="中国标准真实姓名-2-4位汉字"><a href="#中国标准真实姓名-2-4位汉字" class="headerlink" title="中国标准真实姓名(2-4位汉字)"></a>中国标准真实姓名(2-4位汉字)</h3><p>let reg = /^[\u4e00-\u9fa5]{2,4}$/<br>中国汉字Unicode编码范围</p>
 <h3 id="身份证号码"><a href="#身份证号码" class="headerlink" title="身份证号码"></a>身份证号码</h3><p>前两位代表省份，接着四位代表市区县 中间代表年月日，接着两位无意义，倒数第二位奇数代表男，偶数代表女，最后一位可能是数字也可能是大写X<br>let reg = /^(\d{2})(\d{4})(\d{4})(\d{2})(\d{2})(\d{2})(\d)(\d|X)$/</p>
+<h3 id="找出一个字符串中出现次数最多的字符"><a href="#找出一个字符串中出现次数最多的字符" class="headerlink" title="找出一个字符串中出现次数最多的字符"></a>找出一个字符串中出现次数最多的字符</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"a firefox jumps over a box"</span>
+<span class="token comment" spellcheck="true">//1.定义一个对象用来存储字符串中每个字母出现的次数</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[a-z]/gi</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> val <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    obj<span class="token punctuation">[</span>val<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token operator">++</span>obj<span class="token punctuation">[</span>val<span class="token punctuation">]</span> <span class="token punctuation">:</span> obj<span class="token punctuation">[</span>val<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//2.获取最多出现的次数</span>
+<span class="token comment" spellcheck="true">//用假设法，先假设最多次数为0，再不断的更新这个变量</span>
+<span class="token keyword">let</span> maxNum <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">></span> maxNum <span class="token operator">?</span> maxNum <span class="token operator">=</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//3.根据maxNum得到key,保存到一个数组中</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">let</span> key <span class="token keyword">in</span> obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">===</span> maxNum <span class="token operator">?</span> arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`字符串中出现次数最多的字符是</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,出现了</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>maxNum<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">次`</span></span><span class="token punctuation">)</span></code></pre>
+<h3 id="模板引擎基本原理"><a href="#模板引擎基本原理" class="headerlink" title="模板引擎基本原理"></a>模板引擎基本原理</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"Hello {0} , I am {1}"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'world'</span><span class="token punctuation">,</span> <span class="token string">'lee'</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> newStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/{(\d+)}/g</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">[</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newStr<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//"Hello world , I am lee"</span></code></pre>
+<h3 id="解析Url"><a href="#解析Url" class="headerlink" title="解析Url"></a>解析Url</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token string">"http://baidu.com?name=lee&amp;age=12&amp;city=guangzhou"</span>
+<span class="token keyword">let</span> reg <span class="token operator">=</span> <span class="token regex">/([^=?&amp;]+)=([^=?&amp;]+)/g</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+url<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    obj<span class="token punctuation">[</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>arguments<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//{name: "lee", age: "12", city: "guangzhou"}</span></code></pre>
 
             </div>
             <hr/>
@@ -638,28 +671,27 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/jquery/">
+                <a href="/zheng-ze-biao-da-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="jquery">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
                         
-                        <span class="card-title">jquery</span>
+                        <span class="card-title">正则表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。
-jQuery的选择器不会返回undefined或者null
-jQuery对象和DOM对象之间可以互相转化var div = $('#abc'); // jQuery对</div>
+                    <div class="summary">正则表达式在 JavaScript中，正则表达式也是对象。这些模式被用于RegExp 的 exec 和 test 方法, 以及 String 的 match、matchAll、replace、search 和 split 方法
+创建正则表达</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -668,6 +700,7 @@ jQuery对象和DOM对象之间可以互相转化var div = $('#abc'); // jQuery�
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -678,21 +711,21 @@ jQuery对象和DOM对象之间可以互相转化var div = $('#abc'); // jQuery�
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/js/">
+                <a href="/qian-duan-gong-ju-he-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="前端常用工具简介">
                         
-                        <span class="card-title">js</span>
+                        <span class="card-title">前端常用工具简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">!function(){}() 作用跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数
-noscript 标签</div>
+                    <div class="summary">前端常用工具简介综合
+can i use“Can I use” provides up-to-date browser support tables for support of front-end web technologies on </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-22
                             </span>
                         <span class="publish-author">
                             
@@ -809,7 +842,7 @@ noscript 标签</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">12.8k</span>
+                <span class="white-color">13.1k</span>
             
 
             
