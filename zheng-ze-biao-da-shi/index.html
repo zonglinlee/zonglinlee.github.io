@@ -379,21 +379,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-22
+                    2020-02-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.9k
+                        2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        7 Min
+                        8 Min
                     </div>
                     
                 
@@ -485,6 +485,29 @@ url<span class="token punctuation">.</span><span class="token function">replace<
     obj<span class="token punctuation">[</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>arguments<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//{name: "lee", age: "12", city: "guangzhou"}</span></code></pre>
+<h3 id="解析字符串日期"><a href="#解析字符串日期" class="headerlink" title="解析字符串日期"></a>解析字符串日期</h3><p>将 “2020-2-20 22:12:33” 转换成 2020年2月20日 22时12分33秒</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> timeStr <span class="token operator">=</span> <span class="token string">"2020-2-20 22:12:33"</span>
+<span class="token comment" spellcheck="true">//第一步提取 年月日时分秒</span>
+String<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>myFormateTime <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> reg <span class="token operator">=</span> <span class="token regex">/^(\d{4})[-/](\d{1,2})[/-](\d{1,2}) +(\d{1,2}):(\d{1,2}):(\d{1,2})$/g</span>
+    <span class="token keyword">let</span> arr <span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//类数组转数组并提取小分组</span>
+        arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>
+        arr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>   
+    <span class="token comment" spellcheck="true">//定义模板字符串</span>
+    <span class="token keyword">let</span> strTem <span class="token operator">=</span> <span class="token template-string"><span class="token string">`{0}年{1}月{2}日 {3}时{4}分{5}秒`</span></span>
+    <span class="token keyword">let</span> newTime <span class="token operator">=</span> strTem<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/{(\d+)}/g</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">let</span> val <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">let</span> result <span class="token operator">=</span> arr<span class="token punctuation">[</span>val<span class="token punctuation">]</span>
+        result<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> result<span class="token operator">=</span><span class="token string">'0'</span><span class="token operator">+</span> result <span class="token punctuation">:</span> <span class="token keyword">null</span>
+        <span class="token keyword">return</span> result
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> newTime
+<span class="token punctuation">}</span>
+timeStr<span class="token punctuation">.</span><span class="token function">myFormateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
@@ -671,45 +694,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
-            <div class="card">
-                <a href="/zheng-ze-biao-da-shi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
-                        
-                        <span class="card-title">正则表达式</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">正则表达式在 JavaScript中，正则表达式也是对象。这些模式被用于RegExp 的 exec 和 test 方法, 以及 String 的 match、matchAll、replace、search 和 split 方法
-创建正则表达</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            zonglinlee
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
                 <a href="/qian-duan-gong-ju-he-ji/">
                     <div class="card-image">
@@ -724,8 +711,41 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="summary">前端常用工具简介综合
 can i use“Can I use” provides up-to-date browser support tables for support of front-end web technologies on </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            zonglinlee
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/build-hexo-theme/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="build-hexo-theme">
+                        
+                        <span class="card-title">build-hexo-theme</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">iconfont应用下载的iconfont在style中引入@import &quot;iconfont/iconfont.css&quot;&lt;i class=&quot;iconfont icon-xxx&quot;&gt;&lt;</div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-01
                             </span>
                         <span class="publish-author">
                             
@@ -842,7 +862,7 @@ can i use“Can I use” provides up-to-date browser support tables for support 
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13.1k</span>
+                <span class="white-color">17k</span>
             
 
             

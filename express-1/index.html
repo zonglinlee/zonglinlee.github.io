@@ -380,14 +380,14 @@ res.cookie(name, value [, options])这个API是express添加到res对象中的�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-22
+                    2020-02-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        275
+                        286
                     </div>
                     
 
@@ -415,6 +415,7 @@ res.cookie(name, value [, options])这个API是express添加到res对象中的�
 <h3 id="res-cookie-name-value-options"><a href="#res-cookie-name-value-options" class="headerlink" title="res.cookie(name, value [, options])"></a>res.cookie(name, value [, options])</h3><p>这个API是express添加到res对象中的，node.js原生不提供此方法，服务器端写入cookie给http响应头部。<br>options 中 expires 如果不设置，则默认创建一个session cookie，即浏览器不关闭就一直生效。<br>httpOnly,默认false，此时可以在浏览器中通过 document.cookie读取到，设为true，就只能被服务器读取。<br>secure设置为true，Marks the cookie to be used with HTTPS only.<br>signed用来设置cookie是否被签名。</p>
 <p>浏览器发送到服务端的cookie如何读取，中间件 cookie-parser,Parse Cookie header and populate <code>req.cookies</code> with an object keyed by the cookie names.如果cookie 被signed ，可以用 <code>req.signedCookie</code> 来读取。</p>
 <h3 id="express-session"><a href="#express-session" class="headerlink" title="express-session"></a><a href="https://www.npmjs.com/package/express-session" target="_blank" rel="noopener">express-session</a></h3><p>session机制，客户端第一次访问服务器的时候，服务器会生成全局唯一的session_id,之后通过http的响应头set-cookie发给客户端，此后客户端会带着这个session_id来访问服务器，服务器会通过这个session_id来取出服务端保存的数据。<br>session的持久化保存:session-store.<br> connect-mongo A MongoDB-based session store<br> connect-redis A Redis-based session store.</p>
+<p>如何在vscode中debugger，打断点<br>Object.defineProperty<br>object.create</p>
 
             </div>
             <hr/>
@@ -605,20 +606,23 @@ res.cookie(name, value [, options])这个API是express添加到res对象中的�
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/js-basics/">
+                <a href="/express-0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js-basics">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="express(0)">
                         
-                        <span class="card-title">js-basics</span>
+                        <span class="card-title">express(0)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by E</div>
+                    <div class="summary">expressexpress app.get()方法封装let http = require('http')
+let url = require('url')
+function createApplication() {
+    //app</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
                         </span>
                         <span class="publish-author">
                             
@@ -652,7 +656,7 @@ res.cookie(name, value [, options])这个API是express添加到res对象中的�
 添加 submodule将GitHub</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
                             </span>
                         <span class="publish-author">
                             
@@ -777,7 +781,7 @@ res.cookie(name, value [, options])这个API是express添加到res对象中的�
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13.1k</span>
+                <span class="white-color">17k</span>
             
 
             

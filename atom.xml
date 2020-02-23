@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tumbleweed.top/"/>
-  <updated>2020-02-22T11:18:32.463Z</updated>
+  <updated>2020-02-23T15:29:07.628Z</updated>
   <id>https://tumbleweed.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>正则表达式</title>
-    <link href="https://tumbleweed.top/zheng-ze-biao-da-shi/"/>
-    <id>https://tumbleweed.top/zheng-ze-biao-da-shi/</id>
-    <published>2020-02-22T11:18:32.463Z</published>
-    <updated>2020-02-22T11:18:32.463Z</updated>
+    <title>koa(1)</title>
+    <link href="https://tumbleweed.top/koa-1/"/>
+    <id>https://tumbleweed.top/koa-1/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;p&gt;在 JavaScript中，正则表达式也是对象。这些模式被用于&lt;code&gt;RegExp&lt;/code&gt; 的 exec
+          &lt;p&gt;koa不包含任何middleware,express.static这种都不包括&lt;br&gt;它的中间件原理和express不太一样&lt;br&gt;app.use(async function(ctx,next){&lt;br&gt;    console.log(1)//先打印1&lt;br&gt;   
         
       
     
@@ -40,11 +40,11 @@
   </entry>
   
   <entry>
-    <title>前端常用工具简介</title>
-    <link href="https://tumbleweed.top/qian-duan-gong-ju-he-ji/"/>
-    <id>https://tumbleweed.top/qian-duan-gong-ju-he-ji/</id>
-    <published>2020-02-22T11:18:32.463Z</published>
-    <updated>2020-02-22T11:18:32.463Z</updated>
+    <title>formatting contexts</title>
+    <link href="https://tumbleweed.top/bfc/"/>
+    <id>https://tumbleweed.top/bfc/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -52,30 +52,7 @@
       
         
         
-          &lt;h1 id=&quot;前端常用工具简介&quot;&gt;&lt;a href=&quot;#前端常用工具简介&quot; class=&quot;headerlink&quot; title=&quot;前端常用工具简介&quot;&gt;&lt;/a&gt;前端常用工具简介&lt;/h1&gt;&lt;h2 id=&quot;综合&quot;&gt;&lt;a href=&quot;#综合&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Z-index</title>
-    <link href="https://tumbleweed.top/z-index/"/>
-    <id>https://tumbleweed.top/z-index/</id>
-    <published>2020-02-22T11:18:32.463Z</published>
-    <updated>2020-02-22T11:18:32.463Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CSS-Z-index&quot;&gt;&lt;a href=&quot;#CSS-Z-index&quot; class=&quot;headerlink&quot; title=&quot;CSS Z-index&quot;&gt;&lt;/a&gt;CSS Z-index&lt;/h1&gt;&lt;h2 id=&quot;当没有定义z-index属性时&quot;&gt;&lt;a
+          &lt;h2 id=&quot;formatting-contexts-types&quot;&gt;&lt;a href=&quot;#formatting-contexts-types&quot; class=&quot;headerlink&quot; title=&quot;formatting contexts types&quot;&gt;&lt;/a&gt;formatting
         
       
     
@@ -88,11 +65,11 @@
   </entry>
   
   <entry>
-    <title>tar-unzip</title>
-    <link href="https://tumbleweed.top/tar-unzip/"/>
-    <id>https://tumbleweed.top/tar-unzip/</id>
-    <published>2020-02-22T11:18:32.463Z</published>
-    <updated>2020-02-22T11:18:32.463Z</updated>
+    <title>css-basics</title>
+    <link href="https://tumbleweed.top/css-basics/"/>
+    <id>https://tumbleweed.top/css-basics/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -100,7 +77,10 @@
       
         
         
-          &lt;p&gt;Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z&lt;br&gt;其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2&lt;br&gt;unzip filename.zip&lt;br&gt;事实上,
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;css盒模型中以 top-left为坐标原点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50%
         
       
     
@@ -111,11 +91,11 @@
   </entry>
   
   <entry>
-    <title>js-basics</title>
-    <link href="https://tumbleweed.top/js-basics/"/>
-    <id>https://tumbleweed.top/js-basics/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <title>docker</title>
+    <link href="https://tumbleweed.top/docker/"/>
+    <id>https://tumbleweed.top/docker/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -123,7 +103,30 @@
       
         
         
-          &lt;h2 id=&quot;DOMTokenList-interface&quot;&gt;&lt;a href=&quot;#DOMTokenList-interface&quot; class=&quot;headerlink&quot; title=&quot;DOMTokenList interface&quot;&gt;&lt;/a&gt;DOMTokenList
+          &lt;p&gt;docker架构&lt;br&gt;Linux 容器（Linux Containers，缩写为 LXC）。&lt;br&gt;docker 是基于 Linux容器的一种封装&lt;br&gt;docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>express(0)</title>
+    <link href="https://tumbleweed.top/express-0/"/>
+    <id>https://tumbleweed.top/express-0/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;express&quot;&gt;&lt;a href=&quot;#express&quot; class=&quot;headerlink&quot; title=&quot;express&quot;&gt;&lt;/a&gt;express&lt;/h1&gt;&lt;h2 id=&quot;express-app-get-方法封装&quot;&gt;&lt;a
         
       
     
@@ -137,8 +140,8 @@
     <title>express(1)</title>
     <link href="https://tumbleweed.top/express-1/"/>
     <id>https://tumbleweed.top/express-1/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -162,8 +165,8 @@
     <title>git</title>
     <link href="https://tumbleweed.top/git/"/>
     <id>https://tumbleweed.top/git/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -184,11 +187,11 @@
   </entry>
   
   <entry>
-    <title>bootstrap 入门</title>
-    <link href="https://tumbleweed.top/bootstrap/"/>
-    <id>https://tumbleweed.top/bootstrap/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <title>sql</title>
+    <link href="https://tumbleweed.top/sql/"/>
+    <id>https://tumbleweed.top/sql/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -196,7 +199,7 @@
       
         
         
-          &lt;h1 id=&quot;bootstrap-v4-4-入门&quot;&gt;&lt;a href=&quot;#bootstrap-v4-4-入门&quot; class=&quot;headerlink&quot; title=&quot;bootstrap v4.4 入门&quot;&gt;&lt;/a&gt;bootstrap v4.4 入门&lt;/h1&gt;&lt;h2
+          &lt;h2 id=&quot;关系模型&quot;&gt;&lt;a href=&quot;#关系模型&quot; class=&quot;headerlink&quot; title=&quot;关系模型&quot;&gt;&lt;/a&gt;关系模型&lt;/h2&gt;&lt;h3 id=&quot;主键&quot;&gt;&lt;a href=&quot;#主键&quot; class=&quot;headerlink&quot;
         
       
     
@@ -210,8 +213,8 @@
     <title>hexo博客点击特效</title>
     <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
     <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -237,8 +240,8 @@
     <title>hexo参数</title>
     <link href="https://tumbleweed.top/hexo-can-shu/"/>
     <id>https://tumbleweed.top/hexo-can-shu/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -263,8 +266,8 @@
     <title>jquery</title>
     <link href="https://tumbleweed.top/jquery/"/>
     <id>https://tumbleweed.top/jquery/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -286,11 +289,11 @@
   </entry>
   
   <entry>
-    <title>formatting contexts</title>
-    <link href="https://tumbleweed.top/bfc/"/>
-    <id>https://tumbleweed.top/bfc/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <title>js-basics</title>
+    <link href="https://tumbleweed.top/js-basics/"/>
+    <id>https://tumbleweed.top/js-basics/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -298,7 +301,7 @@
       
         
         
-          &lt;h2 id=&quot;formatting-contexts-types&quot;&gt;&lt;a href=&quot;#formatting-contexts-types&quot; class=&quot;headerlink&quot; title=&quot;formatting contexts types&quot;&gt;&lt;/a&gt;formatting
+          &lt;h2 id=&quot;DOMTokenList-interface&quot;&gt;&lt;a href=&quot;#DOMTokenList-interface&quot; class=&quot;headerlink&quot; title=&quot;DOMTokenList interface&quot;&gt;&lt;/a&gt;DOMTokenList
         
       
     
@@ -306,16 +309,14 @@
     
     
     
-      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
-    
   </entry>
   
   <entry>
     <title>js</title>
     <link href="https://tumbleweed.top/js/"/>
     <id>https://tumbleweed.top/js/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -334,11 +335,57 @@
   </entry>
   
   <entry>
+    <title>nginx</title>
+    <link href="https://tumbleweed.top/nginx/"/>
+    <id>https://tumbleweed.top/nginx/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;windows-nginx指南&quot;&gt;&lt;a href=&quot;#windows-nginx指南&quot; class=&quot;headerlink&quot; title=&quot;windows nginx指南&quot;&gt;&lt;/a&gt;windows nginx指南&lt;/h3&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mysql(1)</title>
+    <link href="https://tumbleweed.top/mysql-1/"/>
+    <id>https://tumbleweed.top/mysql-1/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>node-sql-install</title>
     <link href="https://tumbleweed.top/node-sql-install/"/>
     <id>https://tumbleweed.top/node-sql-install/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -365,11 +412,11 @@
   </entry>
   
   <entry>
-    <title>css-basics</title>
-    <link href="https://tumbleweed.top/css-basics/"/>
-    <id>https://tumbleweed.top/css-basics/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <title>bootstrap 入门</title>
+    <link href="https://tumbleweed.top/bootstrap/"/>
+    <id>https://tumbleweed.top/bootstrap/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -377,10 +424,7 @@
       
         
         
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;css盒模型中以 top-left为坐标原点&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50%
+          &lt;h1 id=&quot;bootstrap-v4-4-入门&quot;&gt;&lt;a href=&quot;#bootstrap-v4-4-入门&quot; class=&quot;headerlink&quot; title=&quot;bootstrap v4.4 入门&quot;&gt;&lt;/a&gt;bootstrap v4.4 入门&lt;/h1&gt;&lt;h2
         
       
     
@@ -391,11 +435,11 @@
   </entry>
   
   <entry>
-    <title>docker</title>
-    <link href="https://tumbleweed.top/docker/"/>
-    <id>https://tumbleweed.top/docker/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <title>移动端适配</title>
+    <link href="https://tumbleweed.top/yi-dong-duan-gua-pei/"/>
+    <id>https://tumbleweed.top/yi-dong-duan-gua-pei/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -403,7 +447,7 @@
       
         
         
-          &lt;p&gt;docker架构&lt;br&gt;Linux 容器（Linux Containers，缩写为 LXC）。&lt;br&gt;docker 是基于 Linux容器的一种封装&lt;br&gt;docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker
+          &lt;p&gt;物理像素：屏幕实际的横纵像素点的个数&lt;br&gt;逻辑像素：程序认为的屏幕横纵像素点的个数&lt;br&gt;屏幕倍率dpr：devicePixelRatio
         
       
     
@@ -414,11 +458,11 @@
   </entry>
   
   <entry>
-    <title>express(0)</title>
-    <link href="https://tumbleweed.top/express-0/"/>
-    <id>https://tumbleweed.top/express-0/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <title>tar-unzip</title>
+    <link href="https://tumbleweed.top/tar-unzip/"/>
+    <id>https://tumbleweed.top/tar-unzip/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -426,7 +470,7 @@
       
         
         
-          &lt;h1 id=&quot;express&quot;&gt;&lt;a href=&quot;#express&quot; class=&quot;headerlink&quot; title=&quot;express&quot;&gt;&lt;/a&gt;express&lt;/h1&gt;&lt;h2 id=&quot;express-app-get-方法封装&quot;&gt;&lt;a
+          &lt;p&gt;Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z&lt;br&gt;其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2&lt;br&gt;unzip filename.zip&lt;br&gt;事实上,
         
       
     
@@ -437,11 +481,11 @@
   </entry>
   
   <entry>
-    <title>nginx</title>
-    <link href="https://tumbleweed.top/nginx/"/>
-    <id>https://tumbleweed.top/nginx/</id>
-    <published>2020-02-22T11:18:32.459Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
+    <title>Z-index</title>
+    <link href="https://tumbleweed.top/z-index/"/>
+    <id>https://tumbleweed.top/z-index/</id>
+    <published>2020-02-23T15:29:07.628Z</published>
+    <updated>2020-02-23T15:29:07.628Z</updated>
     
     <summary type="html">
     
@@ -449,7 +493,7 @@
       
         
         
-          &lt;h3 id=&quot;windows-nginx指南&quot;&gt;&lt;a href=&quot;#windows-nginx指南&quot; class=&quot;headerlink&quot; title=&quot;windows nginx指南&quot;&gt;&lt;/a&gt;windows nginx指南&lt;/h3&gt;&lt;p&gt;&lt;a
+          &lt;h1 id=&quot;CSS-Z-index&quot;&gt;&lt;a href=&quot;#CSS-Z-index&quot; class=&quot;headerlink&quot; title=&quot;CSS Z-index&quot;&gt;&lt;/a&gt;CSS Z-index&lt;/h1&gt;&lt;h2 id=&quot;当没有定义z-index属性时&quot;&gt;&lt;a
         
       
     
@@ -457,52 +501,7 @@
     
     
     
-  </entry>
-  
-  <entry>
-    <title>build-hexo-theme</title>
-    <link href="https://tumbleweed.top/build-hexo-theme/"/>
-    <id>https://tumbleweed.top/build-hexo-theme/</id>
-    <published>2020-02-01T13:23:35.000Z</published>
-    <updated>2020-02-22T11:18:32.459Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;iconfont应用&quot;&gt;&lt;a href=&quot;#iconfont应用&quot; class=&quot;headerlink&quot; title=&quot;iconfont应用&quot;&gt;&lt;/a&gt;iconfont应用&lt;/h2&gt;&lt;p&gt;下载的iconfont在style中引入&lt;br&gt;&lt;code&gt;@import
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>responsive web design</title>
-    <link href="https://tumbleweed.top/responsive-web-design/"/>
-    <id>https://tumbleweed.top/responsive-web-design/</id>
-    <published>2020-01-31T09:31:49.000Z</published>
-    <updated>2020-02-22T11:18:32.463Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;容器块级元素自适应&lt;pre class=&quot; language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-    
+      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
     
   </entry>
   

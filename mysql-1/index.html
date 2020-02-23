@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="nginx, 风滚草">
-    <meta name="description" content="windows nginx指南http://nginx.org/en/docs/windows.html新手指引http://nginx.org/en/docs/beginners_guide.htmlhttp://nginx.org/en">
+    <meta name="keywords" content="mysql(1), 风滚草">
+    <meta name="description" content="mysql安装https://blog.csdn.net/Very666/article/details/98594227
+连接mysqlMySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>nginx | 风滚草</title>
+    <title>mysql(1) | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -269,13 +270,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        nginx
+                        mysql(1)
                     </div>
                 </div>
             </div>
@@ -385,14 +386,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        1.7k
+                        252
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        8 Min
+                        1 Min
                     </div>
                     
                 
@@ -408,84 +409,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="windows-nginx指南"><a href="#windows-nginx指南" class="headerlink" title="windows nginx指南"></a>windows nginx指南</h3><p><a href="http://nginx.org/en/docs/windows.html" target="_blank" rel="noopener">http://nginx.org/en/docs/windows.html</a><br>新手指引<br><a href="http://nginx.org/en/docs/beginners_guide.html" target="_blank" rel="noopener">http://nginx.org/en/docs/beginners_guide.html</a><br><a href="http://nginx.org/en/docs/" target="_blank" rel="noopener">http://nginx.org/en/docs/</a><br>nginx配置常见误区<br><a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/" target="_blank" rel="noopener">https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/</a><br>配置指南<br><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/" target="_blank" rel="noopener">https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/</a></p>
-<p>一定要结合日志查看nginx 服务运行状况<br>access.log error.log 这两个文件很重要<br>windows下载nginx目录中开启cmd窗口<br>start nginx.exe<br>nginx.exe -s stop  //暴力退出<br>nginx.exe -s quit  //优雅退出<br>nginx.exe -s reload  //重新加载配置文件<br>nginx.exe -V   //查看各个目录<br>nginx.exe -t   //检查配置文件是否正确 </p>
-<h3 id="Linux下安装nginx"><a href="#Linux下安装nginx" class="headerlink" title="Linux下安装nginx"></a>Linux下安装nginx</h3><p>yum install nginx -y</p>
-<p>RPM (Red Hat Package Manager) is an default open source and most popular package management utility for Red Hat based systems like (RHEL, CentOS and Fedora).The tool allows system administrators and users to install, update, uninstall, query, verify and manage system software packages in Unix/Linux operating systems. The RPM formerly known as .rpm file, that includes compiled software programs and libraries needed by the packages. This utility only works with packages that built on .rpm format.</p>
-<p>rpm -ql nginx #查看配置文件和目录</p>
-<p>nginx http 中server模块的配置<br>root是服务器的根目录，可以在server字段中配置，location中可以覆盖<br>index 字段在server中配置，location中也可以覆盖<br>The index variable tells NGINX which file to serve if none is specified.</p>
-<h3 id="location-修饰符"><a href="#location-修饰符" class="headerlink" title="location 修饰符"></a>location 修饰符</h3><ul>
-<li><p>The = modifier<br>The requested document URI must match the specified pattern exactly(只能严格匹配一个字符串路径)，不能使用正则</p>
-</li>
-<li><p>No modifier<br>The requested document URI must begin with the specified pattern.不能使用正则</p>
-</li>
-<li><p>The ^~ modifier (类似于没有修饰符情况，它比正则匹配享有优先权)<br>Similar to the no-symbol behavior, the location URI must begin with the specified pattern.<br>The difference is that if the pattern is matched, Nginx stops searching for other patterns</p>
-</li>
-<li><p>The ~ modifier (uri大小写敏感)<br>The requested URI must be a case-sensitive match to the specified regular expression</p>
-</li>
-<li><p>The ~* modifier (uri大小写不敏感)<br>The requested URI must be a case-insensitive match to the specified regular expression</p>
-<h3 id="location的匹配顺序-Search-order-and-priority"><a href="#location的匹配顺序-Search-order-and-priority" class="headerlink" title="location的匹配顺序(Search order and priority)"></a>location的匹配顺序(Search order and priority)</h3><p>location 的匹配和先后顺序无关。<br>Nginx will search for matching patterns in a specific order:</p>
-</li>
-<li><p>location blocks with the = modifier: If the specified string exactly matches the<br>requested URI, Nginx retains the location block.</p>
-</li>
-<li><p>location blocks with no modifier: If the specified string exactly matches the<br>requested URI, Nginx retains the location block.</p>
-</li>
-<li><p>location blocks with the ^~ modifier: If the specified string matches the beginning<br>of the requested URI, Nginx retains the location block.</p>
-</li>
-<li><p>location blocks with ~ or ~* modifier: If the regular expression matches the<br>requested URI, Nginx retains the location block.</p>
-</li>
-<li><p>location blocks with no modifier: If the specified string matches the beginning of<br>the requested URI, Nginx retains the location block.</p>
-</li>
-</ul>
-<h3 id="会导致内部重定向的几个命令"><a href="#会导致内部重定向的几个命令" class="headerlink" title="会导致内部重定向的几个命令"></a><a href="https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms" target="_blank" rel="noopener">会导致内部重定向的几个命令</a></h3><p>Some directives that can lead to this type of internal redirect are:</p>
-<ul>
-<li>index</li>
-<li>try_files</li>
-<li>rewrite</li>
-<li>error_page</li>
-</ul>
-<pre class=" language-shell"><code class="language-shell">        root         /usr/share/nginx/html/data;
-        index index.html;
-        location  /a {
-            root /home;
-            #这里如果要留在这个block中可以使用 try_files $uri $uri.html $uri/
-            #它会依次匹配/a文件  /a.html文件  /a/目录   
-
-        }
-        error_page 404 /404.html;
-        location = /40x.html {
-        }</code></pre>
-<p>情况1：假设根目录下只有/home<br>如果有一个请求 /a 过来，nginx会先匹配第一个location block，此时进入block之后，会重新定义根目录，即 /home ,然后就没有然后了，在access.log中会报404状态码，表示未找到页面，在error.log中它会记录 open() “/home/a” failed (2: No such file or directory)，接着它会走error_page ，导航到/404.html , nginx会匹配 /404.html 这个URI，此时相当于重新寻找要走的block，此时相当于以 / 开头，即根目录，它会去/usr/share/nginx/html/data下寻找404.html<br>情况2： 根目录下只有/home/a ，a文件夹里面什么都没有<br>此时nginx会进入a目录，access.log中报”GET /a/ HTTP/1.1” 403 ，error.log中报 directory index of “/home/a/“ is forbidden<br>情况3： a中新建一个index.html文件<br>access.log 中状态码 200，返回的是a文件夹中的index.html. 它会默认index index.html.</p>
-<h3 id="index-字段"><a href="#index-字段" class="headerlink" title="index 字段"></a>index 字段</h3><p>Context: http, server, location. Variables are accepted.(即这几个http server,location 中都存在index字段。默认 index.html)<br>This defines the default page that Nginx will serve if no filename is specified in the<br>request (in other words, the index page). You may specify multiple filenames, and the first<br>file to be found will be served. If none of the specified files are found, and if the<br>autoindex directive is enabled (check the HTTP Autoindex module), Nginx will attempt to<br>generate an automatic index of the files. Otherwise, it will return a 403 Forbidden error<br>page. Optionally, you may insert an absolute filename (such as /page.html, based from<br>the document root directory) but only as the last argument of the directive.<br>Syntax: index file1 [file2…] [absolute_file];<br>Default value: index.html</p>
-<p>HTTP 304 未改变说明无需再次传输请求的内容，也就是说可以使用缓存的内容</p>
-<h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><p>所有以jpg/png/gif结尾的图片文件缓存24h<br>location ~ .*.(jpg|png|gif)$ {<br>        expires 24h;<br>}</p>
-<h3 id="浏览器缓存-1"><a href="#浏览器缓存-1" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><p>add_header name value<br>location ~ .*.json$ {<br>        add_header Access-Control-Allow-Origin <a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a>;<br>        add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,OPTIONS;<br>        root /data/json;<br>    }</p>
-<h3 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h3><p>The HTTP referer (a misspelling of referrer),By checking the referrer, the new webpage can see where the request originated.<br>In the most common situation this means that when a user clicks a hyperlink in a web browser, the browser sends a request to the server holding the destination webpage. The request may include the referer field, which indicates the last page the user was on (the one where they clicked the link).</p>
-<p>location ~ .*.(jpg|png|gif)$ {<br>        expires 1h;<br>        valid_referers none blocked 47.104.184.134;<br>        if ($invalid_referer) {<br>           return 403;<br>        }<br>        root /data/images;<br>    }</p>
-<ul>
-<li>none “Referer” 为空</li>
-<li>blocked “Referer”不为空，但是里面的值被代理或者防火墙删除了，这些值都不以http://或者https://开头，而是“Referer: XXXXXXX”这种形式</li>
-<li>server_names “Referer”来源头部包含当前的server_names（当前域名）</li>
-<li>arbitrary string 任意字符串,定义服务器名或者可选的URI前缀.主机名可以使用*开头或者结尾，在检测来源头部这个过程中，来源域名中的主机端口将会被忽略掉</li>
-<li>regular expression 正则表达式,~表示排除https://或http://开头的字符串.<br>注意:通过Referer实现防盗链比较基础，仅可以简单实现方式资源被盗用。构造Referer的请求很容易实现<h3 id="代理服务"><a href="#代理服务" class="headerlink" title="代理服务"></a>代理服务</h3>正向代理，代理的是客户端，比如浏览器，翻墙上外网。<br>反向代理代理的是服务器，浏览器访问代理服务器，比如nginx代理服务器，nginx转发请求给后面的服务器集群处理，平衡负载，同时也保证了业务服务器的安全性，客户端感知不到业务处理服务器，互联网向外暴露的是nginx代理服务器。</li>
-</ul>
-<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a><a href="http://www.zhufengpeixun.com/plan/html/43.nginx.html#t518.7.1%20upstream" target="_blank" rel="noopener">反向代理</a></h3><p>在http模块中配置upstream模块，放置服务器集群<br>在server模块location中配置 proxy_pass </p>
-<pre class=" language-shell"><code class="language-shell">http{
-    upstream test {    # 定义一个服务器组名 ，默认用轮询的方式分配
-        server localhost:3000;
-        server localhost:4000;
-        server localhost:5000;
-    }
-
-    server {
-          location / {
-            proxy_pass http://test; #以/开头的路由转交给服务器组test处理
-        }
-    }
-}</code></pre>
-<h3 id="阿里云端口问题"><a href="#阿里云端口问题" class="headerlink" title="阿里云端口问题"></a><a href="https://cnodejs.org/topic/599d58e1f36051a45246c2b5" target="_blank" rel="noopener">阿里云端口问题</a></h3><p>ifconfig看不到外网ip，只显示环回地址和内网ip</p>
-<p>答案：阿里云现在不能使用经典网络了，现在连接应该是通过转发一次到内部机房的，所以ECS里面只能看到一个局域网的IP.在ECS实例的安全组配置里面配置外网可访问的端口，这样就能在外面使用公网IP访问了。开启3000、4000、5000端口</p>
-<p>Accelerated support with caching of FastCGI, uwsgi, Simple Common Gateway<br>Interface (SCGI)</p>
+                <h2 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h2><p><a href="https://blog.csdn.net/Very666/article/details/98594227" target="_blank" rel="noopener">https://blog.csdn.net/Very666/article/details/98594227</a></p>
+<h2 id="连接mysql"><a href="#连接mysql" class="headerlink" title="连接mysql"></a>连接mysql</h2><p>MySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。<br>MySQL Client中输入的SQL语句通过TCP连接发送到MySQL Server。默认端口号是3306，即如果发送到本机MySQL Server，地址就是127.0.0.1:3306。<br>也可以只安装MySQL Client，然后连接到远程MySQL Server。假设远程MySQL Server的IP地址是10.0.1.99，那么就使用-h指定IP或域名：<br>mysql -h 10.0.1.99 -u root -p</p>
+<h2 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h2><p>SHOW DATABASES;<br>CREATE DATABASE test;//创建数据库<br>USE test;<br>CREATE TABLE students;//创建一个表<br>DROP TABLE students;//删除一个表<br>SHOW TABLES;//列出当前数据库中所有表<br>DESC students;//查看一个表的结构<br>SHOW CREATE TABLE students;//查看创建表的SQL语句<br>ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;//增加一列<br>ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;//修改列信息<br>ALTER TABLE students DROP COLUMN birthday;//删除列<br>DROP DATABASE test; //删除一个数据库<br>EXIT; //断开mysql客户端和服务器的连接</p>
 
             </div>
             <hr/>
@@ -626,7 +552,7 @@
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/nginx/" class="b-link-green">nginx</a>
+                    <a href="/mysql-1/" class="b-link-green">mysql(1)</a>
                 </p>
             </div>
         </div>
@@ -647,9 +573,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/nginx/';
-        this.page.identifier = '/nginx/';
-        this.page.title = 'nginx';
+        this.page.url = 'https://tumbleweed.top/mysql-1/';
+        this.page.identifier = '/mysql-1/';
+        this.page.title = 'mysql(1)';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -676,18 +602,17 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/js/">
+                <a href="/nginx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="nginx">
                         
-                        <span class="card-title">js</span>
+                        <span class="card-title">nginx</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">!function(){}() 作用跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数
-noscript 标签</div>
+                    <div class="summary">windows nginx指南http://nginx.org/en/docs/windows.html新手指引http://nginx.org/en/docs/beginners_guide.htmlhttp://nginx.org/en</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
@@ -710,29 +635,50 @@ noscript 标签</div>
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mysql-1/">
+                <a href="/node-sql-install/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="mysql(1)">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="node-sql-install">
                         
-                        <span class="card-title">mysql(1)</span>
+                        <span class="card-title">node-sql-install</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">mysql安装https://blog.csdn.net/Very666/article/details/98594227
-连接mysqlMySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。</div>
+                    <div class="summary">CentOS8 install node安装nodecd /home
+wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
+tar -Jxvf node-v</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            zonglinlee
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
+                                    CentOS8
+                                </a>
+                            
+                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
+                                    Install
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/" target="_blank">
+                        <span class="chip bg-color">部署</span>
+                    </a>
+                    
+                    <a href="/tags/CentOS/" target="_blank">
+                        <span class="chip bg-color">CentOS</span>
+                    </a>
+                    
                 </div>
                 
             </div>
