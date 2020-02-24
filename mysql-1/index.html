@@ -379,21 +379,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-02-24
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        252
+                        871
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        1 Min
+                        4 Min
                     </div>
                     
                 
@@ -412,6 +412,79 @@
                 <h2 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h2><p><a href="https://blog.csdn.net/Very666/article/details/98594227" target="_blank" rel="noopener">https://blog.csdn.net/Very666/article/details/98594227</a></p>
 <h2 id="连接mysql"><a href="#连接mysql" class="headerlink" title="连接mysql"></a>连接mysql</h2><p>MySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。<br>MySQL Client中输入的SQL语句通过TCP连接发送到MySQL Server。默认端口号是3306，即如果发送到本机MySQL Server，地址就是127.0.0.1:3306。<br>也可以只安装MySQL Client，然后连接到远程MySQL Server。假设远程MySQL Server的IP地址是10.0.1.99，那么就使用-h指定IP或域名：<br>mysql -h 10.0.1.99 -u root -p</p>
 <h2 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h2><p>SHOW DATABASES;<br>CREATE DATABASE test;//创建数据库<br>USE test;<br>CREATE TABLE students;//创建一个表<br>DROP TABLE students;//删除一个表<br>SHOW TABLES;//列出当前数据库中所有表<br>DESC students;//查看一个表的结构<br>SHOW CREATE TABLE students;//查看创建表的SQL语句<br>ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;//增加一列<br>ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;//修改列信息<br>ALTER TABLE students DROP COLUMN birthday;//删除列<br>DROP DATABASE test; //删除一个数据库<br>EXIT; //断开mysql客户端和服务器的连接</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-tutorial.html</a><br><a href="https://juejin.im/post/5ae55861f265da0ba062ec71" target="_blank" rel="noopener">https://juejin.im/post/5ae55861f265da0ba062ec71</a></p>
+<h2 id="node-js-库-mysql-用法"><a href="#node-js-库-mysql-用法" class="headerlink" title="node.js 库 mysql 用法"></a><a href="https://github.com/mysqljs/mysq" target="_blank" rel="noopener">node.js 库 <code>mysql</code> 用法</a></h2><h3 id="连接mysql-1"><a href="#连接mysql-1" class="headerlink" title="连接mysql"></a>连接mysql</h3><p>方式一(推荐)：返回一个connection对象</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//Connection options可以参考文档</span>
+<span class="token keyword">var</span> mysql      <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> connection <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  host     <span class="token punctuation">:</span> <span class="token string">'example.org'</span><span class="token punctuation">,</span>
+  user     <span class="token punctuation">:</span> <span class="token string">'bob'</span><span class="token punctuation">,</span>
+  password <span class="token punctuation">:</span> <span class="token string">'secret'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>方式二：ssl连接方式，需要读取SSL profiles配置文件<br>方式三：Pooling connections<br>一次性创建多个连接,返回一个pool对象，详情参考文档</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> pool  <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createPool</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  connectionLimit <span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  host            <span class="token punctuation">:</span> <span class="token string">'example.org'</span><span class="token punctuation">,</span>
+  user            <span class="token punctuation">:</span> <span class="token string">'bob'</span><span class="token punctuation">,</span>
+  password        <span class="token punctuation">:</span> <span class="token string">'secret'</span><span class="token punctuation">,</span>
+  database        <span class="token punctuation">:</span> <span class="token string">'my_db'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="断开mysql连接"><a href="#断开mysql连接" class="headerlink" title="断开mysql连接"></a>断开mysql连接</h3><p>两种方法</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//方式一：优雅的断开连接</span>
+connection<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// The connection is terminated now</span>
+  <span class="token comment" spellcheck="true">//if err,an err argument will be provided to the callback, but the connection will be terminated regardless of that.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方式二：不推荐</span>
+connection<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="查询数据库"><a href="#查询数据库" class="headerlink" title="查询数据库"></a>查询数据库</h3><p>连接对象connection 和pool 都提供了 query(sqlString, callback) 方法用于执行sql语句查询,三种方式</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//方式一：简单查询</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT * FROM `books` WHERE `author` = "David"'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// error will be an Error if one occurred during the query</span>
+  <span class="token comment" spellcheck="true">// results will contain the results of the query</span>
+  <span class="token comment" spellcheck="true">// fields will contain information about the returned results fields (if any)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方式二：query(sqlString, values, callback) comes when using placeholder values </span>
+<span class="token comment" spellcheck="true">//方式三：query(options, callback) comes when using various advanced options</span></code></pre>
+<h3 id="Escaping-query-values-转义查询语句"><a href="#Escaping-query-values-转义查询语句" class="headerlink" title="Escaping query values 转义查询语句"></a>Escaping query values 转义查询语句</h3><p>These methods of escaping values only works when the NO_BACKSLASH_ESCAPES SQL mode is disabled (which is the default state for MySQL servers).<br>为了防止SQL注入，用户执行的sql语句都应该先进行转义，mysql.escape(), connection.escape() or pool.escape() 这三个方法都可以使用</p>
+<pre class=" language-js"><code class="language-js"> <span class="token comment" spellcheck="true">//方法一：</span>
+<span class="token keyword">var</span> userId <span class="token operator">=</span> <span class="token string">'some user provided value'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sql    <span class="token operator">=</span> <span class="token string">'SELECT * FROM users WHERE id = '</span> <span class="token operator">+</span> connection<span class="token punctuation">.</span><span class="token function">escape</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方法二：use ? characters as placeholders ，这个本质上也是调用connection.escape()方法</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT * FROM users WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>userId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//多个占位符映射到数组</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'UPDATE users SET foo = ?, bar = ?, baz = ? WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> userId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="Escaping-query-identifiers转义数据库-表-列-名"><a href="#Escaping-query-identifiers转义数据库-表-列-名" class="headerlink" title="Escaping query identifiers转义数据库/表/列 名"></a>Escaping query identifiers转义数据库/表/列 名</h3><p>if you can’t trust an SQL identifier (database / table / column name) because it is provided by a user, you should escape it with mysql.escapeId(identifier), connection.escapeId(identifier) or pool.escapeId(identifier)</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> sorter <span class="token operator">=</span> <span class="token string">'date'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sql    <span class="token operator">=</span> <span class="token string">'SELECT * FROM posts ORDER BY '</span> <span class="token operator">+</span> connection<span class="token punctuation">.</span><span class="token function">escapeId</span><span class="token punctuation">(</span>sorter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>使用 ?? 占位符</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> userId <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'email'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> query <span class="token operator">=</span> connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT ?? FROM ?? WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>columns<span class="token punctuation">,</span> <span class="token string">'users'</span><span class="token punctuation">,</span> userId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// SELECT `username`, `email` FROM `users` WHERE id = 1</span></code></pre>
+<h3 id="预定义查询语句格式"><a href="#预定义查询语句格式" class="headerlink" title="预定义查询语句格式"></a>预定义查询语句格式</h3><p>You can use mysql.format to prepare a query with multiple insertion points, utilizing the proper escaping for ids and values. A simple example of this follows:</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> sql <span class="token operator">=</span> <span class="token string">"SELECT * FROM ?? WHERE ?? = ?"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> inserts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'users'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">,</span> userId<span class="token punctuation">]</span><span class="token punctuation">;</span>
+sql <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> inserts<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -612,10 +685,10 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">关系模型主键对于关系表，有个很重要的约束，就是任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是指能够通过某个字段唯一区分出不同的记录，这个字段被称为主键对主键的要求，最关键的一点是：记录一旦插入到表中，主键最好不要再修改，因为主</div>
+                    <div class="summary">数据类型INT    整型    4字节整数类型，范围约+/-21亿BIGINT    长整型    8字节整数类型，范围约+/-922亿亿REAL    浮点型    4字节浮点数，范围约+/-1038 ( FLOAT(24) )DOUB</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
                         </span>
                         <span class="publish-author">
                             
@@ -650,7 +723,7 @@ wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
 tar -Jxvf node-v</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
                             </span>
                         <span class="publish-author">
                             
@@ -787,7 +860,7 @@ tar -Jxvf node-v</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">19.3k</span>
+                <span class="white-color">20.3k</span>
             
 
             

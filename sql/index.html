@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="sql, 风滚草">
-    <meta name="description" content="关系模型主键对于关系表，有个很重要的约束，就是任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是指能够通过某个字段唯一区分出不同的记录，这个字段被称为主键对主键的要求，最关键的一点是：记录一旦插入到表中，主键最好不要再修改，因为主">
+    <meta name="description" content="数据类型INT    整型    4字节整数类型，范围约+/-21亿BIGINT    长整型    8字节整数类型，范围约+/-922亿亿REAL    浮点型    4字节浮点数，范围约+/-1038 ( FLOAT(24) )DOUB">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -378,21 +378,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-02-24
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        2.7k
+                        3.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        10 Min
+                        11 Min
                     </div>
                     
                 
@@ -408,7 +408,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><h3 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h3><p>对于关系表，有个很重要的约束，就是任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是指能够通过某个字段唯一区分出不同的记录，这个字段被称为主键<br>对主键的要求，最关键的一点是：记录一旦插入到表中，主键最好不要再修改，因为主键是用来唯一定位记录的，修改了主键，会造成一系列的影响。<br>选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。<br>因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均不可用作主键。<br>作为主键最好是完全业务无关的字段，我们一般把这个字段命名为id。常见的可作为id字段的类型有：<br>自增整数类型：数据库会在插入数据时自动为每一条记录分配一个自增整数，这样我们就完全不用担心主键重复，也不用自己预先生成主键；<br>全局唯一GUID类型：使用一种全局唯一的字符串作为主键，类似8f55d96b-8acc-4636-8cb8-76bf8abc2f57。GUID算法通过网卡MAC地址、时间戳和随机数保证任意计算机在任意时间生成的字符串都是不同的，大部分编程语言都内置了GUID算法，可以自己预算出主键。</p>
+                <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>INT    整型    4字节整数类型，范围约+/-21亿<br>BIGINT    长整型    8字节整数类型，范围约+/-922亿亿<br>REAL    浮点型    4字节浮点数，范围约+/-1038 ( FLOAT(24) )<br>DOUBLE    浮点型    8字节浮点数，范围约+/-10308<br>DECIMAL(M,N)    高精度小数    由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算<br>CHAR(N)    定长字符串    存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串<br>VARCHAR(N)    变长字符串    存储可变长度的字符串，例如，VARCHAR(100)可以存储0<del>100个字符的字符串<br>BOOLEAN    布尔类型    存储True或者False<br>DATE    日期类型    存储日期，例如，2018-06-22<br>TIME    时间类型    存储时间，例如，12:20:59<br>DATETIME    日期和时间类型    存储日期+时间，例如，2018-06-22 12:20:59<br>上面的表中列举了最常用的数据类型。很多数据类型还有别名，例如，REAL又可以写成FLOAT(24)。还有一些不常用的数据类型，例如，TINYINT（范围在0</del>255）。各数据库厂商还会支持特定的数据类型，例如JSON。<br>选择数据类型的时候，要根据业务规则选择合适的类型。通常来说，BIGINT能满足整数存储的需求，VARCHAR(N)能满足字符串存储的需求，这两种类型是使用最广泛的。</p>
+<h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><h3 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h3><p>对于关系表，有个很重要的约束，就是任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是指能够通过某个字段唯一区分出不同的记录，这个字段被称为主键<br>对主键的要求，最关键的一点是：记录一旦插入到表中，主键最好不要再修改，因为主键是用来唯一定位记录的，修改了主键，会造成一系列的影响。<br>选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。<br>因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均不可用作主键。<br>作为主键最好是完全业务无关的字段，我们一般把这个字段命名为id。常见的可作为id字段的类型有：<br>自增整数类型：数据库会在插入数据时自动为每一条记录分配一个自增整数，这样我们就完全不用担心主键重复，也不用自己预先生成主键；<br>全局唯一GUID类型：使用一种全局唯一的字符串作为主键，类似8f55d96b-8acc-4636-8cb8-76bf8abc2f57。GUID算法通过网卡MAC地址、时间戳和随机数保证任意计算机在任意时间生成的字符串都是不同的，大部分编程语言都内置了GUID算法，可以自己预算出主键。</p>
 <h3 id="联合主键"><a href="#联合主键" class="headerlink" title="联合主键"></a>联合主键</h3><p>关系数据库实际上还允许通过多个字段唯一标识记录，即两个或更多的字段都设置为主键，这种主键被称为联合主键。对于联合主键，允许一列有重复，只要不是所有主键列都重复即可。没有必要的情况下，我们尽量不使用联合主键，因为它给关系表带来了复杂度的上升。</p>
 <h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p>在students表中，通过class_id的字段，可以把数据与另一张表关联起来，这种列称为外键。</p>
 <p>外键并不是通过列名实现的，而是通过定义外键约束实现的：<br>ALTER TABLE students<br>ADD CONSTRAINT fk_class_id<br>FOREIGN KEY (class_id)<br>REFERENCES classes (id);<br>其中，外键约束的名称fk_class_id可以任意，FOREIGN KEY (class_id)指定了class_id作为外键，REFERENCES classes (id)指定了这个外键将关联到classes表的id列（即classes表的主键）。</p>
@@ -634,7 +635,7 @@
 noscript 标签</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
                         </span>
                         <span class="publish-author">
                             
@@ -668,7 +669,7 @@ noscript 标签</div>
 连接mysqlMySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
                             </span>
                         <span class="publish-author">
                             
@@ -785,7 +786,7 @@ noscript 标签</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">19.3k</span>
+                <span class="white-color">20.3k</span>
             
 
             
