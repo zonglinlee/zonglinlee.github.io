@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="移动端适配, 风滚草">
-    <meta name="description" content="物理像素：屏幕实际的横纵像素点的个数逻辑像素：程序认为的屏幕横纵像素点的个数屏幕倍率dpr：devicePixelRatio //window.devicePixelRatio
-移动端1px问题解决方案方法一：制作一个12px高的背景图，一">
+    <meta name="keywords" content="适配, 风滚草">
+    <meta name="description" content="名词解释物理像素：屏幕实际的横纵像素点的个数逻辑像素：程序认为的屏幕横纵像素点的个数屏幕倍率dpr：devicePixelRatio //window.devicePixelRatio (特指移动端)
+移动端移动端1px问题解决方案方法一：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>移动端适配 | 风滚草</title>
+    <title>适配 | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +270,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        移动端适配
+                        适配
                     </div>
                 </div>
             </div>
@@ -379,21 +379,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-24
+                    2020-02-26
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        505
+                        763
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        2 Min
+                        3 Min
                     </div>
                     
                 
@@ -409,10 +409,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>物理像素：屏幕实际的横纵像素点的个数<br>逻辑像素：程序认为的屏幕横纵像素点的个数<br>屏幕倍率dpr：devicePixelRatio //window.devicePixelRatio</p>
-<p>移动端1px问题解决方案<br>方法一：制作一个1<em>2px高的背景图，一半高度使用透明背景。<br>.hair-line{<br>    background-image:url(./hair-line-bg.png);<br>    background-repeat:repeat-x;<br>    background-position:0 0;<br>    backgdround-size:100% 1px;<br>}<br>缺点是颜色不好变更，要替换不同的图片<br>方法二 : 使用边框图<br>制作一个 6</em>6图片，只有最外围一圈1px像素为黑色，内层都是透明的<br>切成九宫格<br>.hair-line{<br>    border-image:url(./hair-line-bg.png) 2 repeat;<br>    border-width:1px;<br>}<br>方法三 ： 使用多背景和背景渐变<br>.test{<br>    width:100%;<br>    height:100%;<br>    background-image:linear-gradient(180deg, black,black,50%,transparent,50%);<br>    background-position:top left;<br>    background-repeat: no-repeat;<br>    background-size:100% 1px;<br>}<br>方法四： 伪类+transform(效果较好,还可以做圆角)<br>.hairline-top{<br>    position:relative;<br>    border-top:none;<br>}<br>.hairline-top:after{<br>    content:’’;<br>    display:block;<br>    position:absolute;<br>    top:0;<br>    left:0;<br>    height:1px;<br>    width:100%;<br>    background-color:#000;<br>    transform:scaleY(0.5);<br>    -webkit-transform:scaleY(0.5);<br>}</p>
+                <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>物理像素：屏幕实际的横纵像素点的个数<br>逻辑像素：程序认为的屏幕横纵像素点的个数<br>屏幕倍率dpr：devicePixelRatio //window.devicePixelRatio (特指移动端)</p>
+<h2 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h2><p>移动端1px问题解决方案<br>方法一：制作一个1<em>2px高的背景图，一半高度使用透明背景。<br>.hair-line{<br>    background-image:url(./hair-line-bg.png);<br>    background-repeat:repeat-x;<br>    background-position:0 0;<br>    backgdround-size:100% 1px;<br>}<br>缺点是颜色不好变更，要替换不同的图片<br>方法二 : 使用边框图<br>制作一个 6</em>6图片，只有最外围一圈1px像素为黑色，内层都是透明的<br>切成九宫格<br>.hair-line{<br>    border-image:url(./hair-line-bg.png) 2 repeat;<br>    border-width:1px;<br>}<br>方法三 ： 使用多背景和背景渐变<br>.test{<br>    width:100%;<br>    height:100%;<br>    background-image:linear-gradient(180deg, black,black,50%,transparent,50%);<br>    background-position:top left;<br>    background-repeat: no-repeat;<br>    background-size:100% 1px;<br>}<br>方法四： 伪类+transform(效果较好,还可以做圆角)<br>.hairline-top{<br>    position:relative;<br>    border-top:none;<br>}<br>.hairline-top:after{<br>    content:’’;<br>    display:block;<br>    position:absolute;<br>    top:0;<br>    left:0;<br>    height:1px;<br>    width:100%;<br>    background-color:#000;<br>    transform:scaleY(0.5);<br>    -webkit-transform:scaleY(0.5);<br>}</p>
 <p>以上四种方法对 三倍屏 不友好<br>方法五：viewport缩放 + rem 阿里目前采用的解决方法</p>
-<p>阿里的amfe-flexible<br>根据屏幕尺寸，在html根元素上设置dpr,给字体和图片单独使用<br>根据屏幕情况，在html根元素上设置font-size大小，设置字体给rem使用<br>根据屏幕情况设置<br>npm i -S amfe-flexible</p>
+<h2 id="阿里的amfe-flexible"><a href="#阿里的amfe-flexible" class="headerlink" title="阿里的amfe-flexible"></a>阿里的amfe-flexible</h2><p>根据屏幕尺寸，在html根元素上设置dpr,给字体和图片单独使用<br>根据屏幕情况，在html根元素上设置font-size大小，设置字体给rem使用<br>根据屏幕情况设置<br>npm i -S amfe-flexible</p>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 <script src="./node_modules/amfe-flexible/index.js"></script>
 
@@ -460,6 +460,8 @@
     docEl<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>fakeBody<span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> document<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="pc端"><a href="#pc端" class="headerlink" title="pc端"></a>pc端</h2><p>以1280*800屏幕为例，显示类型定宽，内容宽度1180或1090，低于1280的用户不考虑。<br>pc端多以定宽设计为主。响应式局限性太大，大公司一般都是移动端和pc端分开设计。<br>如为一些特定的企业设计web管理系统，应用的设备统一是 1440px 宽以上的，那么我们就要按这个宽度作为设计的标准开始设计设计稿。如果要设计一个面向年轻群体的潮牌官网，可能就会为了更好的展示效果放弃低分辨率的用户（主要集中在中老年群体），最低按 1366 宽开始支持。如果是设计像淘宝这样的要满足所有人的网站，那么就要从最低的 1024 开始支持。</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>设计网页，常见的宽度是多少像素？ - 酸梅干超人的回答 - 知乎<br><a href="https://www.zhihu.com/question/21042513/answer/287207544" target="_blank" rel="noopener">https://www.zhihu.com/question/21042513/answer/287207544</a></p>
 
             </div>
             <hr/>
@@ -600,7 +602,7 @@
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/yi-dong-duan-gua-pei/" class="b-link-green">移动端适配</a>
+                    <a href="/gua-pei/" class="b-link-green">适配</a>
                 </p>
             </div>
         </div>
@@ -621,9 +623,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/yi-dong-duan-gua-pei/';
-        this.page.identifier = '/yi-dong-duan-gua-pei/';
-        this.page.title = '移动端适配';
+        this.page.url = 'https://tumbleweed.top/gua-pei/';
+        this.page.identifier = '/gua-pei/';
+        this.page.title = '适配';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -650,21 +652,21 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/qian-duan-gong-ju-he-ji/">
+                <a href="/git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="前端常用工具简介">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
                         
-                        <span class="card-title">前端常用工具简介</span>
+                        <span class="card-title">git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">前端常用工具简介综合
-can i use“Can I use” provides up-to-date browser support tables for support of front-end web technologies on </div>
+                    <div class="summary">submodulesubmodule中文件变更了,在主工作目录中是没有办法add并commit的，分而治之，主模块提交主模块的，子模块提交自己的，子模块提交后，主模块会感知到，从而再在主模块中提交即可
+添加 submodule将GitHub</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
                         </span>
                         <span class="publish-author">
                             
@@ -673,6 +675,14 @@ can i use“Can I use” provides up-to-date browser support tables for support 
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -684,29 +694,41 @@ can i use“Can I use” provides up-to-date browser support tables for support 
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/zheng-ze-biao-da-shi/">
+                <a href="/hexo-bo-ke-dian-ji-te-xiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo博客点击特效">
                         
-                        <span class="card-title">正则表达式</span>
+                        <span class="card-title">hexo博客点击特效</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">正则表达式在 JavaScript中，正则表达式也是对象。这些模式被用于RegExp 的 exec 和 test 方法, 以及 String 的 match、matchAll、replace、search 和 split 方法
-创建正则表达</div>
+                    <div class="summary">jQuery(document).ready(function ($) {
+    let coreSocialistValues = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            zonglinlee
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category" target="_blank">
+                                    Hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/" target="_blank">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -815,7 +837,7 @@ can i use“Can I use” provides up-to-date browser support tables for support 
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">20.3k</span>
+                <span class="white-color">21.4k</span>
             
 
             

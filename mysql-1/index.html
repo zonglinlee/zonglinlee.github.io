@@ -379,7 +379,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-24
+                    2020-02-26
                 </div>
 
                 
@@ -413,7 +413,7 @@
 <h2 id="连接mysql"><a href="#连接mysql" class="headerlink" title="连接mysql"></a>连接mysql</h2><p>MySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。<br>MySQL Client中输入的SQL语句通过TCP连接发送到MySQL Server。默认端口号是3306，即如果发送到本机MySQL Server，地址就是127.0.0.1:3306。<br>也可以只安装MySQL Client，然后连接到远程MySQL Server。假设远程MySQL Server的IP地址是10.0.1.99，那么就使用-h指定IP或域名：<br>mysql -h 10.0.1.99 -u root -p</p>
 <h2 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h2><p>SHOW DATABASES;<br>CREATE DATABASE test;//创建数据库<br>USE test;<br>CREATE TABLE students;//创建一个表<br>DROP TABLE students;//删除一个表<br>SHOW TABLES;//列出当前数据库中所有表<br>DESC students;//查看一个表的结构<br>SHOW CREATE TABLE students;//查看创建表的SQL语句<br>ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;//增加一列<br>ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;//修改列信息<br>ALTER TABLE students DROP COLUMN birthday;//删除列<br>DROP DATABASE test; //删除一个数据库<br>EXIT; //断开mysql客户端和服务器的连接</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-tutorial.html</a><br><a href="https://juejin.im/post/5ae55861f265da0ba062ec71" target="_blank" rel="noopener">https://juejin.im/post/5ae55861f265da0ba062ec71</a></p>
-<h2 id="node-js-库-mysql-用法"><a href="#node-js-库-mysql-用法" class="headerlink" title="node.js 库 mysql 用法"></a><a href="https://github.com/mysqljs/mysq" target="_blank" rel="noopener">node.js 库 <code>mysql</code> 用法</a></h2><h3 id="连接mysql-1"><a href="#连接mysql-1" class="headerlink" title="连接mysql"></a>连接mysql</h3><p>方式一(推荐)：返回一个connection对象</p>
+<h2 id="node-js-库-mysql-用法"><a href="#node-js-库-mysql-用法" class="headerlink" title="node.js 库 mysql 用法"></a><a href="https://github.com/mysqljs/mysql" target="_blank" rel="noopener">node.js 库 <code>mysql</code> 用法</a></h2><h3 id="连接mysql-1"><a href="#连接mysql-1" class="headerlink" title="连接mysql"></a>连接mysql</h3><p>方式一(推荐)：返回一个connection对象</p>
 <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//Connection options可以参考文档</span>
 <span class="token keyword">var</span> mysql      <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> connection <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -671,25 +671,27 @@ sql <span class="token operator">=</span> mysql<span class="token punctuation">.
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/sql/">
+                <a href="/mysql-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="sql">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="mysql(1)">
                         
-                        <span class="card-title">sql</span>
+                        <span class="card-title">mysql(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">数据类型INT    整型    4字节整数类型，范围约+/-21亿BIGINT    长整型    8字节整数类型，范围约+/-922亿亿REAL    浮点型    4字节浮点数，范围约+/-1038 ( FLOAT(24) )DOUB</div>
+                    <div class="summary">mysql安装https://blog.csdn.net/Very666/article/details/98594227
+连接mysqlMySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -698,6 +700,7 @@ sql <span class="token operator">=</span> mysql<span class="token punctuation">.
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -708,50 +711,29 @@ sql <span class="token operator">=</span> mysql<span class="token punctuation">.
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/node-sql-install/">
+                <a href="/zheng-ze-biao-da-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="node-sql-install">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
                         
-                        <span class="card-title">node-sql-install</span>
+                        <span class="card-title">正则表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">CentOS8 install node安装nodecd /home
-wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
-tar -Jxvf node-v</div>
+                    <div class="summary">正则表达式在 JavaScript中，正则表达式也是对象。这些模式被用于RegExp 的 exec 和 test 方法, 以及 String 的 match、matchAll、replace、search 和 split 方法
+创建正则表达</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
-                                    CentOS8
-                                </a>
-                            
-                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
-                                    Install
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            zonglinlee
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%83%A8%E7%BD%B2/" target="_blank">
-                        <span class="chip bg-color">部署</span>
-                    </a>
-                    
-                    <a href="/tags/CentOS/" target="_blank">
-                        <span class="chip bg-color">CentOS</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -860,7 +842,7 @@ tar -Jxvf node-v</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">20.3k</span>
+                <span class="white-color">21.4k</span>
             
 
             

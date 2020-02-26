@@ -381,21 +381,21 @@ Digitaly signed -infor">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-24
+                    2020-02-26
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        2.4k
+                        2.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        8 Min
+                        10 Min
                     </div>
                     
                 
@@ -433,7 +433,14 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
 <p>HMACSHA256(<br>    base64UrlEncode(header) + ‘.’ +base64UrlEncode(payload),your-256-bit-secret //自己定义secret<br>)</p>
 <h3 id="How-do-jwt-work"><a href="#How-do-jwt-work" class="headerlink" title="How do jwt work?"></a>How do jwt work?</h3><p>browser post a request to login with credentials,server will generate jwt via secret,then return the jwt to the browser,then browser send jwt on the authorization header,then the server will check jwt signature and get user information</p>
 <h3 id="jwt-实现"><a href="#jwt-实现" class="headerlink" title="jwt 实现"></a>jwt 实现</h3><p>nodejs 实现库：node-jsonwebtoken(<code>npm install jsonwebtoken</code>)</p>
-<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://jwt.io/" target="_blank" rel="noopener">https://jwt.io/</a><br><a href="http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html#Terminology" target="_blank" rel="noopener">http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html#Terminology</a></p>
+<h3 id="jsonwebtoken库用法"><a href="#jsonwebtoken库用法" class="headerlink" title="jsonwebtoken库用法"></a><a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener">jsonwebtoken库用法</a></h3><ul>
+<li>jwt.sign(payload, secretOrPrivateKey, [options, callback])<br>(Asynchronous) If a callback is supplied, the callback is called with the err or the JWT.<br>(Synchronous) Returns the JsonWebToken as string</li>
+<li>jwt.verify(token, secretOrPublicKey, [options, callback])<br>验证token，并解密payload.<br>如果提供了callback，则为异步方法，The callback is called with the decoded payload if the signature is valid and optional expiration, audience, or issuer are valid. If not, it will be called with the error.</li>
+</ul>
+<p>如果未提供则为同步方法，返回解密的payload，如果验证失败则会抛出一个错误，同步需要用catch方法来捕获错误。</p>
+<ul>
+<li>jwt.decode(token [, options])<br>(Synchronous) Returns the decoded payload without verifying if the signature is valid.<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><a href="https://jwt.io/" target="_blank" rel="noopener">https://jwt.io/</a><br><a href="http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html#Terminology" target="_blank" rel="noopener">http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html#Terminology</a></li>
+</ul>
 <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><h3 id="about-base64"><a href="#about-base64" class="headerlink" title="about base64"></a>about base64</h3><p>Base64是一种基于64个可打印字符来表示二进制数据的表示方法。由于2的6次方等于64，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。它可用来作为电子邮件的传输编码。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9，这样共有62个字符，此外两个可打印符号在不同的系统中而不同。<br>如果要编码的字节数不能被3整除，最后会多出1个或2个字节，那么可以使用下面的方法进行处理：先使用0字节值在末尾补足，使其能够被3整除，然后再进行Base64的编码。在编码后的Base64文本后加上一个或两个=号，代表补足的字节数。也就是说，当最后剩余两个八位(待补足)字节（2个byte）时，最后一个6位的Base64字节块有四位是0值，最后附加上两个等号；如果最后剩余一个八位(待补足)字节（1个byte）时，最后一个6位的base字节块有两位是0值，最后附加一个等号。<br>在ASCII码中规定，0<del>31、128这33个字符属于控制字符，32</del>127这95个字符属于可打印字符，也就是说网络传输只能传输这95个字符，不在这个范围内的字符无法传输。</p>
 <h3 id="为什么要使用-base64"><a href="#为什么要使用-base64" class="headerlink" title="为什么要使用 base64"></a>为什么要使用 base64</h3><p>当不可见字符在网络上传输时，比如说从 A 计算机传到 B 计算机，往往要经过多个路由设备，由于不同的设备（特指老的路由设备）对字符的处理方式有一些不同，这样那些不可见字符就有可能被处理错误，这是不利于传输的。所以就先把数据先做一个 base64 编码，统统变成可见字符，也就是 ascii 码可表示的可见字符，确保数据可靠传输。base64 的内容是有 0 ～9，a ～z，A ～Z，+，/组成，正好 64 个字符，这些字符是在 ascii 可表示的范围内，属于 95 个可见字符的一部分。<br>对于现在路由设备，只要是文本字符（无论是否是可见字符）都可以直接在网络上传输。注意，由于二进制格式的数据（图片，音频，视频，语音等非文本字符）， 无法直接在网络上传输，我们一般都要把这些二进制数据转为文本字符后进行网络传输。而 base64 可以把这些二进制数据转为文本字符，并且 base64为了兼容早期的老的路由器，还转化为了可见的文本字符，当然，对于现在的路由器来说，只要是文本字符就可以通过网络传输。<br>在企业开发中，我们只要遵守一个好的习惯就可以了：对于文本字符传输，我们先序列化，然后再通过网络发送；对于二进制数据（图片，音频，视频，语音等非文本字符），我们先用 base64 编码成文本字符，然后序列化后再通过网络发送。大家可能要问，只要是文本字符不就可以直接通过网络传输了吗，为什么还要序列化？在此，我再告诉大家，你项目中要传输的数据不只有字符串吧，应该还需要包容其它类型的数据，通信双方约定的就是发送的东西都是序列化后数据，这样方便对通信双方的数据类型进行还原。你没必要只对其它类型的数据序列化，对字符串不序列化，这样反而增加了业务逻辑。</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.zhihu.com/question/36306744/answer/931187310" target="_blank" rel="noopener">https://www.zhihu.com/question/36306744/answer/931187310</a></p>
@@ -447,6 +454,7 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
 <h3 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.cnblogs.com/chenwenhao/p/11823695.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenwenhao/p/11823695.html</a></p>
 <h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><p>我们把变量从内存中变成可存储或传输的过程称之为序列化，在Python中叫pickling，在其他语言中也被称之为serialization，marshalling，flattening等等，都是一个意思。<br>序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到别的机器上。<br>反过来，把变量内容从序列化的对象重新读到内存里称之为反序列化，即unpickling。<br>如果我们要在不同的编程语言之间传递对象，就必须把对象序列化为标准格式，比如XML，但更好的方法是序列化为JSON，因为JSON表示出来就是一个字符串，可以被所有语言读取，也可以方便地存储到磁盘或者通过网络传输。JSON不仅是标准格式，并且比XML更快，而且可以直接在Web页面中读取，非常方便。</p>
 <h2 id="MySQL-protocol"><a href="#MySQL-protocol" class="headerlink" title="MySQL protocol"></a>MySQL protocol</h2><p>The MySQL protocol is used between MySQL Clients and a MySQL Server<br>nodejs实现：<code>npm install mysql</code></p>
+<h2 id="PWA-Progressive-Web-Apps"><a href="#PWA-Progressive-Web-Apps" class="headerlink" title="PWA(Progressive Web Apps)"></a>PWA(Progressive Web Apps)</h2><p>Progressive Web App, 简称 PWA，是提升 Web App 的体验的一种新方法，能给用户原生应用的体验。 PWA 能做到原生应用的体验不是靠特指某一项技术，而是经过应用一些新技术进行改进，在安全、性能和体验三个方面都有很大提升，PWA 本质上是 Web App，借助一些新技术(service worker等等)也具备了 Native App 的一些特性，兼具 Web App 和 Native App 的优点。</p>
 
             </div>
             <hr/>
@@ -637,21 +645,21 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/git/">
+                <a href="/zheng-ze-biao-da-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
                         
-                        <span class="card-title">git</span>
+                        <span class="card-title">正则表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">submodulesubmodule中文件变更了,在主工作目录中是没有办法add并commit的，分而治之，主模块提交主模块的，子模块提交自己的，子模块提交后，主模块会感知到，从而再在主模块中提交即可
-添加 submodule将GitHub</div>
+                    <div class="summary">正则表达式在 JavaScript中，正则表达式也是对象。这些模式被用于RegExp 的 exec 和 test 方法, 以及 String 的 match、matchAll、replace、search 和 split 方法
+创建正则表达</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
                         </span>
                         <span class="publish-author">
                             
@@ -660,14 +668,6 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/git/" target="_blank">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -679,41 +679,28 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/hexo-bo-ke-dian-ji-te-xiao/">
+                <a href="/sql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo博客点击特效">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="sql">
                         
-                        <span class="card-title">hexo博客点击特效</span>
+                        <span class="card-title">sql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">jQuery(document).ready(function ($) {
-    let coreSocialistValues = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国</div>
+                    <div class="summary">数据类型INT    整型    4字节整数类型，范围约+/-21亿BIGINT    长整型    8字节整数类型，范围约+/-922亿亿REAL    浮点型    4字节浮点数，范围约+/-1038 ( FLOAT(24) )DOUB</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Hexo/" class="post-category" target="_blank">
-                                    Hexo
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            zonglinlee
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/" target="_blank">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -822,7 +809,7 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">20.3k</span>
+                <span class="white-color">21.4k</span>
             
 
             
