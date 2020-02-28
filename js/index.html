@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="js, 风滚草">
     <meta name="description" content="!function(){}() 作用跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数
-noscript 标签">
+DOMTokenList interface">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -379,14 +379,14 @@ noscript 标签">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-02-28
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        62
+                        318
                     </div>
                     
 
@@ -410,7 +410,24 @@ noscript 标签">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="function-作用"><a href="#function-作用" class="headerlink" title="!function(){}() 作用"></a><code>!function(){}()</code> 作用</h2><p>跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数</p>
-<h2 id="noscript-标签"><a href="#noscript-标签" class="headerlink" title="noscript 标签"></a>noscript 标签</h2>
+<h2 id="DOMTokenList-interface"><a href="#DOMTokenList-interface" class="headerlink" title="DOMTokenList interface"></a>DOMTokenList interface</h2><p>The DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by <code>Element.classList</code>.</p>
+<div class="class1 class2"></div>
+原生dom方法来toggle一个类：`div.classList.toggle("class1")`
+<hr>
+## noscript 标签
+## form
+enctype 属性
+在method是post的情况下，enctype是form提交时候的mime类型
+默认是：application/x-www-form-urlencoded
+如果有input 的type为file类型，即这个表单要上传文件，则使用multipart/form-data类型
+using the GET method (in this case the enctype attribute will be ignored).
+## FormData 对象
+在form enctype='multipart/form-data'情况下，可以使用FormData对象来讲form中要提交的数据转换成一个对象，用ajax来提交。
+It is primarily intended for use in sending form data, but can be used independently from forms in order to transmit keyed data.
+
+<p>var formData = new FormData(someFormElement);//将form元素传入构造函数，返回表单提交的数据对象，还可以用formData.append(“username”, “Groucho”);来添加新的键值对。<br>优缺点：Using the FormData API is the simplest and fastest, but has the disadvantage that data collected can not be stringified.</p>
+<p>如果不想使用FormData对象，请参考以下链接<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Submitting_forms_and_uploading_files" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Submitting_forms_and_uploading_files</a></p>
+
             </div>
             <hr/>
 
@@ -600,20 +617,23 @@ noscript 标签">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/js-basics/">
+                <a href="/jquery/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js-basics">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="jquery">
                         
-                        <span class="card-title">js-basics</span>
+                        <span class="card-title">jquery</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by E</div>
+                    <div class="summary">
+jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。
+jQuery的选择器不会返回undefined或者null
+jQuery对象和DOM对象之间可以互相转化var div = $('#abc'); // jQuery对</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-28
                         </span>
                         <span class="publish-author">
                             
@@ -646,7 +666,7 @@ noscript 标签">
                     <div class="summary">koa不包含任何middleware,express.static这种都不包括它的中间件原理和express不太一样app.use(async function(ctx,next){    console.log(1)//先打印1    a</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-28
                             </span>
                         <span class="publish-author">
                             
@@ -763,7 +783,7 @@ noscript 标签">
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">21.4k</span>
+                <span class="white-color">21.6k</span>
             
 
             
