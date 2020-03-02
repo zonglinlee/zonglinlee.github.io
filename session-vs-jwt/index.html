@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="node-sql-install, 风滚草">
-    <meta name="description" content="CentOS8 install node安装nodecd /home
-wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
-tar -Jxvf node-v">
+    <meta name="keywords" content="session vs jwt, 风滚草">
+    <meta name="description" content="koa-session-minimal内部引入了uid-safe(unique id for cookie and url)模块来产生一个sid(session id),当用户登录后调用ctx.cookies.set(key,value),">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@ tar -Jxvf node-v">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>node-sql-install | 风滚草</title>
+    <title>session vs jwt | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -271,13 +269,13 @@ tar -Jxvf node-v">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        node-sql-install
+                        session vs jwt
                     </div>
                 </div>
             </div>
@@ -367,33 +365,12 @@ tar -Jxvf node-v">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E9%83%A8%E7%BD%B2/" target="_blank">
-                                <span class="chip bg-color">部署</span>
-                            </a>
-                        
-                            <a href="/tags/CentOS/" target="_blank">
-                                <span class="chip bg-color">CentOS</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
-                                CentOS8
-                            </a>
-                        
-                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
-                                Install
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -408,7 +385,7 @@ tar -Jxvf node-v">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        126
+                        242
                     </div>
                     
 
@@ -431,22 +408,8 @@ tar -Jxvf node-v">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CentOS8-install-node"><a href="#CentOS8-install-node" class="headerlink" title="CentOS8 install node"></a>CentOS8 install node</h1><h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><pre class=" language-shell"><code class="language-shell">cd /home
-wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
-tar -Jxvf node-v12.14.1-linux-x64.tar.xz
-ln -s /home/node-v12.14.1-linux-x64/bin/node /usr/local/bin
-ln -s /home/node-v12.14.1-linux-x64/bin/npm  /usr/local/bin
-ln -s /home/node-v12.14.1-linux-x64/bin/npx  /usr/local/bin
-node -v</code></pre>
-<h2 id="开放80端口"><a href="#开放80端口" class="headerlink" title="开放80端口"></a>开放80端口</h2><p><code>firewall-cmd --zone=public --permanent --add-port=80/tcp &amp;&amp; firewall-cmd --reload</code></p>
-<h2 id="node-后台运行"><a href="#node-后台运行" class="headerlink" title="node 后台运行"></a>node 后台运行</h2><p>vim /etc/systemd/system/http1.service</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
-Description=http1 daemon
-<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
-ExecStart=/usr/local/bin/node  /home/my-server/app.js
-Restart=always
-<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
-WantedBy=graphical.target</code></pre>
+                <p>koa-session-minimal<br>内部引入了uid-safe(unique id for cookie and url)模块来产生一个sid(session id),当用户登录后调用ctx.cookies.set(key,value),key时koa-session-minimal配置时候传入的key,value是uid模块生成的session id,服务器在返回的时候设置了 set-cookie=sid,用来管理会话,服务器和客户端来回传递此sessionid ,服务器保存了ctx.session对象，通过此id来查询服务器上保存的用户信息，默认保存在memory-store中，浏览器窗口关闭，session对象就会丢失，持久化保存请用对应的数据库store</p>
+<p>jwt 是另外一种会话管理机制<br>服务的生成token返回给客户端，客户端保存在localStorage 或者sessionStorage中，在axios中配置全局默认响应头 authorization，传入token<br>axios.defaults.headers[‘Authorization’] = sessionStorage.getItem(“token”);<br>服务端收到之后，从req对象中提取token,再校验token的合法性，token中包含了用户名。</p>
 
             </div>
             <hr/>
@@ -587,7 +550,7 @@ WantedBy=graphical.target</code></pre>
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/node-sql-install/" class="b-link-green">node-sql-install</a>
+                    <a href="/session-vs-jwt/" class="b-link-green">session vs jwt</a>
                 </p>
             </div>
         </div>
@@ -608,9 +571,9 @@ WantedBy=graphical.target</code></pre>
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/node-sql-install/';
-        this.page.identifier = '/node-sql-install/';
-        this.page.title = 'node-sql-install';
+        this.page.url = 'https://tumbleweed.top/session-vs-jwt/';
+        this.page.identifier = '/session-vs-jwt/';
+        this.page.title = 'session vs jwt';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -633,56 +596,32 @@ WantedBy=graphical.target</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/node-sql-install/">
+                <a href="/nginx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="node-sql-install">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="nginx">
                         
-                        <span class="card-title">node-sql-install</span>
+                        <span class="card-title">nginx</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">CentOS8 install node安装nodecd /home
-wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
-tar -Jxvf node-v</div>
+                    <div class="summary">windows nginx指南http://nginx.org/en/docs/windows.html新手指引http://nginx.org/en/docs/beginners_guide.htmlhttp://nginx.org/en</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
-                                    CentOS8
-                                </a>
-                            
-                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
-                                    Install
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            zonglinlee
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%83%A8%E7%BD%B2/" target="_blank">
-                        <span class="chip bg-color">部署</span>
-                    </a>
-                    
-                    <a href="/tags/CentOS/" target="_blank">
-                        <span class="chip bg-color">CentOS</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -694,18 +633,18 @@ tar -Jxvf node-v</div>
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/zheng-ze-biao-da-shi/">
+                <a href="/gua-pei/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="适配">
                         
-                        <span class="card-title">正则表达式</span>
+                        <span class="card-title">适配</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">正则表达式在 JavaScript中，正则表达式也是对象。这些模式被用于RegExp 的 exec 和 test 方法, 以及 String 的 match、matchAll、replace、search 和 split 方法
-创建正则表达</div>
+                    <div class="summary">名词解释物理像素：屏幕实际的横纵像素点的个数逻辑像素：程序认为的屏幕横纵像素点的个数屏幕倍率dpr：devicePixelRatio //window.devicePixelRatio (特指移动端)
+移动端移动端1px问题解决方案方法一：</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02

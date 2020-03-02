@@ -379,21 +379,21 @@ DOMTokenList interface">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-28
+                    2020-03-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        318
+                        757
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        1 Min
+                        3 Min
                     </div>
                     
                 
@@ -427,6 +427,18 @@ It is primarily intended for use in sending form data, but can be used independe
 
 <p>var formData = new FormData(someFormElement);//将form元素传入构造函数，返回表单提交的数据对象，还可以用formData.append(“username”, “Groucho”);来添加新的键值对。<br>优缺点：Using the FormData API is the simplest and fastest, but has the disadvantage that data collected can not be stringified.</p>
 <p>如果不想使用FormData对象，请参考以下链接<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Submitting_forms_and_uploading_files" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Submitting_forms_and_uploading_files</a></p>
+<h2 id="ajax-cookie"><a href="#ajax-cookie" class="headerlink" title="ajax cookie"></a>ajax cookie</h2><p>ajax 配置nginx,跨域请求的时候会不带cookie,如果要带cookie<br>request header 要配置 withCredentials：true<br>response header 要配置 Access-Control-Allow-Credentials: true</p>
+<p>如果用koa框架，会有 <code>koa-cors</code>包设置Access-Control-Allow-Credentials.  查看koa-cors源码配置选项{credentials:true}</p>
+<h2 id="FormData-对象"><a href="#FormData-对象" class="headerlink" title="FormData 对象"></a>FormData 对象</h2><pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> form <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> formdata <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>formdata<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//打印出{}空对象</span>
+<span class="token comment" spellcheck="true">//FormData实例对象打印不出任何东西，但它提供了许多方法，会返回迭代器。</span></code></pre>
+<p>FormData.entries()<br>Returns an iterator allowing to go through all key/value pairs contained in this object.</p>
+<h2 id="File-interface"><a href="#File-interface" class="headerlink" title="File interface"></a>File interface</h2><p>The File interface provides information about files and allows JavaScript in a web page to access their content.<br><code>File</code> objects are generally retrieved from a <code>FileList</code> object returned as a result of a user selecting files using the <input> element, from a drag and drop operation’s <code>DataTransfer</code> object, or from the <code>mozGetAsFile() API</code> on an <code>HTMLCanvasElement</code>.<br>A File object is a specific kind of a <code>Blob</code>, and can be used in any context that a Blob can. In particular, <code>FileReader</code>, <code>URL.createObjectURL()</code>, <code>createImageBitmap()</code>, and <code>XMLHttpRequest.send()</code> accept both Blobs and Files.<br>file属性<br>Properties:File.lastModified/File.lastModifiedDate/File.name/File.size/File.type<br>file 方法<br>File接口不实现任何方法，都是从Blob接口上继承上来的。</p>
+<h2 id="Blob"><a href="#Blob" class="headerlink" title="Blob"></a>Blob</h2><p>The Blob object represents a blob, which is a file-like object of immutable, raw data; they can be read as text or binary data, or converted into a <code>ReadableStream</code> so its methods can be used for processing the data.</p>
+<p>Blobs can represent data that isn’t necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user’s system.</p>
+<h2 id="ArrayBuffer"><a href="#ArrayBuffer" class="headerlink" title="ArrayBuffer"></a>ArrayBuffer</h2><p>The ArrayBuffer object is used to represent a generic, fixed-length raw binary data buffer.<br>It is an array of bytes, often referred to in other languages as a “byte array”.You cannot directly manipulate the contents of an ArrayBuffer; instead, you create one of the <code>typed array objects</code> or a <code>DataView</code> object which represents the buffer in a specific format, and use that to read and write the contents of the buffer.</p>
+<p>The ArrayBuffer() constructor creates a new ArrayBuffer of the given length in bytes, you can also get an array buffer from existing data, for example from a <code>Base64 string</code> or from a <code>local file</code>.</p>
 
             </div>
             <hr/>
@@ -633,7 +645,7 @@ jQuery的选择器不会返回undefined或者null
 jQuery对象和DOM对象之间可以互相转化var div = $('#abc'); // jQuery对</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-28
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
                         </span>
                         <span class="publish-author">
                             
@@ -666,7 +678,7 @@ jQuery对象和DOM对象之间可以互相转化var div = $('#abc'); // jQuery�
                     <div class="summary">koa不包含任何middleware,express.static这种都不包括它的中间件原理和express不太一样app.use(async function(ctx,next){    console.log(1)//先打印1    a</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
                             </span>
                         <span class="publish-author">
                             
@@ -783,7 +795,7 @@ jQuery对象和DOM对象之间可以互相转化var div = $('#abc'); // jQuery�
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">21.6k</span>
+                <span class="white-color">22.3k</span>
             
 
             

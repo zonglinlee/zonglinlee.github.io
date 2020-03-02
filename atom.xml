@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tumbleweed.top/"/>
-  <updated>2020-02-28T16:21:34.184Z</updated>
+  <updated>2020-03-02T12:19:39.703Z</updated>
   <id>https://tumbleweed.top/</id>
   
   <author>
@@ -17,347 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>mysql(1)</title>
-    <link href="https://tumbleweed.top/mysql-1/"/>
-    <id>https://tumbleweed.top/mysql-1/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式</title>
-    <link href="https://tumbleweed.top/zheng-ze-biao-da-shi/"/>
-    <id>https://tumbleweed.top/zheng-ze-biao-da-shi/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;p&gt;在 JavaScript中，正则表达式也是对象。这些模式被用于&lt;code&gt;RegExp&lt;/code&gt; 的 exec
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>名词解释</title>
-    <link href="https://tumbleweed.top/ming-ci-jie-shi/"/>
-    <id>https://tumbleweed.top/ming-ci-jie-shi/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;JSON-Web-Token-JWT&quot;&gt;&lt;a href=&quot;#JSON-Web-Token-JWT&quot; class=&quot;headerlink&quot; title=&quot;JSON Web Token (JWT)&quot;&gt;&lt;/a&gt;JSON Web Token (JWT)&lt;/h2&gt;&lt;h3
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>sql</title>
-    <link href="https://tumbleweed.top/sql/"/>
-    <id>https://tumbleweed.top/sql/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;p&gt;INT    整型    4字节整数类型，范围约+/-21亿&lt;br&gt;BIGINT    长整型   
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>express(0)</title>
-    <link href="https://tumbleweed.top/express-0/"/>
-    <id>https://tumbleweed.top/express-0/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;express&quot;&gt;&lt;a href=&quot;#express&quot; class=&quot;headerlink&quot; title=&quot;express&quot;&gt;&lt;/a&gt;express&lt;/h1&gt;&lt;h2 id=&quot;express-app-get-方法封装&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>express(1)</title>
-    <link href="https://tumbleweed.top/express-1/"/>
-    <id>https://tumbleweed.top/express-1/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;res-cookie-name-value-options&quot;&gt;&lt;a href=&quot;#res-cookie-name-value-options&quot; class=&quot;headerlink&quot; title=&quot;res.cookie(name, value
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>git</title>
-    <link href="https://tumbleweed.top/git/"/>
-    <id>https://tumbleweed.top/git/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;submodule&quot;&gt;&lt;a href=&quot;#submodule&quot; class=&quot;headerlink&quot; title=&quot;submodule&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.phpgao.com/git_submodule.html&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="git" scheme="https://tumbleweed.top/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx</title>
-    <link href="https://tumbleweed.top/nginx/"/>
-    <id>https://tumbleweed.top/nginx/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;windows-nginx指南&quot;&gt;&lt;a href=&quot;#windows-nginx指南&quot; class=&quot;headerlink&quot; title=&quot;windows nginx指南&quot;&gt;&lt;/a&gt;windows nginx指南&lt;/h3&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客点击特效</title>
-    <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
-    <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot; language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://tumbleweed.top/categories/Hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://tumbleweed.top/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo参数</title>
-    <link href="https://tumbleweed.top/hexo-can-shu/"/>
-    <id>https://tumbleweed.top/hexo-can-shu/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;site.data&lt;br&gt;在source/_data文件夹下的 YAML or JSON files&lt;br&gt;比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;% for
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>jquery</title>
-    <link href="https://tumbleweed.top/jquery/"/>
-    <id>https://tumbleweed.top/jquery/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。&lt;/li&gt;
-&lt;li&gt;jQuery的选择器不会返回undefined或者null&lt;/li&gt;
-&lt;li&gt;jQuery对象和DOM对象之间可以互相转化&lt;pre class=&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>js</title>
-    <link href="https://tumbleweed.top/js/"/>
-    <id>https://tumbleweed.top/js/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;function-作用&quot;&gt;&lt;a href=&quot;#function-作用&quot; class=&quot;headerlink&quot; title=&quot;!function(){}() 作用&quot;&gt;&lt;/a&gt;&lt;code&gt;!function(){}()&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>koa(1)</title>
-    <link href="https://tumbleweed.top/koa-1/"/>
-    <id>https://tumbleweed.top/koa-1/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;koa不包含任何middleware,express.static这种都不包括&lt;br&gt;它的中间件原理和express不太一样&lt;br&gt;app.use(async function(ctx,next){&lt;br&gt;    console.log(1)//先打印1&lt;br&gt;   
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>适配</title>
-    <link href="https://tumbleweed.top/gua-pei/"/>
-    <id>https://tumbleweed.top/gua-pei/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>node-sql-install</title>
     <link href="https://tumbleweed.top/node-sql-install/"/>
     <id>https://tumbleweed.top/node-sql-install/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
     
     <summary type="html">
     
@@ -384,11 +48,11 @@
   </entry>
   
   <entry>
-    <title>前端常用工具简介</title>
-    <link href="https://tumbleweed.top/qian-duan-gong-ju-he-ji/"/>
-    <id>https://tumbleweed.top/qian-duan-gong-ju-he-ji/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
+    <title>正则表达式</title>
+    <link href="https://tumbleweed.top/zheng-ze-biao-da-shi/"/>
+    <id>https://tumbleweed.top/zheng-ze-biao-da-shi/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
     
     <summary type="html">
     
@@ -396,7 +60,7 @@
       
         
         
-          &lt;h1 id=&quot;前端常用工具简介&quot;&gt;&lt;a href=&quot;#前端常用工具简介&quot; class=&quot;headerlink&quot; title=&quot;前端常用工具简介&quot;&gt;&lt;/a&gt;前端常用工具简介&lt;/h1&gt;&lt;h2 id=&quot;综合&quot;&gt;&lt;a href=&quot;#综合&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;p&gt;在 JavaScript中，正则表达式也是对象。这些模式被用于&lt;code&gt;RegExp&lt;/code&gt; 的 exec
         
       
     
@@ -407,11 +71,11 @@
   </entry>
   
   <entry>
-    <title>Z-index</title>
-    <link href="https://tumbleweed.top/z-index/"/>
-    <id>https://tumbleweed.top/z-index/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
+    <title>css-basics</title>
+    <link href="https://tumbleweed.top/css-basics/"/>
+    <id>https://tumbleweed.top/css-basics/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
     
     <summary type="html">
     
@@ -419,7 +83,10 @@
       
         
         
-          &lt;h1 id=&quot;CSS-Z-index&quot;&gt;&lt;a href=&quot;#CSS-Z-index&quot; class=&quot;headerlink&quot; title=&quot;CSS Z-index&quot;&gt;&lt;/a&gt;CSS Z-index&lt;/h1&gt;&lt;h2 id=&quot;当没有定义z-index属性时&quot;&gt;&lt;a
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;css盒模型中以 top-left为坐标原点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50%
         
       
     
@@ -427,7 +94,364 @@
     
     
     
-      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
+  </entry>
+  
+  <entry>
+    <title>docker</title>
+    <link href="https://tumbleweed.top/docker/"/>
+    <id>https://tumbleweed.top/docker/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;docker架构&lt;br&gt;Linux 容器（Linux Containers，缩写为 LXC）。&lt;br&gt;docker 是基于 Linux容器的一种封装&lt;br&gt;docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>express(0)</title>
+    <link href="https://tumbleweed.top/express-0/"/>
+    <id>https://tumbleweed.top/express-0/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;express&quot;&gt;&lt;a href=&quot;#express&quot; class=&quot;headerlink&quot; title=&quot;express&quot;&gt;&lt;/a&gt;express&lt;/h1&gt;&lt;h2 id=&quot;express-app-get-方法封装&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>express(1)</title>
+    <link href="https://tumbleweed.top/express-1/"/>
+    <id>https://tumbleweed.top/express-1/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;res-cookie-name-value-options&quot;&gt;&lt;a href=&quot;#res-cookie-name-value-options&quot; class=&quot;headerlink&quot; title=&quot;res.cookie(name, value
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <link href="https://tumbleweed.top/git/"/>
+    <id>https://tumbleweed.top/git/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;submodule&quot;&gt;&lt;a href=&quot;#submodule&quot; class=&quot;headerlink&quot; title=&quot;submodule&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.phpgao.com/git_submodule.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="git" scheme="https://tumbleweed.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>名词解释</title>
+    <link href="https://tumbleweed.top/ming-ci-jie-shi/"/>
+    <id>https://tumbleweed.top/ming-ci-jie-shi/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JSON-Web-Token-JWT&quot;&gt;&lt;a href=&quot;#JSON-Web-Token-JWT&quot; class=&quot;headerlink&quot; title=&quot;JSON Web Token (JWT)&quot;&gt;&lt;/a&gt;JSON Web Token (JWT)&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客点击特效</title>
+    <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
+    <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot; language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://tumbleweed.top/categories/Hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://tumbleweed.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo参数</title>
+    <link href="https://tumbleweed.top/hexo-can-shu/"/>
+    <id>https://tumbleweed.top/hexo-can-shu/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;site.data&lt;br&gt;在source/_data文件夹下的 YAML or JSON files&lt;br&gt;比如在此文件夹下有一个 munu.yaml 文件，则可以在模板字符串中，link是 property&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;% for
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>jquery</title>
+    <link href="https://tumbleweed.top/jquery/"/>
+    <id>https://tumbleweed.top/jquery/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。&lt;/li&gt;
+&lt;li&gt;jQuery的选择器不会返回undefined或者null&lt;/li&gt;
+&lt;li&gt;jQuery对象和DOM对象之间可以互相转化&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js</title>
+    <link href="https://tumbleweed.top/js/"/>
+    <id>https://tumbleweed.top/js/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;function-作用&quot;&gt;&lt;a href=&quot;#function-作用&quot; class=&quot;headerlink&quot; title=&quot;!function(){}() 作用&quot;&gt;&lt;/a&gt;&lt;code&gt;!function(){}()&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>koa(1)</title>
+    <link href="https://tumbleweed.top/koa-1/"/>
+    <id>https://tumbleweed.top/koa-1/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;koa不包含任何middleware,express.static这种都不包括&lt;br&gt;它的中间件原理和express不太一样&lt;br&gt;app.use(async function(ctx,next){&lt;br&gt;    console.log(1)//先打印1&lt;br&gt;   
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mysql(1)</title>
+    <link href="https://tumbleweed.top/mysql-1/"/>
+    <id>https://tumbleweed.top/mysql-1/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sql</title>
+    <link href="https://tumbleweed.top/sql/"/>
+    <id>https://tumbleweed.top/sql/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;p&gt;INT    整型    4字节整数类型，范围约+/-21亿&lt;br&gt;BIGINT    长整型   
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>nginx</title>
+    <link href="https://tumbleweed.top/nginx/"/>
+    <id>https://tumbleweed.top/nginx/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;windows-nginx指南&quot;&gt;&lt;a href=&quot;#windows-nginx指南&quot; class=&quot;headerlink&quot; title=&quot;windows nginx指南&quot;&gt;&lt;/a&gt;windows nginx指南&lt;/h3&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>session vs jwt</title>
+    <link href="https://tumbleweed.top/session-vs-jwt/"/>
+    <id>https://tumbleweed.top/session-vs-jwt/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;koa-session-minimal&lt;br&gt;内部引入了uid-safe(unique id for cookie and url)模块来产生一个sid(session
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>适配</title>
+    <link href="https://tumbleweed.top/gua-pei/"/>
+    <id>https://tumbleweed.top/gua-pei/</id>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
     
   </entry>
   
@@ -435,8 +459,8 @@
     <title>tar-unzip</title>
     <link href="https://tumbleweed.top/tar-unzip/"/>
     <id>https://tumbleweed.top/tar-unzip/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
     
     <summary type="html">
     
@@ -458,8 +482,8 @@
     <title>vue-cli环境搭建</title>
     <link href="https://tumbleweed.top/vue-cli-huan-jing-da-jian/"/>
     <id>https://tumbleweed.top/vue-cli-huan-jing-da-jian/</id>
-    <published>2020-02-28T16:21:34.184Z</published>
-    <updated>2020-02-28T16:21:34.184Z</updated>
+    <published>2020-03-02T12:19:39.703Z</published>
+    <updated>2020-03-02T12:19:39.703Z</updated>
     
     <summary type="html">
     
@@ -469,29 +493,6 @@
         
           &lt;h2 id=&quot;vue-cli插件&quot;&gt;&lt;a href=&quot;#vue-cli插件&quot; class=&quot;headerlink&quot; title=&quot;vue-cli插件&quot;&gt;&lt;/a&gt;vue-cli插件&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;@vue/cli-plugin-eslint&lt;br&gt;vue-cli 的
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>bootstrap 入门</title>
-    <link href="https://tumbleweed.top/bootstrap/"/>
-    <id>https://tumbleweed.top/bootstrap/</id>
-    <published>2020-02-28T16:21:34.180Z</published>
-    <updated>2020-02-28T16:21:34.180Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;bootstrap-v4-4-入门&quot;&gt;&lt;a href=&quot;#bootstrap-v4-4-入门&quot; class=&quot;headerlink&quot; title=&quot;bootstrap v4.4 入门&quot;&gt;&lt;/a&gt;bootstrap v4.4 入门&lt;/h1&gt;&lt;h2
         
       
     
