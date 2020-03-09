@@ -381,21 +381,21 @@ Digitaly signed -infor">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-03-02
+                    2020-03-09
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        2.7k
+                        3.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        10 Min
+                        14 Min
                     </div>
                     
                 
@@ -455,6 +455,22 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
 <h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><p>我们把变量从内存中变成可存储或传输的过程称之为序列化，在Python中叫pickling，在其他语言中也被称之为serialization，marshalling，flattening等等，都是一个意思。<br>序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到别的机器上。<br>反过来，把变量内容从序列化的对象重新读到内存里称之为反序列化，即unpickling。<br>如果我们要在不同的编程语言之间传递对象，就必须把对象序列化为标准格式，比如XML，但更好的方法是序列化为JSON，因为JSON表示出来就是一个字符串，可以被所有语言读取，也可以方便地存储到磁盘或者通过网络传输。JSON不仅是标准格式，并且比XML更快，而且可以直接在Web页面中读取，非常方便。</p>
 <h2 id="MySQL-protocol"><a href="#MySQL-protocol" class="headerlink" title="MySQL protocol"></a>MySQL protocol</h2><p>The MySQL protocol is used between MySQL Clients and a MySQL Server<br>nodejs实现：<code>npm install mysql</code></p>
 <h2 id="PWA-Progressive-Web-Apps"><a href="#PWA-Progressive-Web-Apps" class="headerlink" title="PWA(Progressive Web Apps)"></a>PWA(Progressive Web Apps)</h2><p>Progressive Web App, 简称 PWA，是提升 Web App 的体验的一种新方法，能给用户原生应用的体验。 PWA 能做到原生应用的体验不是靠特指某一项技术，而是经过应用一些新技术进行改进，在安全、性能和体验三个方面都有很大提升，PWA 本质上是 Web App，借助一些新技术(service worker等等)也具备了 Native App 的一些特性，兼具 Web App 和 Native App 的优点。</p>
+<h2 id="MIME"><a href="#MIME" class="headerlink" title="MIME"></a>MIME</h2><p>“Multipurpose Internet Mail Extensions”,指的是一系列的电子邮件技术规范(主要包括RFC 2045、RFC 2046、RFC 2047、RFC 4288、RFC 4289和RFC 2077。),MIME是对传统电子邮件的一个扩展<br>传统的电子邮件的技术规范(RFC 822)规定，电子邮件只能使用ASCII字符。这导致了三个结果：1）非英语字符都不能在电子邮件中使用；2）电子邮件中不能插入二进制文件（如图片）；3）电子邮件不能有附件。</p>
+<p>MIME对传统电子邮件的扩展，表现在它在信件头部分添加了几条语句，主要有三条<br>MIME-Version: 1.0<br>Content-Type: text/plain; charset=”ISO-8859-1”<br>Content-transfer-encoding: base64</p>
+<h3 id="参考链接-2"><a href="#参考链接-2" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.ruanyifeng.com/blog/2008/06/mime.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2008/06/mime.html</a></p>
+<h2 id="文本文件和二进制文件的区别"><a href="#文本文件和二进制文件的区别" class="headerlink" title="文本文件和二进制文件的区别?"></a>文本文件和二进制文件的区别?</h2><p>以读文件为例，实际上是磁盘 》》 文件缓冲区》》应用程序内存空间 这两个转化过程。我们说“文本文件和二进制文件没有区别”，实际上针对的是第一个过程；既然没有区别，那么打开方式不同，为何显示内容就不同呢？这个区别实际上是第二个过程造成的。文件实际上包括两部分，控制信息和内容信息。纯文本文件仅仅是没有控制格式信息罢了；实际上也是一种特殊的二进制文件。所以，我们很难区分二者的不同，因为他们的概念上不是完全互斥的。我们说文本文件是特殊的二进制文件，是因为文本文件实际上的解释格式已经确定了：ASCII或者unicode编码。文本文件的一个缺点是，它的熵往往较低，也就是说，其实本可以用更小的存储空间记录这些信息。比如，文本文件中的一个数字65536，需要用5个字节来存储；但是用二进制格式，采用int存储，仅仅需要2个字节。而二进制文件elf和bmp等，都往往有一个head，告诉你文件信息和解释方式。<br>链接：<a href="https://www.zhihu.com/question/19971994/answer/36113974" target="_blank" rel="noopener">https://www.zhihu.com/question/19971994/answer/36113974</a><br>来源：知乎</p>
+<h2 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h2><p>一般来说，URL只能使用英文字母、阿拉伯数字和某些标点符号，不能使用其他文字和符号。(网络标准RFC 1738做了硬性规定)<br>只有字母和数字[0-9a-zA-Z]、一些特殊符号”$-_.+!*’(),”[不包括双引号]、以及某些保留字，才可以不经过编码直接用于URL。<br>这意味着，如果URL中有汉字，就必须编码后使用。但是麻烦的是，RFC 1738没有规定具体的编码方法，而是交给应用程序（浏览器）自己决定。这导致”URL编码”成为了一个混乱的领域。</p>
+<ul>
+<li>网址路径中包含汉字</li>
+<li>查询字符串包含汉字</li>
+<li>Get方法生成的URL包含汉字</li>
+<li>Ajax调用的URL包含汉字</li>
+</ul>
+<p>前面三种情况都是由浏览器发出HTTP请求，最后一种情况则是由Javascript生成HTTP请求，也就是Ajax调用.每个浏览器处理方式都不一致<br>有没有办法，能够保证客户端只用一种编码方法向服务器发出请求？<br>使用Javascript先对URL编码，然后再向服务器提交，不要给浏览器插手的机会。因为Javascript的输出总是一致的，所以就保证了服务器得到的数据是格式统一的。</p>
+<ul>
+<li>encodeURI()是Javascript中真正用来对URL编码的函数。对应的解码函数是decodeURI()。需要注意的是，它不对单引号’编码。<br>它着眼于对整个URL进行编码，因此除了常见的符号以外，对其他一些在网址中有特殊含义的符号”; / ? : @ &amp; = + $ , #”，也不进行编码。编码后，它输出符号的utf-8形式，并且在每个字节前加上%。</li>
+<li>encodeURIComponent()，它对应的解码函数是decodeURIComponent()。<br>最后一个Javascript编码函数是encodeURIComponent()。与encodeURI()的区别是，它用于对URL的组成部分进行个别编码，而不用于对整个URL进行编码。<br>因此，”; / ? : @ &amp; = + $ , #”，这些在encodeURI()中不被编码的符号，在encodeURIComponent()中统统会被编码。<br>参考链接<br><a href="https://www.ruanyifeng.com/blog/2010/02/url_encoding.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2010/02/url_encoding.html</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -659,7 +675,7 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
 添加 submodule将GitHub</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-09
                         </span>
                         <span class="publish-author">
                             
@@ -701,7 +717,7 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
     let coreSocialistValues = ["富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-09
                             </span>
                         <span class="publish-author">
                             
@@ -830,7 +846,7 @@ cccc<span class="token operator">:</span>signature部分，combine bade64 header
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">22.3k</span>
+                <span class="white-color">23.4k</span>
             
 
             

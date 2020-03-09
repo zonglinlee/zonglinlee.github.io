@@ -379,14 +379,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-03-02
+                    2020-03-09
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        504
+                        573
                     </div>
                     
 
@@ -410,14 +410,22 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="vue-cli插件"><a href="#vue-cli插件" class="headerlink" title="vue-cli插件"></a>vue-cli插件</h2><ul>
-<li>@vue/cli-plugin-eslint<br>vue-cli 的 eslint 插件，通过这个插件给vue-cli注入了<code>vue-cli-service lint</code> 命令，提供了命令行使用lint的功能。@vue/cli-plugin-xxx功能都是注入命令行方法，扩展vue-cli 或者 webpack</li>
-<li>eslint 和 eslint-plugin-vue<br>Linters have two categories of rules:Formatting rules/Code-quality rules,都有相应的配置规则，以eslint为例，都需要自行配置(官方也有预设)。linter根据语言有不同的linter来匹配语法错误。在<br>vue中使用eslint，需要先安装eslint，然后安装eslint的vue插件才可以使用</li>
-<li><a href="https://prettier.io/docs/en/comparison.html" target="_blank" rel="noopener">prettier 和 eslint-plugin-prettier</a><br>prettier是一个code formatter，在vscode中安装了prettier后就可以 shift+alt+F 来格式化代码，它提供了linter中的Formatting rules功能,相当于只有一部分的linter功能，但并不会检查语法错误。这两个包是给eslint服务的。</li>
-<li>style-resources-loader<br>这个包是一个css注入包，在webpack中配置在最右边，style-loader/css-loader/stylus-loader/style-resources-loader ，即第一个调用，它被用作将一些全局css 变量 mixin 等注入到每个css模块中，从而不用手动在每个css模块中引入了。在vue.config.js中配合chainWepack使用<br>替代包：vue-cli-plugin-style-resources-loader</li>
-<li>babel-plugin-import<br>模块化导入用<br>Modular import plugin for babel, compatible with antd, antd-mobile, lodash, material-ui, and so on.使用的时候看所使用的的框架是否支持<br>babelrc文件或者webpack中babel-loader中添加配置。</li>
-<li>vue-loader<br>在webpack的配置文件中使用，是用来自行构建脚手架时候使用的，官方推荐使用vue-cli构建开发环境。</li>
-<li>vue-template-compiler<br>使用vue-cli构建时候 自动安装的<br>这个包可以被用来将 Vue 2.0 的模板预编译为渲染函数以避免运行时不必要的编译开销和 CSP 的限制。</li>
-<li>css预处理器<br>vue-cli搭建环境的时候会选择预处理器，如果没选的话，只需要手动npm安装即可，内置的webpack会处理好一切。</li>
+<li><p>@vue/cli-plugin-eslint<br>vue-cli 的 eslint 插件，通过这个插件给vue-cli注入了<code>vue-cli-service lint</code> 命令，提供了命令行使用lint的功能。@vue/cli-plugin-xxx功能都是注入命令行方法，扩展vue-cli 或者 webpack</p>
+</li>
+<li><p>eslint 和 eslint-plugin-vue<br>Linters have two categories of rules:Formatting rules/Code-quality rules,都有相应的配置规则，以eslint为例，都需要自行配置(官方也有预设)。linter根据语言有不同的linter来匹配语法错误。在.vue文件中使用eslint，需要先安装eslint，然后安装eslint的vue插件才可以使用<br>eslint-plugin-vue:This plugin allows us to check the <template> and <script> of .vue files with ESLint<br>配置规则见官网，要覆盖默认的规则，看配置文件是在vue项目中单独出来了，还是在package.json 文件中的eslintConfig字段中配置<br>官网：<a href="https://eslint.vuejs.org/" target="_blank" rel="noopener">https://eslint.vuejs.org/</a></p>
+</li>
+<li><p><a href="https://prettier.io/docs/en/comparison.html" target="_blank" rel="noopener">prettier 和 eslint-plugin-prettier</a><br>prettier是一个code formatter，在vscode中安装了prettier后就可以 shift+alt+F 来格式化代码，它提供了linter中的Formatting rules功能,相当于只有一部分的linter功能，但并不会检查语法错误。这两个包是给eslint服务的。</p>
+</li>
+<li><p>style-resources-loader<br>这个包是一个css注入包，在webpack中配置在最右边，style-loader/css-loader/stylus-loader/style-resources-loader ，即第一个调用，它被用作将一些全局css 变量 mixin 等注入到每个css模块中，从而不用手动在每个css模块中引入了。在vue.config.js中配合chainWepack使用<br>替代包：vue-cli-plugin-style-resources-loader</p>
+</li>
+<li><p>babel-plugin-import<br>模块化导入用<br>Modular import plugin for babel, compatible with antd, antd-mobile, lodash, material-ui, and so on.使用的时候看所使用的的框架是否支持<br>babelrc文件或者webpack中babel-loader中添加配置。</p>
+</li>
+<li><p>vue-loader<br>在webpack的配置文件中使用，是用来自行构建脚手架时候使用的，官方推荐使用vue-cli构建开发环境。</p>
+</li>
+<li><p>vue-template-compiler<br>使用vue-cli构建时候 自动安装的<br>这个包可以被用来将 Vue 2.0 的模板预编译为渲染函数以避免运行时不必要的编译开销和 CSP 的限制。</p>
+</li>
+<li><p>css预处理器<br>vue-cli搭建环境的时候会选择预处理器，如果没选的话，只需要手动npm安装即可，内置的webpack会处理好一切。</p>
+</li>
 </ul>
 
             </div>
@@ -622,7 +630,7 @@
                     <div class="summary">Linux下常见的压缩包格式有5种:zip tar.gz tar.bz2 tar.xz tar.Z其中tar是种打包格式,gz和bz2等后缀才是指代压缩方式:gzip和bzip2unzip filename.zip事实上, 从1.15版本开</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-09
                         </span>
                         <span class="publish-author">
                             
@@ -655,7 +663,7 @@
                     <div class="summary">CSS Z-index当没有定义z-index属性时When no z-index property is specified, elements are rendered on the default rendering layer 0 </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-09
                             </span>
                         <span class="publish-author">
                             
@@ -780,7 +788,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">22.3k</span>
+                <span class="white-color">23.4k</span>
             
 
             
