@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tumbleweed.top/"/>
-  <updated>2020-03-09T07:13:13.193Z</updated>
+  <updated>2020-04-07T13:25:31.404Z</updated>
   <id>https://tumbleweed.top/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>适配</title>
+    <link href="https://tumbleweed.top/gua-pei/"/>
+    <id>https://tumbleweed.top/gua-pei/</id>
+    <published>2020-04-07T13:25:31.404Z</published>
+    <updated>2020-04-07T13:25:31.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>node-sql-install</title>
     <link href="https://tumbleweed.top/node-sql-install/"/>
     <id>https://tumbleweed.top/node-sql-install/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -48,36 +71,11 @@
   </entry>
   
   <entry>
-    <title>formatting contexts</title>
-    <link href="https://tumbleweed.top/bfc/"/>
-    <id>https://tumbleweed.top/bfc/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;formatting-contexts-types&quot;&gt;&lt;a href=&quot;#formatting-contexts-types&quot; class=&quot;headerlink&quot; title=&quot;formatting contexts types&quot;&gt;&lt;/a&gt;formatting
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>css-basics</title>
     <link href="https://tumbleweed.top/css-basics/"/>
     <id>https://tumbleweed.top/css-basics/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -102,8 +100,8 @@
     <title>docker</title>
     <link href="https://tumbleweed.top/docker/"/>
     <id>https://tumbleweed.top/docker/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -125,8 +123,8 @@
     <title>express(0)</title>
     <link href="https://tumbleweed.top/express-0/"/>
     <id>https://tumbleweed.top/express-0/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -148,8 +146,8 @@
     <title>express(1)</title>
     <link href="https://tumbleweed.top/express-1/"/>
     <id>https://tumbleweed.top/express-1/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -173,8 +171,8 @@
     <title>git</title>
     <link href="https://tumbleweed.top/git/"/>
     <id>https://tumbleweed.top/git/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -198,8 +196,8 @@
     <title>名词解释</title>
     <link href="https://tumbleweed.top/ming-ci-jie-shi/"/>
     <id>https://tumbleweed.top/ming-ci-jie-shi/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -221,8 +219,8 @@
     <title>hexo博客点击特效</title>
     <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
     <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -248,8 +246,8 @@
     <title>hexo参数</title>
     <link href="https://tumbleweed.top/hexo-can-shu/"/>
     <id>https://tumbleweed.top/hexo-can-shu/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -274,8 +272,8 @@
     <title>jquery</title>
     <link href="https://tumbleweed.top/jquery/"/>
     <id>https://tumbleweed.top/jquery/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -300,8 +298,8 @@
     <title>js</title>
     <link href="https://tumbleweed.top/js/"/>
     <id>https://tumbleweed.top/js/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -323,8 +321,8 @@
     <title>koa(1)</title>
     <link href="https://tumbleweed.top/koa-1/"/>
     <id>https://tumbleweed.top/koa-1/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -346,8 +344,8 @@
     <title>mysql(1)</title>
     <link href="https://tumbleweed.top/mysql-1/"/>
     <id>https://tumbleweed.top/mysql-1/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -369,8 +367,8 @@
     <title>sql</title>
     <link href="https://tumbleweed.top/sql/"/>
     <id>https://tumbleweed.top/sql/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -392,8 +390,8 @@
     <title>nginx</title>
     <link href="https://tumbleweed.top/nginx/"/>
     <id>https://tumbleweed.top/nginx/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -415,8 +413,8 @@
     <title>session vs jwt</title>
     <link href="https://tumbleweed.top/session-vs-jwt/"/>
     <id>https://tumbleweed.top/session-vs-jwt/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -438,8 +436,8 @@
     <title>bootstrap 入门</title>
     <link href="https://tumbleweed.top/bootstrap/"/>
     <id>https://tumbleweed.top/bootstrap/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -461,8 +459,8 @@
     <title>tar-unzip</title>
     <link href="https://tumbleweed.top/tar-unzip/"/>
     <id>https://tumbleweed.top/tar-unzip/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     
@@ -484,8 +482,8 @@
     <title>vue-cli环境搭建</title>
     <link href="https://tumbleweed.top/vue-cli-huan-jing-da-jian/"/>
     <id>https://tumbleweed.top/vue-cli-huan-jing-da-jian/</id>
-    <published>2020-03-09T07:13:13.193Z</published>
-    <updated>2020-03-09T07:13:13.193Z</updated>
+    <published>2020-04-07T13:25:31.400Z</published>
+    <updated>2020-04-07T13:25:31.400Z</updated>
     
     <summary type="html">
     

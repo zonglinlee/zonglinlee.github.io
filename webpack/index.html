@@ -4,13 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="css-basics, 风滚草">
-    <meta name="description" content="
-css盒模型中以 top-left为坐标原点
-
-css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0
-
-CSS objec">
+    <meta name="keywords" content="webpack, 风滚草">
+    <meta name="description" content="webpack-dev-middlewarewebpack-dev-middleware 是一个容器(wrapper)，它可以把 webpack 处理后的文件传递给一个服务器(server)。webpack-dev-server内部就使用了">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +13,7 @@ CSS objec">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>css-basics | 风滚草</title>
+    <title>webpack | 风滚草</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +269,13 @@ CSS objec">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        css-basics
+                        webpack
                     </div>
                 </div>
             </div>
@@ -390,14 +385,14 @@ CSS objec">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        259
+                        717
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        1 Min
+                        3 Min
                     </div>
                     
                 
@@ -413,30 +408,26 @@ CSS objec">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><p>css盒模型中以 top-left为坐标原点</p>
-</li>
-<li><p>css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50% 0</p>
-</li>
-<li><p>CSS object model<br>There are four standard coordinate systems</p>
+                <p><a href="https://www.webpackjs.com/guides/development/#%E4%BD%BF%E7%94%A8-webpack-dev-server" target="_blank" rel="noopener">webpack-dev-middleware</a><br>webpack-dev-middleware 是一个容器(wrapper)，它可以把 webpack 处理后的文件传递给一个服务器(server)。webpack-dev-server内部就使用了它，如果不想使用webpack-dev-server,比如自行构建express服务器，就需要引入这个中间件。当express服务器脚本构建好之后，直接运行此服务器脚本，webpack就会自行打包，并将打包后的结果保存在内存中，此时即可在服务器中访问页面。<br>优点：</p>
 <ul>
-<li>Offset ：the mouse event’s offsetX and offsetY properties</li>
-<li>Client : the MouseEvent.clientX and MouseEvent.clientY</li>
-<li>Page :Mouse events’ pageX and pageY properties </li>
-<li>Screen :The MouseEvent.screenX and MouseEvent.screenY properties </li>
+<li>No files are written to disk, rather it handles files in memory</li>
+<li>If files changed in watch mode, the middleware delays requests until compiling has completed.</li>
+<li>Supports hot module reload (HMR).<br><a href="https://github.com/webpack-contrib/webpack-hot-middleware" target="_blank" rel="noopener">webpack-hot-middleware</a><br>为自定义的服务器添加模块热更新功能(HMR),两步实现</li>
+<li>在plugin中添加webpack-hot-middleware插件</li>
+<li>在entry入口数组中(数组第一项)添加一个入口项[‘webpack-hot-middleware/client’,path.resolve(__dirname, “./app/main.js”)]</li>
 </ul>
-</li>
-<li><p>base-line: align-items:base-line;//所有flex items 第一行文字底部对齐</p>
-</li>
-<li><p>hover,active顺序<br>a:hover,a:focus{<br>  //这两个最好一块写<br>  color:pink;<br>}</p>
-</li>
-<li><p>如果父元素display:flex,子元素display：none; position:absolute都不算在flex-items里面</p>
-</li>
+<p><a href="https://github.com/bripkens/connect-history-api-fallback" target="_blank" rel="noopener">connect-history-api-fallback</a><br>Fallback to index.html for applications that are using the HTML 5 history API<br>当一个请求满足以下四个条件的时候就会回退到index.html</p>
+<ul>
+<li>The request is a GET request</li>
+<li>which accepts text/html,</li>
+<li>is not a direct file request, i.e. the requested path does not contain a . (DOT) character and</li>
+<li>does not match a pattern provided in options.rewrites (see options below)<br><a href="https://github.com/vuejs/vue-style-loader" target="_blank" rel="noopener">vue-style-loader</a><br>vue-loader专用，等同于style-loader<br>This is a fork based on style-loader. Similar to style-loader, you can chain it after css-loader to dynamically inject CSS into the document as style tags. However, since this is included as a dependency and used by default in vue-loader, in most cases you don’t need to configure this loader yourself.<br>Compiler对象</li>
 </ul>
-<p>The unset CSS keyword resets a property to its inherited value if it inherits from its parent, and to its initial value if not.</p>
-<p>The initial CSS keyword applies the initial (or default) value of a property to an element. This initial value is set by the browser. </p>
-<p>The inherit CSS keyword causes the element for which it is specified to take the computed value of the property from its parent element.</p>
-<p>display:none<br>Turns off the display of an element so that it has no effect on layout (the document is rendered as though the element did not exist). All descendant elements also have their display turned off.<br>To have an element take up the space that it would normally take, but without actually rendering anything, use the visibility property instead.</p>
+<p>Compiler 对象包含了Webpack环境所有的配置信息，包含options，loaders, plugins这些项，这个对象在webpack启动时候被实例化，它是全局唯一的。我们可以把它理解为webpack的实列。<br>compilation 对象</p>
+<p>compilation 对象包含了当前的模块资源、编译生成资源、文件的变化等。当webpack在开发模式下运行时，每当检测到一个文件发生改变的时候，那么一次新的 Compilation将会被创建。从而生成一组新的编译资源。</p>
+<p>Compiler对象 与 Compilation 对象 的区别是：Compiler代表了是整个webpack从启动到关闭的生命周期。Compilation 对象只代表了一次新的编译。</p>
+<p>PostCSS 是一个 CSS 处理工具，和 SCSS 不同的地方在于它通过插件机制可以灵活的扩展其支持的特性，而不是像 SCSS 那样语法是固定的。 PostCSS 的用处非常多，包括给 CSS 自动加前缀、使用下一代 CSS 语法等，目前越来越多的人开始用它，它很可能会成为 CSS 预处理器的最终赢家。</p>
+<p>参考链接：<br><a href="https://cloud.tencent.com/developer/section/1477246" target="_blank" rel="noopener">https://cloud.tencent.com/developer/section/1477246</a><br><a href="https://github.com/webpack/docs/wiki/how-to-write-a-plugin" target="_blank" rel="noopener">https://github.com/webpack/docs/wiki/how-to-write-a-plugin</a><br><a href="https://webpack.wuhaolin.cn/5%E5%8E%9F%E7%90%86/5-1%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E6%A6%82%E6%8B%AC.html" target="_blank" rel="noopener">https://webpack.wuhaolin.cn/5%E5%8E%9F%E7%90%86/5-1%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E6%A6%82%E6%8B%AC.html</a><br><a href="https://segmentfault.com/a/1190000013657042" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013657042</a><br><a href="https://www.cnblogs.com/donglegend/p/5821092.html" target="_blank" rel="noopener">https://www.cnblogs.com/donglegend/p/5821092.html</a></p>
 
             </div>
             <hr/>
@@ -577,7 +568,7 @@ CSS objec">
                     </span>
                     <a href="https://tumbleweed.top" class="b-link-green">风滚草</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/css-basics/" class="b-link-green">css-basics</a>
+                    <a href="/webpack/" class="b-link-green">webpack</a>
                 </p>
             </div>
         </div>
@@ -598,9 +589,9 @@ CSS objec">
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tumbleweed.top/css-basics/';
-        this.page.identifier = '/css-basics/';
-        this.page.title = 'css-basics';
+        this.page.url = 'https://tumbleweed.top/webpack/';
+        this.page.identifier = '/webpack/';
+        this.page.title = 'webpack';
     };
     let disqus_shortname = 'tumbleweed-top';
 
@@ -627,50 +618,29 @@ CSS objec">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/node-sql-install/">
+                <a href="/vue-cli-huan-jing-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="node-sql-install">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="vue-cli环境搭建">
                         
-                        <span class="card-title">node-sql-install</span>
+                        <span class="card-title">vue-cli环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">CentOS8 install node安装nodecd /home
-wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
-tar -Jxvf node-v</div>
+                    <div class="summary">vue-cli插件
+@vue/cli-plugin-eslintvue-cli 的 eslint 插件，通过这个插件给vue-cli注入了vue-cli-service lint 命令，提供了命令行使用lint的功能。@vue/cli-pl</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-07
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/CentOS8/" class="post-category" target="_blank">
-                                    CentOS8
-                                </a>
-                            
-                            <a href="/categories/CentOS8/Install/" class="post-category" target="_blank">
-                                    Install
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            zonglinlee
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%83%A8%E7%BD%B2/" target="_blank">
-                        <span class="chip bg-color">部署</span>
-                    </a>
-                    
-                    <a href="/tags/CentOS/" target="_blank">
-                        <span class="chip bg-color">CentOS</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -682,17 +652,17 @@ tar -Jxvf node-v</div>
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/docker/">
+                <a href="/z-index/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="docker">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Z-index">
                         
-                        <span class="card-title">docker</span>
+                        <span class="card-title">Z-index</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">docker架构Linux 容器（Linux Containers，缩写为 LXC）。docker 是基于 Linux容器的一种封装docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker c</div>
+                    <div class="summary">CSS Z-index当没有定义z-index属性时When no z-index property is specified, elements are rendered on the default rendering layer 0 </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-07
@@ -704,6 +674,14 @@ tar -Jxvf node-v</div>
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
                 </div>
                 
             </div>

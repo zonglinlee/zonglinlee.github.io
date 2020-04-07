@@ -378,14 +378,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-03-09
+                    2020-04-07
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        242
+                        296
                     </div>
                     
 
@@ -410,6 +410,7 @@
             <div id="articleContent">
                 <p>koa-session-minimal<br>内部引入了uid-safe(unique id for cookie and url)模块来产生一个sid(session id),当用户登录后调用ctx.cookies.set(key,value),key时koa-session-minimal配置时候传入的key,value是uid模块生成的session id,服务器在返回的时候设置了 set-cookie=sid,用来管理会话,服务器和客户端来回传递此sessionid ,服务器保存了ctx.session对象，通过此id来查询服务器上保存的用户信息，默认保存在memory-store中，浏览器窗口关闭，session对象就会丢失，持久化保存请用对应的数据库store</p>
 <p>jwt 是另外一种会话管理机制<br>服务的生成token返回给客户端，客户端保存在localStorage 或者sessionStorage中，在axios中配置全局默认响应头 authorization，传入token<br>axios.defaults.headers[‘Authorization’] = sessionStorage.getItem(“token”);<br>服务端收到之后，从req对象中提取token,再校验token的合法性，token中包含了用户名。</p>
+<p>服务端设置httponly后，客户端不能使用document.cookie获取值<br>res.header(“Access-Control-Allow-Origin”, “具体请求源”);  //这里要写具体请求地址<br>res.header(“ Access-Control-Allow-Credentials”, true);      //增加<br>vue中：<br>axios.defaults.withCredentials = true</p>
 
             </div>
             <hr/>
@@ -613,7 +614,7 @@
                     <div class="summary">windows nginx指南http://nginx.org/en/docs/windows.html新手指引http://nginx.org/en/docs/beginners_guide.htmlhttp://nginx.org/en</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-09
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-07
                         </span>
                         <span class="publish-author">
                             
@@ -646,7 +647,7 @@
                     <div class="summary">bootstrap v4.4 入门使用bootstrap在head中引入css引入jsbootstrap的js是基于jQuery开发的，有的组件需要js,有的不需要，所以可以参考官方文档，需要的时候再引入js文件，除了jQuery之外，还要</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-07
                             </span>
                         <span class="publish-author">
                             
@@ -763,7 +764,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">23.4k</span>
+                <span class="white-color">24.2k</span>
             
 
             
