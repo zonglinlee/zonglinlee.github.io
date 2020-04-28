@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tumbleweed.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="CSS Z-index当没有定义z-index属性时When no z-index property is specified, elements are rendered on the default rendering layer 0 (zero).从下倒上依次是：  The background and borders of the root element Descendant non-p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Z-index">
+<meta property="og:url" content="https://tumbleweed.top/z-index/index.html">
+<meta property="og:site_name" content="风滚草">
+<meta property="og:description" content="CSS Z-index当没有定义z-index属性时When no z-index property is specified, elements are rendered on the default rendering layer 0 (zero).从下倒上依次是：  The background and borders of the root element Descendant non-p">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-28T16:03:57.155Z">
+<meta property="article:modified_time" content="2020-04-28T16:03:57.159Z">
+<meta property="article:author" content="zonglinlee">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tumbleweed.top/z-index/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Z-index | 风滚草</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3cf2ba04786ec43f607967d2bcd6a389";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="风滚草" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">风滚草</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">tumbleweed.top</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tumbleweed.top/z-index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zonglinlee">
+      <meta itemprop="description" content="Hello world!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风滚草">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Z-index
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 16:03:57" itemprop="dateCreated datePublished" datetime="2020-04-28T16:03:57+00:00">2020-04-28</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/z-index/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="z-index/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CSS-Z-index"><a href="#CSS-Z-index" class="headerlink" title="CSS Z-index"></a>CSS Z-index</h1><h2 id="当没有定义z-index属性时"><a href="#当没有定义z-index属性时" class="headerlink" title="当没有定义z-index属性时"></a>当没有定义z-index属性时</h2><p>When no z-index property is specified, elements are rendered on the default rendering layer 0 (zero).<br>从下倒上依次是：</p>
+<ul>
+<li>The background and borders of the root element</li>
+<li>Descendant non-positioned blocks, in order of appearance in the HTML</li>
+<li>Descendant positioned elements, in order of appearance in the HTML</li>
+</ul>
+<p>当flex-items的order属性改变了HTML的显示顺序之后，它同样会影响stacking context的顺序</p>
+<h2 id="The-stacking-context（层叠上下文）"><a href="#The-stacking-context（层叠上下文）" class="headerlink" title="The stacking context（层叠上下文）"></a>The stacking context（层叠上下文）</h2><p>它是一个假象的三维空间，垂直于视口，HTML 元素基于其元素属性按照优先级顺序占据这个空间</p>
+<h3 id="如何产生一个层叠上下文"><a href="#如何产生一个层叠上下文" class="headerlink" title="如何产生一个层叠上下文"></a>如何产生一个层叠上下文</h3><ul>
+<li>html元素本身</li>
+<li>position为absolute/relative，并且z-index不为auto</li>
+<li>position为fixed/sticky</li>
+<li>flex items,并且z-index不为auto</li>
+<li>grid items, 并且z-index不为auto</li>
+<li>Element with a opacity value less than 1 </li>
+<li>Element with a mix-blend-mode value other than normal.</li>
+<li>Element with any of the following properties with value other than none:<pre><code>  - transform
+  - filter
+  - perspective
+  - clip-path
+  - mask / mask-image / mask-border</code></pre><h3 id="层叠上下文如何工作"><a href="#层叠上下文如何工作" class="headerlink" title="层叠上下文如何工作"></a>层叠上下文如何工作</h3>在同一个层叠上下文，子元素按照没有z-index时的顺序叠加，如果子元素有z-index属性，它是相对于在本层叠上下文中的其他子元素而言的，它整体的z-index是由父元素决定的。父元素和子元素属于不同的层叠上下文，其z-index没有比较性可言。</li>
+</ul>
+<p>HTML的层次结构和层叠上下文的层次结构是不同的。在层叠上下文的层次结构中，没有创建层叠上下文的元素同其父级处于一个层叠上下文。创建了层叠上下文的会跳离父元素的HTML结构限制，自成一个层叠上下文。</p>
+<h2 id="Stacking-with-floated-blocks"><a href="#Stacking-with-floated-blocks" class="headerlink" title="Stacking with floated blocks"></a>Stacking with floated blocks</h2><p>For floated blocks, the stacking order is a bit different. Floating blocks are placed between non-positioned blocks and positioned blocks</p>
+<ul>
+<li>The background and borders of the root element</li>
+<li>Descendant non-positioned blocks, in order of appearance in the HTML</li>
+<li>Floating blocks</li>
+<li>Descendant positioned elements, in order of appearance in the HTML</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="zonglinlee 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="zonglinlee 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/css-basics/" rel="prev" title="css-basics">
+      <i class="fa fa-chevron-left"></i> css-basics
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/webpack/" rel="next" title="webpack">
+      webpack <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Z-index"><span class="nav-number">1.</span> <span class="nav-text">CSS Z-index</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#当没有定义z-index属性时"><span class="nav-number">1.1.</span> <span class="nav-text">当没有定义z-index属性时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-stacking-context（层叠上下文）"><span class="nav-number">1.2.</span> <span class="nav-text">The stacking context（层叠上下文）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何产生一个层叠上下文"><span class="nav-number">1.2.1.</span> <span class="nav-text">如何产生一个层叠上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层叠上下文如何工作"><span class="nav-number">1.2.2.</span> <span class="nav-text">层叠上下文如何工作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stacking-with-floated-blocks"><span class="nav-number">1.3.</span> <span class="nav-text">Stacking with floated blocks</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zonglinlee"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">zonglinlee</p>
+  <div class="site-description" itemprop="description">Hello world!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zonglinlee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zonglinlee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:173389705@qq.com" title="E-Mail → mailto:173389705@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zonglinlee</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tumbleweed-top.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://tumbleweed.top/z-index/";
+    this.page.identifier = "z-index/";
+    this.page.title = "Z-index";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://tumbleweed-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

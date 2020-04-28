@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tumbleweed.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="!function(){}() 作用跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数 DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js">
+<meta property="og:url" content="https://tumbleweed.top/js/index.html">
+<meta property="og:site_name" content="风滚草">
+<meta property="og:description" content="!function(){}() 作用跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数 DOMTokenList interfaceThe DOMTokenList interface represents a set of space-separated tokens. Such a se">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-28T16:03:57.155Z">
+<meta property="article:modified_time" content="2020-04-28T16:03:57.155Z">
+<meta property="article:author" content="zonglinlee">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tumbleweed.top/js/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>js | 风滚草</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3cf2ba04786ec43f607967d2bcd6a389";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="风滚草" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">风滚草</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">tumbleweed.top</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tumbleweed.top/js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zonglinlee">
+      <meta itemprop="description" content="Hello world!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风滚草">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          js
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 16:03:57" itemprop="dateCreated datePublished" datetime="2020-04-28T16:03:57+00:00">2020-04-28</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/js/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="js/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="function-作用"><a href="#function-作用" class="headerlink" title="!function(){}() 作用"></a><code>!function(){}()</code> 作用</h2><p>跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数</p>
+<h2 id="DOMTokenList-interface"><a href="#DOMTokenList-interface" class="headerlink" title="DOMTokenList interface"></a>DOMTokenList interface</h2><p>The DOMTokenList interface represents a set of space-separated tokens. Such a set is returned by <code>Element.classList</code>.</p>
+<div class="class1 class2"></div>
+原生dom方法来toggle一个类：`div.classList.toggle("class1")`
+<hr>
+## noscript 标签
+## form
+enctype 属性
+在method是post的情况下，enctype是form提交时候的mime类型
+默认是：application/x-www-form-urlencoded
+如果有input 的type为file类型，即这个表单要上传文件，则使用multipart/form-data类型
+using the GET method (in this case the enctype attribute will be ignored).
+## FormData 对象
+在form enctype='multipart/form-data'情况下，可以使用FormData对象来讲form中要提交的数据转换成一个对象，用ajax来提交。
+It is primarily intended for use in sending form data, but can be used independently from forms in order to transmit keyed data.
+
+<p>var formData = new FormData(someFormElement);//将form元素传入构造函数，返回表单提交的数据对象，还可以用formData.append(“username”, “Groucho”);来添加新的键值对。<br>优缺点：Using the FormData API is the simplest and fastest, but has the disadvantage that data collected can not be stringified.</p>
+<p>如果不想使用FormData对象，请参考以下链接<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Submitting_forms_and_uploading_files" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Submitting_forms_and_uploading_files</a></p>
+<h2 id="ajax-cookie"><a href="#ajax-cookie" class="headerlink" title="ajax cookie"></a>ajax cookie</h2><p>ajax 配置nginx,跨域请求的时候会不带cookie,如果要带cookie<br>request header 要配置 withCredentials：true<br>response header 要配置 Access-Control-Allow-Credentials: true</p>
+<p>如果用koa框架，会有 <code>koa-cors</code>包设置Access-Control-Allow-Credentials.  查看koa-cors源码配置选项{credentials:true}</p>
+<h2 id="FormData-对象"><a href="#FormData-对象" class="headerlink" title="FormData 对象"></a>FormData 对象</h2><pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> form <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> formdata <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>formdata<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//打印出{}空对象</span>
+<span class="token comment" spellcheck="true">//FormData实例对象打印不出任何东西，但它提供了许多方法，会返回迭代器。</span></code></pre>
+<p>FormData.entries()<br>Returns an iterator allowing to go through all key/value pairs contained in this object.</p>
+<h2 id="File-interface"><a href="#File-interface" class="headerlink" title="File interface"></a>File interface</h2><p>The File interface provides information about files and allows JavaScript in a web page to access their content.<br><code>File</code> objects are generally retrieved from a <code>FileList</code> object returned as a result of a user selecting files using the <input> element, from a drag and drop operation’s <code>DataTransfer</code> object, or from the <code>mozGetAsFile() API</code> on an <code>HTMLCanvasElement</code>.<br>A File object is a specific kind of a <code>Blob</code>, and can be used in any context that a Blob can. In particular, <code>FileReader</code>, <code>URL.createObjectURL()</code>, <code>createImageBitmap()</code>, and <code>XMLHttpRequest.send()</code> accept both Blobs and Files.<br>file属性<br>Properties:File.lastModified/File.lastModifiedDate/File.name/File.size/File.type<br>file 方法<br>File接口不实现任何方法，都是从Blob接口上继承上来的。</p>
+<h2 id="Blob"><a href="#Blob" class="headerlink" title="Blob"></a>Blob</h2><p>The Blob object represents a blob, which is a file-like object of immutable, raw data; they can be read as text or binary data, or converted into a <code>ReadableStream</code> so its methods can be used for processing the data.</p>
+<p>Blobs can represent data that isn’t necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user’s system.</p>
+<h2 id="ArrayBuffer"><a href="#ArrayBuffer" class="headerlink" title="ArrayBuffer"></a>ArrayBuffer</h2><p>The ArrayBuffer object is used to represent a generic, fixed-length raw binary data buffer.<br>It is an array of bytes, often referred to in other languages as a “byte array”.You cannot directly manipulate the contents of an ArrayBuffer; instead, you create one of the <code>typed array objects</code> or a <code>DataView</code> object which represents the buffer in a specific format, and use that to read and write the contents of the buffer.</p>
+<p>The ArrayBuffer() constructor creates a new ArrayBuffer of the given length in bytes, you can also get an array buffer from existing data, for example from a <code>Base64 string</code> or from a <code>local file</code>.</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="zonglinlee 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="zonglinlee 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/koa-1/" rel="prev" title="koa(1)">
+      <i class="fa fa-chevron-left"></i> koa(1)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/jquery/" rel="next" title="jquery">
+      jquery <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#function-作用"><span class="nav-number">1.</span> <span class="nav-text">!function(){}() 作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOMTokenList-interface"><span class="nav-number">2.</span> <span class="nav-text">DOMTokenList interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ajax-cookie"><span class="nav-number">3.</span> <span class="nav-text">ajax cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FormData-对象"><span class="nav-number">4.</span> <span class="nav-text">FormData 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-interface"><span class="nav-number">5.</span> <span class="nav-text">File interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blob"><span class="nav-number">6.</span> <span class="nav-text">Blob</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayBuffer"><span class="nav-number">7.</span> <span class="nav-text">ArrayBuffer</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zonglinlee"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">zonglinlee</p>
+  <div class="site-description" itemprop="description">Hello world!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zonglinlee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zonglinlee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:173389705@qq.com" title="E-Mail → mailto:173389705@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zonglinlee</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tumbleweed-top.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://tumbleweed.top/js/";
+    this.page.identifier = "js/";
+    this.page.title = "js";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://tumbleweed-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

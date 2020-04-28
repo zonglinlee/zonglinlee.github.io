@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tumbleweed.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="mysql安装https:&#x2F;&#x2F;blog.csdn.net&#x2F;Very666&#x2F;article&#x2F;details&#x2F;98594227 连接mysqlMySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。MySQL Client中输入的SQL语句通过TCP连接发送到MySQL Server。默认端口号是3306，即如果发送到本机MySQL Server，地址就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql(1)">
+<meta property="og:url" content="https://tumbleweed.top/mysql-1/index.html">
+<meta property="og:site_name" content="风滚草">
+<meta property="og:description" content="mysql安装https:&#x2F;&#x2F;blog.csdn.net&#x2F;Very666&#x2F;article&#x2F;details&#x2F;98594227 连接mysqlMySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。MySQL Client中输入的SQL语句通过TCP连接发送到MySQL Server。默认端口号是3306，即如果发送到本机MySQL Server，地址就是">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-28T16:03:57.155Z">
+<meta property="article:modified_time" content="2020-04-28T16:03:57.155Z">
+<meta property="article:author" content="zonglinlee">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tumbleweed.top/mysql-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>mysql(1) | 风滚草</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3cf2ba04786ec43f607967d2bcd6a389";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="风滚草" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">风滚草</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">tumbleweed.top</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tumbleweed.top/mysql-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zonglinlee">
+      <meta itemprop="description" content="Hello world!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风滚草">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mysql(1)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 16:03:57" itemprop="dateCreated datePublished" datetime="2020-04-28T16:03:57+00:00">2020-04-28</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/mysql-1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="mysql-1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h2><p><a href="https://blog.csdn.net/Very666/article/details/98594227" target="_blank" rel="noopener">https://blog.csdn.net/Very666/article/details/98594227</a></p>
+<h2 id="连接mysql"><a href="#连接mysql" class="headerlink" title="连接mysql"></a>连接mysql</h2><p>MySQL Client的可执行程序是mysql，MySQL Server的可执行程序是mysqld。<br>MySQL Client中输入的SQL语句通过TCP连接发送到MySQL Server。默认端口号是3306，即如果发送到本机MySQL Server，地址就是127.0.0.1:3306。<br>也可以只安装MySQL Client，然后连接到远程MySQL Server。假设远程MySQL Server的IP地址是10.0.1.99，那么就使用-h指定IP或域名：<br>mysql -h 10.0.1.99 -u root -p</p>
+<h2 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h2><p>SHOW DATABASES;<br>CREATE DATABASE test;//创建数据库<br>USE test;<br>CREATE TABLE students;//创建一个表<br>DROP TABLE students;//删除一个表<br>SHOW TABLES;//列出当前数据库中所有表<br>DESC students;//查看一个表的结构<br>SHOW CREATE TABLE students;//查看创建表的SQL语句<br>ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;//增加一列<br>ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;//修改列信息<br>ALTER TABLE students DROP COLUMN birthday;//删除列<br>DROP DATABASE test; //删除一个数据库<br>EXIT; //断开mysql客户端和服务器的连接</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-tutorial.html</a><br><a href="https://juejin.im/post/5ae55861f265da0ba062ec71" target="_blank" rel="noopener">https://juejin.im/post/5ae55861f265da0ba062ec71</a></p>
+<h2 id="node-js-库-mysql-用法"><a href="#node-js-库-mysql-用法" class="headerlink" title="node.js 库 mysql 用法"></a><a href="https://github.com/mysqljs/mysql" target="_blank" rel="noopener">node.js 库 <code>mysql</code> 用法</a></h2><h3 id="连接mysql-1"><a href="#连接mysql-1" class="headerlink" title="连接mysql"></a>连接mysql</h3><p>方式一(推荐)：返回一个connection对象</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//Connection options可以参考文档</span>
+<span class="token keyword">var</span> mysql      <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> connection <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  host     <span class="token punctuation">:</span> <span class="token string">'example.org'</span><span class="token punctuation">,</span>
+  user     <span class="token punctuation">:</span> <span class="token string">'bob'</span><span class="token punctuation">,</span>
+  password <span class="token punctuation">:</span> <span class="token string">'secret'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>方式二：ssl连接方式，需要读取SSL profiles配置文件<br>方式三：Pooling connections<br>一次性创建多个连接,返回一个pool对象，详情参考文档</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> pool  <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createPool</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  connectionLimit <span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  host            <span class="token punctuation">:</span> <span class="token string">'example.org'</span><span class="token punctuation">,</span>
+  user            <span class="token punctuation">:</span> <span class="token string">'bob'</span><span class="token punctuation">,</span>
+  password        <span class="token punctuation">:</span> <span class="token string">'secret'</span><span class="token punctuation">,</span>
+  database        <span class="token punctuation">:</span> <span class="token string">'my_db'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="断开mysql连接"><a href="#断开mysql连接" class="headerlink" title="断开mysql连接"></a>断开mysql连接</h3><p>两种方法</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//方式一：优雅的断开连接</span>
+connection<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// The connection is terminated now</span>
+  <span class="token comment" spellcheck="true">//if err,an err argument will be provided to the callback, but the connection will be terminated regardless of that.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方式二：不推荐</span>
+connection<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="查询数据库"><a href="#查询数据库" class="headerlink" title="查询数据库"></a>查询数据库</h3><p>连接对象connection 和pool 都提供了 query(sqlString, callback) 方法用于执行sql语句查询,三种方式</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//方式一：简单查询</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT * FROM `books` WHERE `author` = "David"'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// error will be an Error if one occurred during the query</span>
+  <span class="token comment" spellcheck="true">// results will contain the results of the query</span>
+  <span class="token comment" spellcheck="true">// fields will contain information about the returned results fields (if any)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方式二：query(sqlString, values, callback) comes when using placeholder values </span>
+<span class="token comment" spellcheck="true">//方式三：query(options, callback) comes when using various advanced options</span></code></pre>
+<h3 id="Escaping-query-values-转义查询语句"><a href="#Escaping-query-values-转义查询语句" class="headerlink" title="Escaping query values 转义查询语句"></a>Escaping query values 转义查询语句</h3><p>These methods of escaping values only works when the NO_BACKSLASH_ESCAPES SQL mode is disabled (which is the default state for MySQL servers).<br>为了防止SQL注入，用户执行的sql语句都应该先进行转义，mysql.escape(), connection.escape() or pool.escape() 这三个方法都可以使用</p>
+<pre class=" language-js"><code class="language-js"> <span class="token comment" spellcheck="true">//方法一：</span>
+<span class="token keyword">var</span> userId <span class="token operator">=</span> <span class="token string">'some user provided value'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sql    <span class="token operator">=</span> <span class="token string">'SELECT * FROM users WHERE id = '</span> <span class="token operator">+</span> connection<span class="token punctuation">.</span><span class="token function">escape</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//方法二：use ? characters as placeholders ，这个本质上也是调用connection.escape()方法</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT * FROM users WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>userId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//多个占位符映射到数组</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'UPDATE users SET foo = ?, bar = ?, baz = ? WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> userId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="Escaping-query-identifiers转义数据库-表-列-名"><a href="#Escaping-query-identifiers转义数据库-表-列-名" class="headerlink" title="Escaping query identifiers转义数据库/表/列 名"></a>Escaping query identifiers转义数据库/表/列 名</h3><p>if you can’t trust an SQL identifier (database / table / column name) because it is provided by a user, you should escape it with mysql.escapeId(identifier), connection.escapeId(identifier) or pool.escapeId(identifier)</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> sorter <span class="token operator">=</span> <span class="token string">'date'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sql    <span class="token operator">=</span> <span class="token string">'SELECT * FROM posts ORDER BY '</span> <span class="token operator">+</span> connection<span class="token punctuation">.</span><span class="token function">escapeId</span><span class="token punctuation">(</span>sorter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>使用 ?? 占位符</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> userId <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'email'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> query <span class="token operator">=</span> connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT ?? FROM ?? WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>columns<span class="token punctuation">,</span> <span class="token string">'users'</span><span class="token punctuation">,</span> userId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> results<span class="token punctuation">,</span> fields<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// SELECT `username`, `email` FROM `users` WHERE id = 1</span></code></pre>
+<h3 id="预定义查询语句格式"><a href="#预定义查询语句格式" class="headerlink" title="预定义查询语句格式"></a>预定义查询语句格式</h3><p>You can use mysql.format to prepare a query with multiple insertion points, utilizing the proper escaping for ids and values. A simple example of this follows:</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> sql <span class="token operator">=</span> <span class="token string">"SELECT * FROM ?? WHERE ?? = ?"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> inserts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'users'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">,</span> userId<span class="token punctuation">]</span><span class="token punctuation">;</span>
+sql <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> inserts<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="zonglinlee 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="zonglinlee 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/sql/" rel="prev" title="sql">
+      <i class="fa fa-chevron-left"></i> sql
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/koa-1/" rel="next" title="koa(1)">
+      koa(1) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql安装"><span class="nav-number">1.</span> <span class="nav-text">mysql安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接mysql"><span class="nav-number">2.</span> <span class="nav-text">连接mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql常用命令"><span class="nav-number">3.</span> <span class="nav-text">mysql常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">3.1.</span> <span class="nav-text">参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js-库-mysql-用法"><span class="nav-number">4.</span> <span class="nav-text">node.js 库 mysql 用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#连接mysql-1"><span class="nav-number">4.1.</span> <span class="nav-text">连接mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断开mysql连接"><span class="nav-number">4.2.</span> <span class="nav-text">断开mysql连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据库"><span class="nav-number">4.3.</span> <span class="nav-text">查询数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Escaping-query-values-转义查询语句"><span class="nav-number">4.4.</span> <span class="nav-text">Escaping query values 转义查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Escaping-query-identifiers转义数据库-表-列-名"><span class="nav-number">4.5.</span> <span class="nav-text">Escaping query identifiers转义数据库&#x2F;表&#x2F;列 名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预定义查询语句格式"><span class="nav-number">4.6.</span> <span class="nav-text">预定义查询语句格式</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zonglinlee"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">zonglinlee</p>
+  <div class="site-description" itemprop="description">Hello world!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zonglinlee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zonglinlee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:173389705@qq.com" title="E-Mail → mailto:173389705@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zonglinlee</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tumbleweed-top.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://tumbleweed.top/mysql-1/";
+    this.page.identifier = "mysql-1/";
+    this.page.title = "mysql(1)";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://tumbleweed-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

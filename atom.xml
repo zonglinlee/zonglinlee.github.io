@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tumbleweed.top/"/>
-  <updated>2020-04-28T15:36:41.671Z</updated>
+  <updated>2020-04-28T16:03:57.159Z</updated>
   <id>https://tumbleweed.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>node-sql-install</title>
-    <link href="https://tumbleweed.top/node-sql-install/"/>
-    <id>https://tumbleweed.top/node-sql-install/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <title>正则表达式</title>
+    <link href="https://tumbleweed.top/zheng-ze-biao-da-shi/"/>
+    <id>https://tumbleweed.top/zheng-ze-biao-da-shi/</id>
+    <published>2020-04-28T16:03:57.159Z</published>
+    <updated>2020-04-28T16:03:57.159Z</updated>
     
     <summary type="html">
     
@@ -29,66 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;CentOS8-install-node&quot;&gt;&lt;a href=&quot;#CentOS8-install-node&quot; class=&quot;headerlink&quot; title=&quot;CentOS8 install node&quot;&gt;&lt;/a&gt;CentOS8 install
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CentOS8" scheme="https://tumbleweed.top/categories/CentOS8/"/>
-    
-      <category term="Install" scheme="https://tumbleweed.top/categories/CentOS8/Install/"/>
-    
-    
-      <category term="部署" scheme="https://tumbleweed.top/tags/%E9%83%A8%E7%BD%B2/"/>
-    
-      <category term="CentOS" scheme="https://tumbleweed.top/tags/CentOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>formatting contexts</title>
-    <link href="https://tumbleweed.top/bfc/"/>
-    <id>https://tumbleweed.top/bfc/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;formatting-contexts-types&quot;&gt;&lt;a href=&quot;#formatting-contexts-types&quot; class=&quot;headerlink&quot; title=&quot;formatting contexts types&quot;&gt;&lt;/a&gt;formatting
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css-basics</title>
-    <link href="https://tumbleweed.top/css-basics/"/>
-    <id>https://tumbleweed.top/css-basics/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;css盒模型中以 top-left为坐标原点&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;css rotate(deg) deg正为clockwise deg负为counter-clockwise,transform-origin默认值为：50% 50%
+          &lt;h1 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h1&gt;&lt;p&gt;在 JavaScript中，正则表达式也是对象。这些模式被用于&lt;code&gt;RegExp&lt;/code&gt; 的 exec
         
       
     
@@ -99,11 +40,11 @@
   </entry>
   
   <entry>
-    <title>docker</title>
-    <link href="https://tumbleweed.top/docker/"/>
-    <id>https://tumbleweed.top/docker/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <title>名词解释</title>
+    <link href="https://tumbleweed.top/ming-ci-jie-shi/"/>
+    <id>https://tumbleweed.top/ming-ci-jie-shi/</id>
+    <published>2020-04-28T16:03:57.159Z</published>
+    <updated>2020-04-28T16:03:57.159Z</updated>
     
     <summary type="html">
     
@@ -111,7 +52,53 @@
       
         
         
-          &lt;p&gt;docker架构&lt;br&gt;Linux 容器（Linux Containers，缩写为 LXC）。&lt;br&gt;docker 是基于 Linux容器的一种封装&lt;br&gt;docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker
+          &lt;h2 id=&quot;JSON-Web-Token-JWT&quot;&gt;&lt;a href=&quot;#JSON-Web-Token-JWT&quot; class=&quot;headerlink&quot; title=&quot;JSON Web Token (JWT)&quot;&gt;&lt;/a&gt;JSON Web Token (JWT)&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端常用工具简介</title>
+    <link href="https://tumbleweed.top/qian-duan-gong-ju-he-ji/"/>
+    <id>https://tumbleweed.top/qian-duan-gong-ju-he-ji/</id>
+    <published>2020-04-28T16:03:57.159Z</published>
+    <updated>2020-04-28T16:03:57.159Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前端常用工具简介&quot;&gt;&lt;a href=&quot;#前端常用工具简介&quot; class=&quot;headerlink&quot; title=&quot;前端常用工具简介&quot;&gt;&lt;/a&gt;前端常用工具简介&lt;/h1&gt;&lt;h2 id=&quot;综合&quot;&gt;&lt;a href=&quot;#综合&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>适配</title>
+    <link href="https://tumbleweed.top/gua-pei/"/>
+    <id>https://tumbleweed.top/gua-pei/</id>
+    <published>2020-04-28T16:03:57.159Z</published>
+    <updated>2020-04-28T16:03:57.159Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot;
         
       
     
@@ -125,8 +112,8 @@
     <title>express(0)</title>
     <link href="https://tumbleweed.top/express-0/"/>
     <id>https://tumbleweed.top/express-0/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -148,8 +135,8 @@
     <title>express(1)</title>
     <link href="https://tumbleweed.top/express-1/"/>
     <id>https://tumbleweed.top/express-1/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -173,8 +160,8 @@
     <title>git</title>
     <link href="https://tumbleweed.top/git/"/>
     <id>https://tumbleweed.top/git/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -195,11 +182,11 @@
   </entry>
   
   <entry>
-    <title>名词解释</title>
-    <link href="https://tumbleweed.top/ming-ci-jie-shi/"/>
-    <id>https://tumbleweed.top/ming-ci-jie-shi/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <title>formatting contexts</title>
+    <link href="https://tumbleweed.top/bfc/"/>
+    <id>https://tumbleweed.top/bfc/</id>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -207,7 +194,7 @@
       
         
         
-          &lt;h2 id=&quot;JSON-Web-Token-JWT&quot;&gt;&lt;a href=&quot;#JSON-Web-Token-JWT&quot; class=&quot;headerlink&quot; title=&quot;JSON Web Token (JWT)&quot;&gt;&lt;/a&gt;JSON Web Token (JWT)&lt;/h2&gt;&lt;h3
+          &lt;h2 id=&quot;formatting-contexts-types&quot;&gt;&lt;a href=&quot;#formatting-contexts-types&quot; class=&quot;headerlink&quot; title=&quot;formatting contexts types&quot;&gt;&lt;/a&gt;formatting
         
       
     
@@ -215,14 +202,16 @@
     
     
     
+      <category term="CSS" scheme="https://tumbleweed.top/tags/CSS/"/>
+    
   </entry>
   
   <entry>
     <title>hexo-next</title>
     <link href="https://tumbleweed.top/hexo-next/"/>
     <id>https://tumbleweed.top/hexo-next/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -244,8 +233,8 @@
     <title>hexo博客点击特效</title>
     <link href="https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/"/>
     <id>https://tumbleweed.top/hexo-bo-ke-dian-ji-te-xiao/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -271,8 +260,8 @@
     <title>hexo参数</title>
     <link href="https://tumbleweed.top/hexo-can-shu/"/>
     <id>https://tumbleweed.top/hexo-can-shu/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -297,8 +286,8 @@
     <title>jquery</title>
     <link href="https://tumbleweed.top/jquery/"/>
     <id>https://tumbleweed.top/jquery/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -323,8 +312,8 @@
     <title>js</title>
     <link href="https://tumbleweed.top/js/"/>
     <id>https://tumbleweed.top/js/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -346,8 +335,8 @@
     <title>koa(1)</title>
     <link href="https://tumbleweed.top/koa-1/"/>
     <id>https://tumbleweed.top/koa-1/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -369,8 +358,8 @@
     <title>mysql(1)</title>
     <link href="https://tumbleweed.top/mysql-1/"/>
     <id>https://tumbleweed.top/mysql-1/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -392,8 +381,8 @@
     <title>sql</title>
     <link href="https://tumbleweed.top/sql/"/>
     <id>https://tumbleweed.top/sql/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -415,8 +404,8 @@
     <title>nginx</title>
     <link href="https://tumbleweed.top/nginx/"/>
     <id>https://tumbleweed.top/nginx/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -438,8 +427,8 @@
     <title>session vs jwt</title>
     <link href="https://tumbleweed.top/session-vs-jwt/"/>
     <id>https://tumbleweed.top/session-vs-jwt/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -461,8 +450,8 @@
     <title>bootstrap 入门</title>
     <link href="https://tumbleweed.top/bootstrap/"/>
     <id>https://tumbleweed.top/bootstrap/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
@@ -484,8 +473,8 @@
     <title>tar-unzip</title>
     <link href="https://tumbleweed.top/tar-unzip/"/>
     <id>https://tumbleweed.top/tar-unzip/</id>
-    <published>2020-04-28T15:36:41.671Z</published>
-    <updated>2020-04-28T15:36:41.671Z</updated>
+    <published>2020-04-28T16:03:57.155Z</published>
+    <updated>2020-04-28T16:03:57.155Z</updated>
     
     <summary type="html">
     
