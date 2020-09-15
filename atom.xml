@@ -342,6 +342,31 @@
   </entry>
   
   <entry>
+    <title>api/api</title>
+    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
+    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
+    <published>2020-09-15T07:37:02.250Z</published>
+    <updated>2020-09-15T07:37:02.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          import { get, post } from &quot;./http.js&quot;;
+
+export const login = () =&gt; post(url,
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>api/http</title>
     <link href="https://zonglinlee.top/2020/09/15/api/http/"/>
     <id>https://zonglinlee.top/2020/09/15/api/http/</id>
@@ -359,31 +384,6 @@
 
 import axios from &quot;axios&quot;;
 import router from
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>api/api</title>
-    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
-    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
-    <published>2020-09-15T07:37:02.250Z</published>
-    <updated>2020-09-15T07:37:02.250Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          import { get, post } from &quot;./http.js&quot;;
-
-export const login = () =&gt; post(url,
         
       
     
