@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>zonglinLee</title>
+  
+  <subtitle>zonglinlee.top</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://zonglinlee.top/"/>
+  <updated>2020-09-15T07:37:02.256Z</updated>
+  <id>https://zonglinlee.top/</id>
+  
+  <author>
+    <name>zonglinlee</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://zonglinlee.top/2020/09/15/zheng-ze-biao-da-shi/"/>
+    <id>https://zonglinlee.top/2020/09/15/zheng-ze-biao-da-shi/</id>
+    <published>2020-09-15T07:37:02.256Z</published>
+    <updated>2020-09-15T07:37:02.256Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 JavaScript中，正则表达式也是对象。这些模式被用于&lt;code&gt;RegExp&lt;/code&gt; 的 exec 和 test 方法, 以及 &lt;code&gt;String&lt;/code&gt; 的 match、matchAll、replace、search 和 split 方法&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>webpack+express搭建脚手架</title>
+    <link href="https://zonglinlee.top/2020/09/15/webpack/"/>
+    <id>https://zonglinlee.top/2020/09/15/webpack/</id>
+    <published>2020-09-15T07:37:02.255Z</published>
+    <updated>2020-09-15T07:37:02.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;webpack-dev-middleware&lt;/code&gt; + &lt;code&gt;webpack-hot-middleware&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="webpack" scheme="https://zonglinlee.top/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web术语</title>
+    <link href="https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/"/>
+    <id>https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/</id>
+    <published>2020-09-15T07:37:02.255Z</published>
+    <updated>2020-09-15T07:37:02.256Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端有关web术语&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工具库简介</title>
+    <link href="https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/"/>
+    <id>https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/</id>
+    <published>2020-09-15T07:37:02.255Z</published>
+    <updated>2020-09-15T07:37:02.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;常用库分类以及用法 &lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue-cli的使用</title>
+    <link href="https://zonglinlee.top/2020/09/15/vue-cli-huan-jing-da-jian/"/>
+    <id>https://zonglinlee.top/2020/09/15/vue-cli-huan-jing-da-jian/</id>
+    <published>2020-09-15T07:37:02.254Z</published>
+    <updated>2020-09-15T07:37:02.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vue-cli脚手架的配置和使用&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="vue" scheme="https://zonglinlee.top/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx</title>
+    <link href="https://zonglinlee.top/2020/09/15/nginx/"/>
+    <id>https://zonglinlee.top/2020/09/15/nginx/</id>
+    <published>2020-09-15T07:37:02.253Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;windows-nginx指南&quot;&gt;&lt;a href=&quot;#windows-nginx指南&quot; class=&quot;headerlink&quot; title=&quot;windows nginx指南&quot;&gt;&lt;/a&gt;windows nginx指南&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="nginx" scheme="https://zonglinlee.top/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centOS8 下安装 node</title>
+    <link href="https://zonglinlee.top/2020/09/15/node-sql-install/"/>
+    <id>https://zonglinlee.top/2020/09/15/node-sql-install/</id>
+    <published>2020-09-15T07:37:02.253Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CentOS8-install-node&quot;&gt;&lt;a href=&quot;#CentOS8-install-node&quot; class=&quot;headerlink&quot; title=&quot;CentOS8 install node&quot;&gt;&lt;/a&gt;CentOS8 install
+        
+      
+    
+    </summary>
+    
+    
+      <category term="CentOS8" scheme="https://zonglinlee.top/categories/CentOS8/"/>
+    
+      <category term="Install" scheme="https://zonglinlee.top/categories/CentOS8/Install/"/>
+    
+    
+      <category term="Linux" scheme="https://zonglinlee.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>koa</title>
+    <link href="https://zonglinlee.top/2020/09/15/koa-1/"/>
+    <id>https://zonglinlee.top/2020/09/15/koa-1/</id>
+    <published>2020-09-15T07:37:02.253Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;koa不包含任何middleware,express.static这种都不包括&lt;br&gt;它的中间件原理和express不太一样&lt;br&gt;app.use(async function(ctx,next){&lt;br&gt;    console.log(1)//先打印1&lt;br&gt;   
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="koa" scheme="https://zonglinlee.top/tags/koa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql</title>
+    <link href="https://zonglinlee.top/2020/09/15/mysql-1/"/>
+    <id>https://zonglinlee.top/2020/09/15/mysql-1/</id>
+    <published>2020-09-15T07:37:02.253Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="sql" scheme="https://zonglinlee.top/tags/sql/"/>
+    
+      <category term="mysql" scheme="https://zonglinlee.top/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jquery</title>
+    <link href="https://zonglinlee.top/2020/09/15/jquery/"/>
+    <id>https://zonglinlee.top/2020/09/15/jquery/</id>
+    <published>2020-09-15T07:37:02.252Z</published>
+    <updated>2020-09-15T07:37:02.252Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。&lt;/li&gt;
+&lt;li&gt;jQuery的选择器不会返回undefined或者null&lt;/li&gt;
+&lt;li&gt;jQuery对象和DOM对象之间可以互相转化&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="jquery" scheme="https://zonglinlee.top/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js补漏</title>
+    <link href="https://zonglinlee.top/2020/09/15/js/"/>
+    <id>https://zonglinlee.top/2020/09/15/js/</id>
+    <published>2020-09-15T07:37:02.252Z</published>
+    <updated>2020-09-15T07:37:02.252Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;function-作用&quot;&gt;&lt;a href=&quot;#function-作用&quot; class=&quot;headerlink&quot; title=&quot;!function(){}() 作用&quot;&gt;&lt;/a&gt;&lt;code&gt;!function(){}()&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="js" scheme="https://zonglinlee.top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git</title>
+    <link href="https://zonglinlee.top/2020/09/15/git/"/>
+    <id>https://zonglinlee.top/2020/09/15/git/</id>
+    <published>2020-09-15T07:37:02.251Z</published>
+    <updated>2020-09-15T07:37:02.251Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;submodule&quot;&gt;&lt;a href=&quot;#submodule&quot; class=&quot;headerlink&quot; title=&quot;submodule&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.phpgao.com/git_submodule.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="git" scheme="https://zonglinlee.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>express</title>
+    <link href="https://zonglinlee.top/2020/09/15/express-1/"/>
+    <id>https://zonglinlee.top/2020/09/15/express-1/</id>
+    <published>2020-09-15T07:37:02.251Z</published>
+    <updated>2020-09-15T07:37:02.251Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;res-cookie-name-value-options&quot;&gt;&lt;a href=&quot;#res-cookie-name-value-options&quot; class=&quot;headerlink&quot; title=&quot;res.cookie(name, value [,
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="express" scheme="https://zonglinlee.top/tags/express/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>api/api</title>
+    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
+    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
+    <published>2020-09-15T07:37:02.250Z</published>
+    <updated>2020-09-15T07:37:02.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          import { get, post } from &quot;./http.js&quot;;
+
+export const login = () =&gt; post(url,
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>api/http</title>
+    <link href="https://zonglinlee.top/2020/09/15/api/http/"/>
+    <id>https://zonglinlee.top/2020/09/15/api/http/</id>
+    <published>2020-09-15T07:37:02.250Z</published>
+    <updated>2020-09-15T07:37:02.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          //https://koa.bootcss.com/#response
+//https://github.com/axios/axios#handling-errors
+
+import axios from &quot;axios&quot;;
+import router from
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端性能优化</title>
+    <link href="https://zonglinlee.top/2020/05/27/qian-duan-xing-neng-you-hua/"/>
+    <id>https://zonglinlee.top/2020/05/27/qian-duan-xing-neng-you-hua/</id>
+    <published>2020-05-27T12:13:05.000Z</published>
+    <updated>2020-09-15T07:37:02.255Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;浏览器加载资源的过程&quot;&gt;&lt;a href=&quot;#浏览器加载资源的过程&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue</title>
+    <link href="https://zonglinlee.top/2020/05/26/vue/"/>
+    <id>https://zonglinlee.top/2020/05/26/vue/</id>
+    <published>2020-05-26T12:42:37.000Z</published>
+    <updated>2020-09-15T07:37:02.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vue总结&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="vue" scheme="https://zonglinlee.top/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js中的各种尺寸</title>
+    <link href="https://zonglinlee.top/2020/05/25/js-zhong-de-ge-chong-chi-cun/"/>
+    <id>https://zonglinlee.top/2020/05/25/js-zhong-de-ge-chong-chi-cun/</id>
+    <published>2020-05-25T07:28:19.000Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;window-screen&quot;&gt;&lt;a href=&quot;#window-screen&quot; class=&quot;headerlink&quot; title=&quot;window.screen&quot;&gt;&lt;/a&gt;window.screen&lt;/h2&gt;&lt;p&gt;A window object (obtained
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="js" scheme="https://zonglinlee.top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http-Content-negotiation</title>
+    <link href="https://zonglinlee.top/2020/05/20/http-content-negotiation/"/>
+    <id>https://zonglinlee.top/2020/05/20/http-content-negotiation/</id>
+    <published>2020-05-20T06:16:12.000Z</published>
+    <updated>2020-09-15T07:37:02.252Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HTTP 内容协商 机制&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="http" scheme="https://zonglinlee.top/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>koa-middleware</title>
+    <link href="https://zonglinlee.top/2020/05/20/koa-middleware/"/>
+    <id>https://zonglinlee.top/2020/05/20/koa-middleware/</id>
+    <published>2020-05-20T06:03:54.000Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;koa常见中间件&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="http" scheme="https://zonglinlee.top/tags/http/"/>
+    
+      <category term="koa" scheme="https://zonglinlee.top/tags/koa/"/>
+    
+  </entry>
+  
+</feed>

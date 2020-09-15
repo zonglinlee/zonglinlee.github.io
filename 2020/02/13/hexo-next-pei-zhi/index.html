@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zonglinlee.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Hexo 配置如何在页面中关闭评论在 front-matter 中配置 comments: false 如何引入图片 绝对路径在根目录 source 文件夹下新建 images 文件夹，通过绝对路径![img](&#x2F;images&#x2F;image.jpg) 引入到 Markdown 中 相对路径根目录下主配置文件 _config.ymlpost_asset_folder: true当执行hexo new">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo-next配置">
+<meta property="og:url" content="https://zonglinlee.top/2020/02/13/hexo-next-pei-zhi/index.html">
+<meta property="og:site_name" content="zonglinLee">
+<meta property="og:description" content="Hexo 配置如何在页面中关闭评论在 front-matter 中配置 comments: false 如何引入图片 绝对路径在根目录 source 文件夹下新建 images 文件夹，通过绝对路径![img](&#x2F;images&#x2F;image.jpg) 引入到 Markdown 中 相对路径根目录下主配置文件 _config.ymlpost_asset_folder: true当执行hexo new">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-13T12:46:25.000Z">
+<meta property="article:modified_time" content="2020-09-15T07:37:02.251Z">
+<meta property="article:author" content="zonglinlee">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="next">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zonglinlee.top/2020/02/13/hexo-next-pei-zhi/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>hexo-next配置 | zonglinLee</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3cf2ba04786ec43f607967d2bcd6a389";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="zonglinLee" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">zonglinLee</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">zonglinlee.top</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zonglinlee" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zonglinlee.top/2020/02/13/hexo-next-pei-zhi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="zonglinlee">
+      <meta itemprop="description" content="Hello world!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zonglinLee">
+    </span>
+      <header class="post-header">
+      
+        <h1 class="post-title" itemprop="name headline">
+          hexo-next配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-13 20:46:25" itemprop="dateCreated datePublished" datetime="2020-02-13T20:46:25+08:00">2020-02-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 15:37:02" itemprop="dateModified" datetime="2020-09-15T15:37:02+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/02/13/hexo-next-pei-zhi/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/13/hexo-next-pei-zhi/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h2><h2 id="如何在页面中关闭评论"><a href="#如何在页面中关闭评论" class="headerlink" title="如何在页面中关闭评论"></a>如何在页面中关闭评论</h2><p>在 front-matter 中配置 <code>comments: false</code></p>
+<h2 id="如何引入图片"><a href="#如何引入图片" class="headerlink" title="如何引入图片"></a><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/" target="_blank" rel="noopener">如何引入图片</a></h2><ul>
+<li>绝对路径<br>在根目录 source 文件夹下新建 images 文件夹，通过绝对路径<code>![img](/images/image.jpg)</code> 引入到 Markdown 中</li>
+<li>相对路径<br>根目录下主配置文件 _config.yml<br>post_asset_folder: true<br>当执行<code>hexo new [layout] title</code>时会生成 title 文件名的文件夹来存放图片，通过相对路径引入即可</li>
+</ul>
+<h2 id="next-主题配置"><a href="#next-主题配置" class="headerlink" title="next 主题配置"></a>next 主题配置</h2><h3 id="模板中的变量"><a href="#模板中的变量" class="headerlink" title="模板中的变量"></a>模板中的变量</h3><p>在模板中打印变量,以下三段代码可以在分别打印出各自的变量</p>
+<pre class=" language-html"><code class="language-html">//打印page变量
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">border</span><span class="token punctuation">:</span>solid <span class="token number">2</span>px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    {% for key ,value in page %}
+     {{ key }}---{{ value }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+     {% endfor %}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+// 打印page.posts变量
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">border</span><span class="token punctuation">:</span>solid <span class="token number">2</span>px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    {% for key ,value in page %}
+     {% for key , value in page.posts %}
+      {{ key }}*******{{ value }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">></span></span>
+     {% endfor %}
+     {% endfor %}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+// page.posts本身好像不是一个数组??
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">border</span><span class="token punctuation">:</span>solid <span class="token number">2</span>px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    {% set foo = page.posts.toArray() %}
+      {% for key , value in foo[0] %}
+          {{ key }}*******{{ value }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">></span></span>
+    {%- endfor %}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="根目录下的db-json文件"><a href="#根目录下的db-json文件" class="headerlink" title="根目录下的db.json文件"></a>根目录下的db.json文件</h3><p>在这个json文件中存放了整个hexo中的数据模型和数据，这是其中的post模型，可以参考 warehose这个包，这个数据库类似 mongodb<br><a href="https://hexojs.github.io/warehouse/" target="_blank" rel="noopener">https://hexojs.github.io/warehouse/</a></p>
+<pre class=" language-json"><code class="language-json">    <span class="token property">"Post"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"常用Windows命令行工具"</span><span class="token punctuation">,</span>
+                <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"2020-04-30T09:10:06.000Z"</span><span class="token punctuation">,</span>
+                <span class="token property">"_content"</span><span class="token operator">:</span> <span class="token string">"## tree(生成目录结构树)\n在所在目录执行 `tree /f > list.txt`,就会在当前文件夹list.txt中生成当前目录结构树(所有文件都会列出)\n可以不加 /f 只列出文件夹目录，不包含文件。\n\n"</span><span class="token punctuation">,</span>
+                <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"_posts/常用Windows命令行工具.md"</span><span class="token punctuation">,</span>
+                <span class="token property">"raw"</span><span class="token operator">:</span> <span class="token string">"---\ntitle: 常用Windows命令行工具\ndate: 2020-04-30 17:10:06\ntags:\n---\n## tree(生成目录结构树)\n在所在目录执行 `tree /f > list.txt`,就会在当前文件夹list.txt中生成当前目录结构树(所有文件都会列出)\n可以不加 /f 只列出文件夹目录，不包含文件。\n\n"</span><span class="token punctuation">,</span>
+                <span class="token property">"slug"</span><span class="token operator">:</span> <span class="token string">"常用Windows命令行工具"</span><span class="token punctuation">,</span>
+                <span class="token property">"published"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">"updated"</span><span class="token operator">:</span> <span class="token string">"2020-04-30T09:29:38.928Z"</span><span class="token punctuation">,</span>
+                <span class="token property">"comments"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">"layout"</span><span class="token operator">:</span> <span class="token string">"post"</span><span class="token punctuation">,</span>
+                <span class="token property">"photos"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">"link"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+                <span class="token property">"_id"</span><span class="token operator">:</span> <span class="token string">"ck9o4hfz000005wtu6oe90npt"</span><span class="token punctuation">,</span>
+                <span class="token property">"content"</span><span class="token operator">:</span> <span class="token string">"&lt;h2 id=\"tree-生成目录结构树\">&lt;a href=\"#tree-生成目录结构树\" class=\"headerlink\" title=\"tree(生成目录结构树)\">&lt;/a>tree(生成目录结构树)&lt;/h2>&lt;p>在所在目录执行 &lt;code>tree /f &amp;gt; list.txt&lt;/code>,就会在当前文件夹list.txt中生成当前目录结构树(所有文件都会列出)&lt;br>可以不加 /f 只列出文件夹目录，不包含文件。&lt;/p>\n"</span><span class="token punctuation">,</span>
+                <span class="token property">"site"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">"data"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">"excerpt"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+                <span class="token property">"more"</span><span class="token operator">:</span> <span class="token string">"&lt;h2 id=\"tree-生成目录结构树\">&lt;a href=\"#tree-生成目录结构树\" class=\"headerlink\" title=\"tree(生成目录结构树)\">&lt;/a>tree(生成目录结构树)&lt;/h2>&lt;p>在所在目录执行 &lt;code>tree /f &amp;gt; list.txt&lt;/code>,就会在当前文件夹list.txt中生成当前目录结构树(所有文件都会列出)&lt;br>可以不加 /f 只列出文件夹目录，不包含文件。&lt;/p>\n"</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span></code></pre>
+<h3 id="next-主题-scripts-脚本目录"><a href="#next-主题-scripts-脚本目录" class="headerlink" title="next 主题 scripts 脚本目录"></a>next 主题 scripts 脚本目录</h3><pre><code>                        events
+                        │ index.js
+                        │
+                        └─lib
+                            config.js
+                            injects-point.js
+                            injects.js</code></pre><p>在 injects-point.js 中定义了一个对象，存放了许多 <code>inject-points</code>,</p>
+<pre class=" language-js"><code class="language-js"><span class="token punctuation">{</span>
+  views<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'head'</span><span class="token punctuation">,</span><span class="token string">'header'</span><span class="token punctuation">,</span><span class="token string">'sidebar'</span><span class="token punctuation">,</span><span class="token string">'postMeta'</span><span class="token punctuation">,</span><span class="token string">'postBodyEnd'</span><span class="token punctuation">,</span>
+  <span class="token string">'footer'</span><span class="token punctuation">,</span><span class="token string">'bodyEnd'</span><span class="token punctuation">,</span> <span class="token string">'comment'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'variable'</span><span class="token punctuation">,</span><span class="token string">'mixin'</span><span class="token punctuation">,</span><span class="token string">'style'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在 injects.js 中定义了 样式插入类 <code>StylusInject</code>,提供了<code>push(file)</code>方法, 还定义了 模板插入类<code>ViewInject</code>,提供了 <code>file()</code>和<code>raw()</code>方法，用来插入 js 和 swig 模板文件</p>
+<p>用户可以在 source 目录下新建一个<code>_data</code>文件夹来存放各种用户数据和模板，然后创建自定义脚本，当 hexo 加载用户脚本的时候就会自动扩展 next 主题。<br>这样做的好处就是不用修改 next 主题自身，用户可以方便的进行扩充和数据管理。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//在body结束标签前插入脚本，injects.bodyEnd是一个 ViewInject 实例。</span>
+<span class="token comment" spellcheck="true">//1.注册filter</span>
+hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>filter<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">"theme_inject"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>injects<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  injects<span class="token punctuation">.</span>bodyEnd<span class="token punctuation">.</span><span class="token function">raw</span><span class="token punctuation">(</span>
+    <span class="token string">"load-custom-js"</span><span class="token punctuation">,</span>
+    <span class="token string">'&lt;script src="js-path-or-cdn.js">&lt;/script>'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> cache<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//2.在index.js 中，generateBefore 事件触发时候 调用 filter</span>
+hexo<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"generateBefore"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./lib/config.js"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>hexo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./lib/injects.js"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>hexo<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//引入并调用注册在"theme_inject"下的所有filter函数</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//3.步骤2中调用的结果就是将之前注册的filter全部添加到了hexo对象上保存了起来。</span>
+  points<span class="token punctuation">.</span>styles<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>type <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    hexo<span class="token punctuation">.</span>theme<span class="token punctuation">.</span>config<span class="token punctuation">.</span>injects<span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> injects<span class="token punctuation">[</span>type<span class="token punctuation">]</span><span class="token punctuation">.</span>files<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//4.next主题自带的next_inject辅助函数</span>
+<span class="token comment" spellcheck="true">//当执行的时候，会将保存在hexo.theme.config.injects中的用户自定义模板，通过partial(hexo自带的helper)方法全部导入进来</span>
+hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>helper<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'next_inject'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>point<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> hexo<span class="token punctuation">.</span>theme<span class="token punctuation">.</span>config<span class="token punctuation">.</span>injects<span class="token punctuation">[</span>point<span class="token punctuation">]</span>
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">partial</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> item<span class="token punctuation">.</span>locals<span class="token punctuation">,</span> item<span class="token punctuation">.</span>options<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//5.next_inject 函数的调用</span>
+<span class="token comment" spellcheck="true">//在_layout.swig等等其它模板文件中调用，比如下面的就是在_layout.swig 结尾调用了</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token operator">-</span> <span class="token function">next_inject</span><span class="token punctuation">(</span><span class="token string">'bodyEnd'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
+<p>这样做的缺点就是只能在指定inject-point地方扩展next主题，像 <code>about</code> 页面就无法修改，因为它用的是<code>page.swig</code>作为模板生成的，但模板本身就没有对 about页面做任何处理,只能自行扩展,下面我对原模板稍作了修改，在next主题目录下<code>/images/avatar.jpg</code>传入了头像，当front-matter中有<code>type: about</code>时，就会渲染下面的内容，这个是写死的，不能再theme中的_config.yml中配置。还有要找到指定的文件修改样式。</p>
+<pre class=" language-js"><code class="language-js">    <span class="token punctuation">{</span><span class="token operator">%</span> elif page<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'about'</span> <span class="token operator">%</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"/images/avatar.jpg"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"author-image"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"author-description"</span><span class="token operator">></span>
+            <span class="token punctuation">{</span><span class="token punctuation">{</span>page<span class="token punctuation">.</span>motto<span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+          <span class="token punctuation">{</span><span class="token punctuation">{</span>page<span class="token punctuation">.</span>content<span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
+<h2 id="next中的CSS"><a href="#next中的CSS" class="headerlink" title="next中的CSS"></a>next中的CSS</h2><p>在<code>/source/css/main.styl</code>中,使用了一个预定义函数<code>hexo-config</code></p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//它来自插件hexo-renderer-stylus</span>
+<span class="token comment" spellcheck="true">//参考：https://github.com/hexojs/hexo-renderer-stylus/blob/master/lib/renderer.js</span>
+ $scheme    <span class="token operator">=</span> hexo<span class="token operator">-</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token string">'scheme'</span><span class="token punctuation">)</span> <span class="token operator">?</span> hexo<span class="token operator">-</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token string">'scheme'</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token string">'Muse'</span><span class="token punctuation">;</span></code></pre>
+<p>dark mode<br> The <code>prefers-color-scheme</code> CSS media feature is used to detect if the user has requested the system use a <code>light</code> or <code>dark</code> color theme.</p>
+<h2 id="点击文字特效"><a href="#点击文字特效" class="headerlink" title="点击文字特效"></a>点击文字特效</h2><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//需要引入jQuery</span>
+<span class="token function">jQuery</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>$<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> coreSocialistValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"富强"</span><span class="token punctuation">,</span> <span class="token string">"民主"</span><span class="token punctuation">,</span> <span class="token string">"文明"</span><span class="token punctuation">,</span> <span class="token string">"和谐"</span><span class="token punctuation">,</span> <span class="token string">"自由"</span><span class="token punctuation">,</span> <span class="token string">"平等"</span><span class="token punctuation">,</span> <span class="token string">"公正"</span><span class="token punctuation">,</span> <span class="token string">"法治"</span><span class="token punctuation">,</span> <span class="token string">"爱国"</span><span class="token punctuation">,</span> <span class="token string">"敬业"</span><span class="token punctuation">,</span> <span class="token string">"诚信"</span><span class="token punctuation">,</span> <span class="token string">"友善"</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"#11f0e5"</span><span class="token punctuation">,</span><span class="token string">"#e815d3"</span><span class="token punctuation">,</span><span class="token string">"#f7f30f"</span><span class="token punctuation">,</span><span class="token string">"#e8270e"</span><span class="token punctuation">,</span><span class="token string">"#15eb59"</span><span class="token punctuation">,</span><span class="token string">"#881df2"</span><span class="token punctuation">,</span><span class="token string">"#fa9120"</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> coreSocialistValues<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'body'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">//过滤a标签</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>tagName <span class="token operator">==</span> <span class="token string">'A'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">let</span> $i <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;span />"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>coreSocialistValues<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      index <span class="token operator">=</span> <span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> coreSocialistValues<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token keyword">let</span> color_index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> colors<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> color <span class="token operator">=</span> colors<span class="token punctuation">[</span>color_index<span class="token punctuation">]</span>
+      <span class="token keyword">let</span> x <span class="token operator">=</span> e<span class="token punctuation">.</span>pageX<span class="token punctuation">,</span>
+        y <span class="token operator">=</span> e<span class="token punctuation">.</span>pageY<span class="token punctuation">;</span>
+      $i<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token string">"z-index"</span><span class="token punctuation">:</span> <span class="token number">999999</span><span class="token punctuation">,</span>
+        <span class="token string">"top"</span><span class="token punctuation">:</span> y <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        <span class="token string">"left"</span><span class="token punctuation">:</span> x<span class="token punctuation">,</span>
+        <span class="token string">"position"</span><span class="token punctuation">:</span> <span class="token string">"absolute"</span><span class="token punctuation">,</span>
+        <span class="token string">"font-weight"</span><span class="token punctuation">:</span> <span class="token string">"bold"</span><span class="token punctuation">,</span>
+        <span class="token string">"color"</span><span class="token punctuation">:</span> color
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"body"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>$i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      $i<span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token string">"top"</span><span class="token punctuation">:</span> y <span class="token operator">-</span> <span class="token number">180</span><span class="token punctuation">,</span>
+        <span class="token string">"opacity"</span><span class="token punctuation">:</span> <span class="token number">0</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token number">1500</span><span class="token punctuation">,</span>
+        <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          $i<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<h2 id="next配置问题"><a href="#next配置问题" class="headerlink" title="next配置问题"></a>next配置问题</h2><h3 id="本地白屏"><a href="#本地白屏" class="headerlink" title="本地白屏"></a>本地白屏</h3><p>在本地执行<code>hexo -s --debug</code>时白屏<br>next 主题配置文件中禁用 motion ,其他的motion配置保持不变</p>
+<h3 id="渲染报错"><a href="#渲染报错" class="headerlink" title="渲染报错"></a><a href="https://www.jianshu.com/p/6032a1a2dc25" target="_blank" rel="noopener">渲染报错</a></h3><p>Template render error: (unknown path)<br>  Error: filter not found: date<br>    at Object._prettifyError (D:\projects\node\zonglinlee\node_modules\nunjucks\src\lib.js:36:11)<br>原因：md文件语法和模板引擎语法冲突<br>解决方法：用  包裹之后，可以渲染，但是不能解析成html ，尚未解决。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><ul>
+<li><a href="https://theme-next.org/docs/advanced-settings" target="_blank" rel="noopener">next-injects</a></li>
+</ul>
+
+    </div>
+<div class='posthr'></div>
+    
+    
+    
+        <div class="reward-container">
+  <div>您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="zonglinlee 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="zonglinlee 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/04/hexo-can-shu/" rel="prev" title="hexo命令以及主题结构">
+      <i class="fa fa-chevron-left"></i> hexo命令以及主题结构
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/01/css-basic/" rel="next" title="css basics">
+      css basics <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-配置"><span class="nav-number">1.</span> <span class="nav-text">Hexo 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在页面中关闭评论"><span class="nav-number">2.</span> <span class="nav-text">如何在页面中关闭评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何引入图片"><span class="nav-number">3.</span> <span class="nav-text">如何引入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next-主题配置"><span class="nav-number">4.</span> <span class="nav-text">next 主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板中的变量"><span class="nav-number">4.1.</span> <span class="nav-text">模板中的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根目录下的db-json文件"><span class="nav-number">4.2.</span> <span class="nav-text">根目录下的db.json文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next-主题-scripts-脚本目录"><span class="nav-number">4.3.</span> <span class="nav-text">next 主题 scripts 脚本目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next中的CSS"><span class="nav-number">5.</span> <span class="nav-text">next中的CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点击文字特效"><span class="nav-number">6.</span> <span class="nav-text">点击文字特效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next配置问题"><span class="nav-number">7.</span> <span class="nav-text">next配置问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地白屏"><span class="nav-number">7.1.</span> <span class="nav-text">本地白屏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染报错"><span class="nav-number">7.2.</span> <span class="nav-text">渲染报错</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">8.</span> <span class="nav-text">参考链接:</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zonglinlee"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">zonglinlee</p>
+  <div class="site-description" itemprop="description">Hello world!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zonglinlee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zonglinlee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:173389705@qq.com" title="E-Mail → mailto:173389705@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://google.com/" title="http:&#x2F;&#x2F;google.com" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://developer.mozilla.org/en-US/" title="https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;" rel="noopener" target="_blank">MDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com&#x2F;" rel="noopener" target="_blank">GitHub</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zonglinlee</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tumbleweed-top.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zonglinlee.top/2020/02/13/hexo-next-pei-zhi/";
+    this.page.identifier = "2020/02/13/hexo-next-pei-zhi/";
+    this.page.title = "hexo-next配置";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://tumbleweed-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
