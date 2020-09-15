@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zonglinlee.top/"/>
-  <updated>2020-09-15T07:37:02.256Z</updated>
+  <updated>2020-09-15T07:09:44.660Z</updated>
   <id>https://zonglinlee.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux-1</title>
+    <link href="https://zonglinlee.top/2020/09/15/linux/"/>
+    <id>https://zonglinlee.top/2020/09/15/linux/</id>
+    <published>2020-09-15T07:40:02.233Z</published>
+    <updated>2020-09-15T07:09:44.660Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Ctrl+ALT+t 打开终端&lt;/p&gt;
+&lt;pre class=&quot; language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;# /usr/src 系统级的源码目录。 /usr/local/src 用户级的源码目录。
+#
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="linux" scheme="https://zonglinlee.top/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式</title>
@@ -26,6 +53,23 @@
     <summary type="html">
     
       &lt;p&gt;在 JavaScript中，正则表达式也是对象。这些模式被用于&lt;code&gt;RegExp&lt;/code&gt; 的 exec 和 test 方法, 以及 &lt;code&gt;String&lt;/code&gt; 的 match、matchAll、replace、search 和 split 方法&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工具库简介</title>
+    <link href="https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/"/>
+    <id>https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/</id>
+    <published>2020-09-15T07:37:02.255Z</published>
+    <updated>2020-09-15T07:37:02.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;常用库分类以及用法 &lt;/p&gt;
     
     </summary>
     
@@ -62,23 +106,6 @@
     <summary type="html">
     
       &lt;p&gt;前端有关web术语&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>工具库简介</title>
-    <link href="https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/"/>
-    <id>https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/</id>
-    <published>2020-09-15T07:37:02.255Z</published>
-    <updated>2020-09-15T07:37:02.255Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;常用库分类以及用法 &lt;/p&gt;
     
     </summary>
     
@@ -131,6 +158,31 @@
   </entry>
   
   <entry>
+    <title>koa</title>
+    <link href="https://zonglinlee.top/2020/09/15/koa-1/"/>
+    <id>https://zonglinlee.top/2020/09/15/koa-1/</id>
+    <published>2020-09-15T07:37:02.253Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;koa不包含任何middleware,express.static这种都不包括&lt;br&gt;它的中间件原理和express不太一样&lt;br&gt;app.use(async function(ctx,next){&lt;br&gt;    console.log(1)//先打印1&lt;br&gt;   
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="koa" scheme="https://zonglinlee.top/tags/koa/"/>
+    
+  </entry>
+  
+  <entry>
     <title>centOS8 下安装 node</title>
     <link href="https://zonglinlee.top/2020/09/15/node-sql-install/"/>
     <id>https://zonglinlee.top/2020/09/15/node-sql-install/</id>
@@ -156,31 +208,6 @@
     
     
       <category term="Linux" scheme="https://zonglinlee.top/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>koa</title>
-    <link href="https://zonglinlee.top/2020/09/15/koa-1/"/>
-    <id>https://zonglinlee.top/2020/09/15/koa-1/</id>
-    <published>2020-09-15T07:37:02.253Z</published>
-    <updated>2020-09-15T07:37:02.253Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;koa不包含任何middleware,express.static这种都不包括&lt;br&gt;它的中间件原理和express不太一样&lt;br&gt;app.use(async function(ctx,next){&lt;br&gt;    console.log(1)//先打印1&lt;br&gt;   
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="koa" scheme="https://zonglinlee.top/tags/koa/"/>
     
   </entry>
   
@@ -315,31 +342,6 @@
   </entry>
   
   <entry>
-    <title>api/api</title>
-    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
-    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
-    <published>2020-09-15T07:37:02.250Z</published>
-    <updated>2020-09-15T07:37:02.250Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          import { get, post } from &quot;./http.js&quot;;
-
-export const login = () =&gt; post(url,
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>api/http</title>
     <link href="https://zonglinlee.top/2020/09/15/api/http/"/>
     <id>https://zonglinlee.top/2020/09/15/api/http/</id>
@@ -357,6 +359,31 @@ export const login = () =&gt; post(url,
 
 import axios from &quot;axios&quot;;
 import router from
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>api/api</title>
+    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
+    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
+    <published>2020-09-15T07:37:02.250Z</published>
+    <updated>2020-09-15T07:37:02.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          import { get, post } from &quot;./http.js&quot;;
+
+export const login = () =&gt; post(url,
         
       
     
@@ -449,27 +476,6 @@ import router from
     
     
       <category term="http" scheme="https://zonglinlee.top/tags/http/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>koa-middleware</title>
-    <link href="https://zonglinlee.top/2020/05/20/koa-middleware/"/>
-    <id>https://zonglinlee.top/2020/05/20/koa-middleware/</id>
-    <published>2020-05-20T06:03:54.000Z</published>
-    <updated>2020-09-15T07:37:02.253Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;koa常见中间件&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="http" scheme="https://zonglinlee.top/tags/http/"/>
-    
-      <category term="koa" scheme="https://zonglinlee.top/tags/koa/"/>
     
   </entry>
   
