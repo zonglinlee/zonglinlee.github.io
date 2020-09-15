@@ -183,6 +183,33 @@
   </entry>
   
   <entry>
+    <title>mysql</title>
+    <link href="https://zonglinlee.top/2020/09/15/mysql-1/"/>
+    <id>https://zonglinlee.top/2020/09/15/mysql-1/</id>
+    <published>2020-09-15T07:37:02.253Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="sql" scheme="https://zonglinlee.top/tags/sql/"/>
+    
+      <category term="mysql" scheme="https://zonglinlee.top/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>centOS8 下安装 node</title>
     <link href="https://zonglinlee.top/2020/09/15/node-sql-install/"/>
     <id>https://zonglinlee.top/2020/09/15/node-sql-install/</id>
@@ -212,11 +239,11 @@
   </entry>
   
   <entry>
-    <title>mysql</title>
-    <link href="https://zonglinlee.top/2020/09/15/mysql-1/"/>
-    <id>https://zonglinlee.top/2020/09/15/mysql-1/</id>
-    <published>2020-09-15T07:37:02.253Z</published>
-    <updated>2020-09-15T07:37:02.253Z</updated>
+    <title>js补漏</title>
+    <link href="https://zonglinlee.top/2020/09/15/js/"/>
+    <id>https://zonglinlee.top/2020/09/15/js/</id>
+    <published>2020-09-15T07:37:02.252Z</published>
+    <updated>2020-09-15T07:37:02.252Z</updated>
     
     <summary type="html">
     
@@ -224,7 +251,7 @@
       
         
         
-          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
+          &lt;h2 id=&quot;function-作用&quot;&gt;&lt;a href=&quot;#function-作用&quot; class=&quot;headerlink&quot; title=&quot;!function(){}() 作用&quot;&gt;&lt;/a&gt;&lt;code&gt;!function(){}()&lt;/code&gt;
         
       
     
@@ -232,9 +259,7 @@
     
     
     
-      <category term="sql" scheme="https://zonglinlee.top/tags/sql/"/>
-    
-      <category term="mysql" scheme="https://zonglinlee.top/tags/mysql/"/>
+      <category term="js" scheme="https://zonglinlee.top/tags/js/"/>
     
   </entry>
   
@@ -263,31 +288,6 @@
     
     
       <category term="jquery" scheme="https://zonglinlee.top/tags/jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js补漏</title>
-    <link href="https://zonglinlee.top/2020/09/15/js/"/>
-    <id>https://zonglinlee.top/2020/09/15/js/</id>
-    <published>2020-09-15T07:37:02.252Z</published>
-    <updated>2020-09-15T07:37:02.252Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;function-作用&quot;&gt;&lt;a href=&quot;#function-作用&quot; class=&quot;headerlink&quot; title=&quot;!function(){}() 作用&quot;&gt;&lt;/a&gt;&lt;code&gt;!function(){}()&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="js" scheme="https://zonglinlee.top/tags/js/"/>
     
   </entry>
   
@@ -342,31 +342,6 @@
   </entry>
   
   <entry>
-    <title>api/api</title>
-    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
-    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
-    <published>2020-09-15T07:37:02.250Z</published>
-    <updated>2020-09-15T07:37:02.250Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          import { get, post } from &quot;./http.js&quot;;
-
-export const login = () =&gt; post(url,
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>api/http</title>
     <link href="https://zonglinlee.top/2020/09/15/api/http/"/>
     <id>https://zonglinlee.top/2020/09/15/api/http/</id>
@@ -384,6 +359,31 @@ export const login = () =&gt; post(url,
 
 import axios from &quot;axios&quot;;
 import router from
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>api/api</title>
+    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
+    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
+    <published>2020-09-15T07:37:02.250Z</published>
+    <updated>2020-09-15T07:37:02.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          import { get, post } from &quot;./http.js&quot;;
+
+export const login = () =&gt; post(url,
         
       
     
