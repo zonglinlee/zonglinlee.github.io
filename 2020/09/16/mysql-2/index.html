@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"zonglinlee.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hello world!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About me">
-<meta property="og:url" content="https://zonglinlee.top/about/index.html">
+  <meta name="description" content="mysql安装mysql安装完毕之后，默认是不可以远程访问的，只支持localhost登录，需要在mysql 的mysql数据库中，找到user表，修改一下root账户的host # 默认root账户的host是localhost，只支持本机登录，修改为 % 代表任意 IP 都可以访问 # 也可以将host指定固定IP地址 use mysql; select user, host, plugin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql">
+<meta property="og:url" content="https://zonglinlee.top/2020/09/16/mysql-2/index.html">
 <meta property="og:site_name" content="zonglinLee">
-<meta property="og:description" content="Hello world!">
+<meta property="og:description" content="mysql安装mysql安装完毕之后，默认是不可以远程访问的，只支持localhost登录，需要在mysql 的mysql数据库中，找到user表，修改一下root账户的host # 默认root账户的host是localhost，只支持本机登录，修改为 % 代表任意 IP 都可以访问 # 也可以将host指定固定IP地址 use mysql; select user, host, plugin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-04T15:25:16.000Z">
-<meta property="article:modified_time" content="2020-09-15T07:37:02.256Z">
+<meta property="article:published_time" content="2020-09-16T07:05:28.216Z">
+<meta property="article:modified_time" content="2020-09-16T07:47:42.788Z">
 <meta property="article:author" content="zonglinlee">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://zonglinlee.top/about/">
+<link rel="canonical" href="https://zonglinlee.top/2020/09/16/mysql-2/">
 
 
 <script id="page-configurations">
@@ -40,13 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>About me | zonglinLee
-</title>
+  <title>mysql | zonglinLee</title>
   
 
 
@@ -196,54 +197,173 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zonglinlee.top/2020/09/16/mysql-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="zonglinlee">
+      <meta itemprop="description" content="Hello world!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zonglinLee">
+    </span>
       <header class="post-header">
+      
+        <h1 class="post-title" itemprop="name headline">
+          mysql
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">About me
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-09-16 15:05:28 / 修改时间：15:47:42" itemprop="dateCreated datePublished" datetime="2020-09-16T15:05:28+08:00">2020-09-16</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/09/16/mysql-2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/16/mysql-2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 
-</div>
+        </div>
+      </header>
 
-</header>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      
-      
-      <div class="post-body">
-          <img src="/images/avatar.jpg" class="author-image">
-          <div class="author-description">
-            前端新人,目前正在自学中...博客主要用于记笔记。
-          </div>
+        <h2 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h2><p>mysql安装完毕之后，默认是不可以远程访问的，只支持localhost登录，需要在mysql 的mysql数据库中，找到user表，修改一下root账户的host</p>
+<pre class=" language-shell"><code class="language-shell"># 默认root账户的host是localhost，只支持本机登录，修改为 % 代表任意 IP 都可以访问
+# 也可以将host指定固定IP地址
+use mysql;
+select user, host, plugin from user;</code></pre>
+<table>
+<thead>
+<tr>
+<th>user</th>
+<th>host</th>
+<th>plugin</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>root</td>
+<td>localhost</td>
+<td>caching_sha2_password</td>
+</tr>
+</tbody></table>
+<pre class=" language-shell"><code class="language-shell">select 'host' from user where user='root';
+update user set host = '%' where user ='root';
+flush privileges;</code></pre>
+<table>
+<thead>
+<tr>
+<th>user</th>
+<th>host</th>
+<th>plugin</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>root</td>
+<td>%</td>
+<td>caching_sha2_password</td>
+</tr>
+</tbody></table>
+<p>还要修改一下mysql的配置文件，因为配置中有 <code>bind-address=127.0.0.1</code> ，需要将其注释掉<br>mysql 配置文件目录  <code>/etc/mysql/my.cnf</code></p>
+<p>参考链接：<br><a href="https://stackoverflow.com/questions/25842341/2003-cant-connect-to-mysql-server-on-localhost-10038" target="_blank" rel="noopener">https://stackoverflow.com/questions/25842341/2003-cant-connect-to-mysql-server-on-localhost-10038</a><br>解决Navicat for MySQL 连接 Mysql 8.0.11 出现1251- Client does not support authentication protocol 错误<br><a href="https://blog.csdn.net/qq_35793285/article/details/92597902" target="_blank" rel="noopener">https://blog.csdn.net/qq_35793285/article/details/92597902</a></p>
+<h2 id="Your-password-does-not-satisfy-the-current-policy-requirements"><a href="#Your-password-does-not-satisfy-the-current-policy-requirements" class="headerlink" title="Your password does not satisfy the current policy requirements"></a>Your password does not satisfy the current policy requirements</h2><p>密码强度不合规，查看 mysql 初始的密码策略</p>
+<pre class=" language-shell"><code class="language-shell">SHOW VARIABLES LIKE 'validate_password%';
+set global validate_password_policy=LOW; # 降级mysql密码策略为低等级
+set global validate_password_length=6;  # 设置密码位数为6位
+ALTER USER 'root'@'localhost' IDENTIFIED BY '123456'; # 修改root用户的密码为简易密码</code></pre>
+<p>参考链接<br><a href="https://blog.csdn.net/hello_world_qwp/article/details/79551789" target="_blank" rel="noopener">https://blog.csdn.net/hello_world_qwp/article/details/79551789</a></p>
 
-          
-          
-        
+    </div>
+<div class='posthr'></div>
+    
+    
+    
+        <div class="reward-container">
+  <div>您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="zonglinlee 微信支付">
+        <p>微信支付</p>
       </div>
       
-      
-      
-    </div>
-    
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="zonglinlee 支付宝">
+        <p>支付宝</p>
+      </div>
 
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/sql/" rel="tag"># sql</a>
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/15/linux/" rel="prev" title="Linux-1">
+      <i class="fa fa-chevron-left"></i> Linux-1
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -290,6 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql安装"><span class="nav-number">1.</span> <span class="nav-text">mysql安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Your-password-does-not-satisfy-the-current-policy-requirements"><span class="nav-number">2.</span> <span class="nav-text">Your password does not satisfy the current policy requirements</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -441,6 +562,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zonglinlee.top/2020/09/16/mysql-2/";
+    this.page.identifier = "2020/09/16/mysql-2/";
+    this.page.title = "mysql";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://tumbleweed-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>

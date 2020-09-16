@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zonglinlee.top/"/>
-  <updated>2020-09-15T07:09:44.660Z</updated>
+  <updated>2020-09-16T07:47:42.788Z</updated>
   <id>https://zonglinlee.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql</title>
+    <link href="https://zonglinlee.top/2020/09/16/mysql-2/"/>
+    <id>https://zonglinlee.top/2020/09/16/mysql-2/</id>
+    <published>2020-09-16T07:05:28.216Z</published>
+    <updated>2020-09-16T07:47:42.788Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;mysql安装完毕之后，默认是不可以远程访问的，只支持localhost登录，需要在mysql
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="sql" scheme="https://zonglinlee.top/tags/sql/"/>
+    
+      <category term="mysql" scheme="https://zonglinlee.top/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux-1</title>
@@ -61,6 +88,23 @@
   </entry>
   
   <entry>
+    <title>web术语</title>
+    <link href="https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/"/>
+    <id>https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/</id>
+    <published>2020-09-15T07:37:02.255Z</published>
+    <updated>2020-09-15T07:37:02.256Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端有关web术语&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>工具库简介</title>
     <link href="https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/"/>
     <id>https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/</id>
@@ -93,23 +137,6 @@
     
     
       <category term="webpack" scheme="https://zonglinlee.top/tags/webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>web术语</title>
-    <link href="https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/"/>
-    <id>https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/</id>
-    <published>2020-09-15T07:37:02.255Z</published>
-    <updated>2020-09-15T07:37:02.256Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前端有关web术语&lt;/p&gt;
-    
-    </summary>
-    
-    
     
   </entry>
   
@@ -154,6 +181,35 @@
     
     
       <category term="nginx" scheme="https://zonglinlee.top/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centOS8 下安装 node</title>
+    <link href="https://zonglinlee.top/2020/09/15/node-sql-install/"/>
+    <id>https://zonglinlee.top/2020/09/15/node-sql-install/</id>
+    <published>2020-09-15T07:37:02.253Z</published>
+    <updated>2020-09-15T07:37:02.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CentOS8-install-node&quot;&gt;&lt;a href=&quot;#CentOS8-install-node&quot; class=&quot;headerlink&quot; title=&quot;CentOS8 install node&quot;&gt;&lt;/a&gt;CentOS8 install
+        
+      
+    
+    </summary>
+    
+    
+      <category term="CentOS8" scheme="https://zonglinlee.top/categories/CentOS8/"/>
+    
+      <category term="Install" scheme="https://zonglinlee.top/categories/CentOS8/Install/"/>
+    
+    
+      <category term="Linux" scheme="https://zonglinlee.top/tags/Linux/"/>
     
   </entry>
   
@@ -206,35 +262,6 @@
       <category term="sql" scheme="https://zonglinlee.top/tags/sql/"/>
     
       <category term="mysql" scheme="https://zonglinlee.top/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centOS8 下安装 node</title>
-    <link href="https://zonglinlee.top/2020/09/15/node-sql-install/"/>
-    <id>https://zonglinlee.top/2020/09/15/node-sql-install/</id>
-    <published>2020-09-15T07:37:02.253Z</published>
-    <updated>2020-09-15T07:37:02.253Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;CentOS8-install-node&quot;&gt;&lt;a href=&quot;#CentOS8-install-node&quot; class=&quot;headerlink&quot; title=&quot;CentOS8 install node&quot;&gt;&lt;/a&gt;CentOS8 install
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CentOS8" scheme="https://zonglinlee.top/categories/CentOS8/"/>
-    
-      <category term="Install" scheme="https://zonglinlee.top/categories/CentOS8/Install/"/>
-    
-    
-      <category term="Linux" scheme="https://zonglinlee.top/tags/Linux/"/>
     
   </entry>
   
@@ -342,6 +369,31 @@
   </entry>
   
   <entry>
+    <title>api/api</title>
+    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
+    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
+    <published>2020-09-15T07:37:02.250Z</published>
+    <updated>2020-09-15T07:37:02.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          import { get, post } from &quot;./http.js&quot;;
+
+export const login = () =&gt; post(url,
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>api/http</title>
     <link href="https://zonglinlee.top/2020/09/15/api/http/"/>
     <id>https://zonglinlee.top/2020/09/15/api/http/</id>
@@ -359,31 +411,6 @@
 
 import axios from &quot;axios&quot;;
 import router from
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>api/api</title>
-    <link href="https://zonglinlee.top/2020/09/15/api/api/"/>
-    <id>https://zonglinlee.top/2020/09/15/api/api/</id>
-    <published>2020-09-15T07:37:02.250Z</published>
-    <updated>2020-09-15T07:37:02.250Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          import { get, post } from &quot;./http.js&quot;;
-
-export const login = () =&gt; post(url,
         
       
     
@@ -457,25 +484,6 @@ export const login = () =&gt; post(url,
     
     
       <category term="js" scheme="https://zonglinlee.top/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>http-Content-negotiation</title>
-    <link href="https://zonglinlee.top/2020/05/20/http-content-negotiation/"/>
-    <id>https://zonglinlee.top/2020/05/20/http-content-negotiation/</id>
-    <published>2020-05-20T06:16:12.000Z</published>
-    <updated>2020-09-15T07:37:02.252Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HTTP 内容协商 机制&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="http" scheme="https://zonglinlee.top/tags/http/"/>
     
   </entry>
   
