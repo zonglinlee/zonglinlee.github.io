@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zonglinlee.top/images/dockerfile.png">
 <meta property="article:published_time" content="2020-03-02T05:23:35.000Z">
-<meta property="article:modified_time" content="2020-10-13T08:08:57.201Z">
+<meta property="article:modified_time" content="2020-10-13T08:47:43.711Z">
 <meta property="article:author" content="zonglinlee">
 <meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-13 16:08:57" itemprop="dateModified" datetime="2020-10-13T16:08:57+08:00">2020-10-13</time>
+                <time title="修改时间：2020-10-13 16:47:43" itemprop="dateModified" datetime="2020-10-13T16:47:43+08:00">2020-10-13</time>
               </span>
 
           
@@ -268,7 +268,6 @@
         <p>docker</p>
 <a id="more"></a>
 <p>docker架构<br>Linux 容器（Linux Containers，缩写为 LXC）。<br>docker 是基于 Linux容器的一种封装<br>docker启动了之后，本地 docker host(运行一个docker 后台服务，里面有docker containers和docker images)<br>docker container 是由 docker image 实例化产生的，比如有一个node镜像(image),可以从这个node镜像同时生成多个实例(container)</p>
-<p>端口映射：比如我们的vps主机上运行了一个nginx的docker container，我们<code>curl http://localhost</code>是访问的此vps上的80端口，但是vps本身没有启动nginx服务，我们需要将请求映射到docker container中，即当有请求访问80端口的时候，我们转交给docker 中的nginx服务来处理</p>
 <h2 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a><a href="https://www.runoob.com/docker/docker-command-manual.html" target="_blank" rel="noopener">docker常用命令</a></h2><p>阿里 centos7 按时付费 下安装 docker<br>yum install -y docker-io<br>systemctl start docker (启动本地docker服务)<br>docker info<br>docker search node   (搜寻node的docker镜像)<br>docker pull node (从官网docker镜像仓库中拉取镜像到服务器)<br>docker run node (会运行node这个镜像名,生成一个不完整的Linux运行环境)<br>docker ps -a (查看所有运行的container)<br>docker exec -it containerID  /bin/bash (进入docker容器)</p>
 <h3 id="docker-run-OPTIONS-IMAGE-COMMAND-ARG…"><a href="#docker-run-OPTIONS-IMAGE-COMMAND-ARG…" class="headerlink" title="docker run [OPTIONS] IMAGE [COMMAND] [ARG…]"></a><a href="https://www.runoob.com/docker/docker-run-command.html" target="_blank" rel="noopener">docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</a></h3><p>常用 options<br>-d: 后台运行容器，并返回容器ID；</p>
 <p>-i: 以交互模式运行容器，通常与 -t 同时使用；</p>
@@ -283,9 +282,20 @@
 <p>–link=[]: 添加链接到另一个容器；</p>
 <p>–expose=[]: 开放一个端口或一组端口；</p>
 <p>–volume , -v: 绑定一个卷</p>
+<h3 id="docker-build-OPTIONS-PATH-URL"><a href="#docker-build-OPTIONS-PATH-URL" class="headerlink" title="docker build [OPTIONS] PATH | URL | -"></a><a href="https://www.runoob.com/docker/docker-build-command.html" target="_blank" rel="noopener">docker build [OPTIONS] PATH | URL | -</a></h3><p>–tag, -t: 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。</p>
+<p>使用<code>当前目录</code>的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1。<br><code>docker build -t runoob/ubuntu:v1 .</code><br>使用URL github.com/creack/docker-firefox 的 Dockerfile 创建镜像。<br><code>docker build github.com/creack/docker-firefox</code></p>
+<h3 id="docker-push-OPTIONS-NAME-TAG"><a href="#docker-push-OPTIONS-NAME-TAG" class="headerlink" title="docker push [OPTIONS] NAME[:TAG]"></a><a href="https://www.runoob.com/docker/docker-push-command.html" target="_blank" rel="noopener">docker push [OPTIONS] NAME[:TAG]</a></h3><p>docker push : 将本地的镜像上传到镜像仓库,要先登陆到镜像仓库<br><code>docker push myapache:v1</code></p>
 <h2 id="制作docker-image"><a href="#制作docker-image" class="headerlink" title="制作docker image"></a><a href="https://cloud.tencent.com/developer/article/1667562" target="_blank" rel="noopener">制作docker image</a></h2><p>docker image是一层层加上去的，你可以基于别人的镜像叠加创建你自己的image<br>docker inspect node (查看镜像)</p>
-<p>Dockerfile 文件(文件名就叫做Dockerfile,docker 打包的时候就会找这个文件，根据里面的配置来打包)<br>比如我们在vps 上创建了一个app文件夹<br>|<strong><em>app(文件夹)<br>|       |</em> <em>server.js(一个express服务器)<br>|       |</em> <em>package.json<br>|</em></strong>Dockerfile</p>
-<p><img src="/images/dockerfile.png" alt="dockerfile"></p>
+<p>Dockerfile 文件(文件名就叫做Dockerfile,docker 打包的时候就会找这个文件，根据里面的配置来打包)<br>Dockerfile是由一系列命令和参数组成的一个文件。其中，每条件命令都要大写（如：FROM），且其后都要跟一个参数（如：centos）。构建镜像时，Dockerfile中的命令会按顺序从上到下执行，在编写Dockerfile文件时应注意各条命令的顺序安排。Dockerfile文件中的每条命令，都会创建一个新的镜像层并会提交镜像。</p>
+<p>比如我们在vps 上创建了一个app文件夹</p>
+<pre class=" language-shell"><code class="language-shell">|___app(文件夹)
+|       |_ _server.js(一个express服务器)
+|       |_ _package.json
+|___Dockerfile</code></pre>
+<p>Dockerfile文件创建完成后，就可以通过 <code>docker build</code> 命令来构建新镜像。执行docker build命令时，Dockerfile中的命令都会被执行和提交，且每次提交都会创建一个新镜像。<br>新镜像构建完成后，可以将其推送到Docker Hub，这样就可以在需要的时候轻松获取和使用镜像</p>
+<pre class=" language-shell"><code class="language-shell">docker login
+docker push web_test</code></pre>
+<p>Dockerfile常用命令<br><img src="/images/dockerfile.png" alt="dockerfile"></p>
 <pre class=" language-shell"><code class="language-shell">#Dockerfile文件内容
 FROM node   (由node镜像演变而来)
 COPY ./app /app  (将当前目录下的app文件夹内的文件拷贝到镜像中根目录下的app文件夹中)
@@ -364,6 +374,9 @@ docker-compose up -d
 curl  http://locolhost:80  #会返回 `welcome to express` html
 </code></pre>
 <h2 id="docker-容器连接"><a href="#docker-容器连接" class="headerlink" title="docker 容器连接"></a><a href="https://cloud.tencent.com/developer/article/1667560" target="_blank" rel="noopener">docker 容器连接</a></h2><p>在使用Docker容器时，我们需要访问容器的内部网络，或需要在容器间相互访问。Docker 容器默认不会开放任何端口，因此需要将容器与宿主机进行端口映射，使容器可外部访问。而容器间互相访问，除了可以基于端口映射进行访问外，还可以通过容器链接（Link）的方式，也可以通过Docker 网络（Networking）实现</p>
+<h3 id="一-端口映射与外部访问容器"><a href="#一-端口映射与外部访问容器" class="headerlink" title="一. 端口映射与外部访问容器"></a>一. 端口映射与外部访问容器</h3><p>比如我们的vps主机上运行了一个nginx的docker container，我们<code>curl http://localhost</code>是访问的此vps上的80端口，但是vps本身没有启动nginx服务，我们需要将请求映射到docker container中，即当有请求访问80端口的时候，我们转交给docker 中的nginx服务来处理<br>容器与宿主机间建立端口映射关系时，可以在运行容器时使用-P或-p参数指定端口映射</p>
+<h3 id="容器链接（Link）"><a href="#容器链接（Link）" class="headerlink" title="容器链接（Link）"></a>容器链接（Link）</h3><p>在执行<code>docker run</code>命令时候可以使用–link参数可以让容器间安全的进行互联<br><code>docker run -d --name db -e POSTGRES_PASSWORD=123456  postgres:9.4</code><br><code>docker run -d -P --name web --link db:db training/webapp python app.py</code><br>–link表示建立容器互联，参数为name:alias，name是要链接的容器名称，alias是我们取得别名<br>通过–link，Docker 会在两个互联的容器之间创建了一个安全的隧道，且不用映射它们的端口到宿主主机上。在前面我们启动db容器的时，并没有使用-p和-P参数，从而避免了暴露数据库端口到外部网络上，增加了容器的安全性。</p>
+<h3 id="Docker网络（Networking）"><a href="#Docker网络（Networking）" class="headerlink" title="Docker网络（Networking）"></a>Docker网络（Networking）</h3><p>Docker Networking允许用户创建自己的网络，容器间可以通过这个网络互相通讯。Docker Networking允许容器跨越不同的宿主机通讯，且网络配置方式更灵活。<br>Docker Engine 会在引擎安装时自动创建一个名为bridge（桥接）网络，这个网络会与docker0(Docker内部网络)相对应。<br>除此之外，用户还可以自行创建bridge或overlay类型的网络。bridge网络适用于单台宿主机运行的单Docker引擎环境，而overlay网络允许我们跨多台宿主机进行通讯。<br>创建一个网络: <code>docker network create -d bridge test-net</code><br>-d 参数指定 Docker 网络类型，有 bridge、overlay<br>查看网络：<code>docker network ls</code><br>创建网络后，可以在创建容器时通过–network参数指定容器要使用的网络：<br><code>docker run -d --name db2 --network=test-net training/postgres</code><br>查看的网络情况: <code>docker network inspect test-net</code><br>另外还可以进入容器内部通过 <code>ping containerName</code> 的方式查看两个容器是否连通</p>
 <h2 id="Docker数据卷"><a href="#Docker数据卷" class="headerlink" title="Docker数据卷"></a><a href="https://cloud.tencent.com/developer/article/1667563" target="_blank" rel="noopener">Docker数据卷</a></h2><p>在docker容器中运行的web服务产生的日志,我如何在宿主机上看到?我想安装mysql或者redis等,配置文件如何配置,可以进到容器去设置,但是容器出现问题或者采重启怎么办呢?种种疑问都说明一个问题–数据共享和持久化<br>在Docker的使用过程中往往需要对数据进行持久化，或者需要在多个容器之间进行数据共享，所以这就涉及到Docker容器的数据操作。容器中数据管理主要有两种方式：数据卷和数据卷容器。<br>数据卷是一个特殊的目录，它将主机目录直接映射进容器。可供一个或多个容器使用。<br>数据卷的特性：</p>
 <ul>
 <li>数据卷在容器启动时初始化，如果容器使用的镜像在挂载点包含了数据，这些数据会拷贝到新初始化的数据卷中</li>
@@ -467,8 +480,8 @@ docker volume rm test-vol # 删除指定数据卷</code></pre>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/02/gua-pei/" rel="prev" title="css 适配">
-      <i class="fa fa-chevron-left"></i> css 适配
+    <a href="/2020/03/02/sql/" rel="prev" title="sql入门">
+      <i class="fa fa-chevron-left"></i> sql入门
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/03/02/bootstrap/" rel="next" title="bootstrap 入门">
@@ -539,7 +552,7 @@ docker volume rm test-vol # 删除指定数据卷</code></pre>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker常用命令"><span class="nav-number">1.</span> <span class="nav-text">docker常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-run-OPTIONS-IMAGE-COMMAND-ARG…"><span class="nav-number">1.1.</span> <span class="nav-text">docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作docker-image"><span class="nav-number">2.</span> <span class="nav-text">制作docker image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布image"><span class="nav-number">3.</span> <span class="nav-text">发布image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定数据盘"><span class="nav-number">4.</span> <span class="nav-text">指定数据盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-容器连接"><span class="nav-number">5.</span> <span class="nav-text">docker 容器连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker数据卷"><span class="nav-number">6.</span> <span class="nav-text">Docker数据卷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据卷容器"><span class="nav-number">6.1.</span> <span class="nav-text">数据卷容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose"><span class="nav-number">7.</span> <span class="nav-text">docker-compose</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker常用命令"><span class="nav-number">1.</span> <span class="nav-text">docker常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-run-OPTIONS-IMAGE-COMMAND-ARG…"><span class="nav-number">1.1.</span> <span class="nav-text">docker run [OPTIONS] IMAGE [COMMAND] [ARG…]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-build-OPTIONS-PATH-URL"><span class="nav-number">1.2.</span> <span class="nav-text">docker build [OPTIONS] PATH | URL | -</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-push-OPTIONS-NAME-TAG"><span class="nav-number">1.3.</span> <span class="nav-text">docker push [OPTIONS] NAME[:TAG]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作docker-image"><span class="nav-number">2.</span> <span class="nav-text">制作docker image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布image"><span class="nav-number">3.</span> <span class="nav-text">发布image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定数据盘"><span class="nav-number">4.</span> <span class="nav-text">指定数据盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-容器连接"><span class="nav-number">5.</span> <span class="nav-text">docker 容器连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-端口映射与外部访问容器"><span class="nav-number">5.1.</span> <span class="nav-text">一. 端口映射与外部访问容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器链接（Link）"><span class="nav-number">5.2.</span> <span class="nav-text">容器链接（Link）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker网络（Networking）"><span class="nav-number">5.3.</span> <span class="nav-text">Docker网络（Networking）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker数据卷"><span class="nav-number">6.</span> <span class="nav-text">Docker数据卷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据卷容器"><span class="nav-number">6.1.</span> <span class="nav-text">数据卷容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose"><span class="nav-number">7.</span> <span class="nav-text">docker-compose</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
