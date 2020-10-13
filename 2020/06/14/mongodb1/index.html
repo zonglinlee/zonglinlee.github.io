@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"zonglinlee.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="前端文件上传以及后台处理">
+  <meta name="description" content="mongodb(1)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ajax上传文件">
-<meta property="og:url" content="https://zonglinlee.top/2020/05/14/image-upload/index.html">
+<meta property="og:title" content="mongodb1">
+<meta property="og:url" content="https://zonglinlee.top/2020/06/14/mongodb1/index.html">
 <meta property="og:site_name" content="zonglinLee">
-<meta property="og:description" content="前端文件上传以及后台处理">
+<meta property="og:description" content="mongodb(1)">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-14T11:35:29.000Z">
-<meta property="article:modified_time" content="2020-09-15T07:37:02.252Z">
+<meta property="article:published_time" content="2020-06-14T07:55:54.000Z">
+<meta property="article:modified_time" content="2020-10-13T06:18:22.900Z">
 <meta property="article:author" content="zonglinlee">
-<meta property="article:tag" content="ajax">
-<meta property="article:tag" content="node">
+<meta property="article:tag" content="mongodb">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://zonglinlee.top/2020/05/14/image-upload/">
+<link rel="canonical" href="https://zonglinlee.top/2020/06/14/mongodb1/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>ajax上传文件 | zonglinLee</title>
+  <title>mongodb1 | zonglinLee</title>
   
 
 
@@ -205,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zonglinlee.top/2020/05/14/image-upload/">
+    <link itemprop="mainEntityOfPage" href="https://zonglinlee.top/2020/06/14/mongodb1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -219,7 +218,7 @@
       <header class="post-header">
       
         <h1 class="post-title" itemprop="name headline">
-          ajax上传文件
+          mongodb1
         </h1>
 
         <div class="post-meta">
@@ -229,14 +228,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-05-14 19:35:29" itemprop="dateCreated datePublished" datetime="2020-05-14T19:35:29+08:00">2020-05-14</time>
+              <time title="创建时间：2020-06-14 15:55:54" itemprop="dateCreated datePublished" datetime="2020-06-14T15:55:54+08:00">2020-06-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-15 15:37:02" itemprop="dateModified" datetime="2020-09-15T15:37:02+08:00">2020-09-15</time>
+                <time title="修改时间：2020-10-13 14:18:22" itemprop="dateModified" datetime="2020-10-13T14:18:22+08:00">2020-10-13</time>
               </span>
 
           
@@ -248,8 +247,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/05/14/image-upload/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/14/image-upload/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/06/14/mongodb1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/14/mongodb1/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -264,39 +263,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>前端文件上传以及后台处理</p>
+        <p>mongodb(1)</p>
 <a id="more"></a>
-<h2 id="ajax上传文件"><a href="#ajax上传文件" class="headerlink" title="ajax上传文件"></a>ajax上传文件</h2><h3 id="创建文件预览链接的两种方式"><a href="#创建文件预览链接的两种方式" class="headerlink" title="创建文件预览链接的两种方式"></a>创建文件预览链接的两种方式</h3><p> <code>FileReader</code>  <code>URL</code>  构造函数以及<code>HTMLCanvasElement</code>对象。</p>
+<p>名词解释<br><a href="https://docs.mongodb.com/manual/reference/glossary/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/reference/glossary/</a><br>文档主键(_id)<br>ObjectID 对象主键<br>如果不提供 <code>文档主键</code>，MongoDB会自动生成 <code>对象主键</code>，长度为12字节；<br>也可以在mongo shell 中执行 <code>objectId()</code>生成对象主键，它包含了document创建的时间，可以通过<br><code>objectId(6hfe73j3w93oje934js3gt).getTimestamp()</code>来获取文档创建时间</p>
+<p>mongo shell crud操作</p>
 <ul>
-<li><code>URL.createObjectURL(obj)</code><br>obj：A File, Blob, or MediaSource object to create an object URL for.<br>The URL lifetime is tied to the document in the window on which it was created.</li>
-<li><code>FileReader.readAsDataURL(blob/file)</code><br>The <code>readAsDataURL</code> method is used to read the contents of the specified <code>Blob</code> or <code>File</code>. When the read operation is finished, the <code>readyState</code> becomes <code>DONE</code>, and the <code>loadend</code> is triggered. At that time, the <code>result</code> attribute contains the data as a data: URL representing the file’s data as a base64 encoded string.<ul>
-<li><code>HTMLCanvasElement.toDataURL(type, encoderOptions)</code><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//方法一 返回一个链接</span>
-<span class="token keyword">const</span> objectURL <span class="token operator">=</span> URL<span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">//方法二 结果是base64编码的，保存在 reader.result 中</span>
-<span class="token keyword">const</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-preview<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Assuming that "preview" is the div output where the content will be displayed.</span>
-<span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-reader<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>aImg<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span> aImg<span class="token punctuation">.</span>src <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>result<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>
-reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//方法三 </span>
-<span class="token keyword">var</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> dataURL <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">toDataURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNby</span>
-<span class="token comment" spellcheck="true">// blAAAADElEQVQImWNgoBMAAABpAAFEI8ARAAAAAElFTkSuQmCC"</span></code></pre>
-<h2 id="后台处理-express为例"><a href="#后台处理-express为例" class="headerlink" title="后台处理(express为例)"></a>后台处理(express为例)</h2>express 中间件 <code>body-parser</code> 只能处理以下几种:</li>
-<li>JSON body parser</li>
-<li>Raw body parser</li>
-<li>Text body parser</li>
-<li>URL-encoded form body parser<br>对于 multipart/form-data 格式的类型，需要用其它中间件处理，比如 <a href="https://github.com/expressjs/multer" target="_blank" rel="noopener"><code>multer</code></a>,它是基于 <a href="https://github.com/mscdex/busboy" target="_blank" rel="noopener"><code>busboy</code></a>(A streaming parser for HTML form data for node.js)封装的。</li>
+<li>insert操作<br><code>insertOne/insertMany/insert/save</code><br>db.collection.insertOne(<br> <document>,<br> {<pre><code>writeConcern: &lt;document&gt;  // 定义本次文档创建操作的安全写级别，安全写级别越高，丢失数据风险越低，然而写入操作的延迟更高,如果不做更改，使用MongoDB默认安全写级别</code></pre> }<br>)</li>
 </ul>
-</li>
+<p>如果没有相应的collection，MongoDB会自动创建相应的collection，<br>错误捕捉<br>try{<br> db.collection.insertOne()<br>}catch(e){<br> print(e)<br>}<br>db.collection.save 命令会调用 db.collection.insert 命令</p>
+<p>复合主键(可以使用文档作为文档主键)<br>db.accounts.insert({<br>    _id:{accountNo: ‘001’, type:’savings’}, // 注意文档的字段顺序调换之后，就是不重复的主键了<br>    name:’bob’,<br>    balance:400<br>})</p>
+<ul>
+<li>find操作<br><code>find/</code><br>var cursor = db.collection.find(query, projection)<br>返回值：<code>文档游标</code>(A cursor to the documents that match the query criteria. )<br>可以使用下标的方式访问游标集合中的数据<br>cursor[3]<br>遍历完游标中所有的文档，或者10分钟之后，游标会自动关闭，如果想使游标一直有效，可以使用<code>noCursorTimeout()</code>函数来保持游标一直有效<br>var myCursor = db.collection.find().noCursorTimeout()<br>如果不遍历游标，你需要主动关闭游标 <code>myCursor.close()</code><br>db.accounts.find() // 读取全部文档，既不筛选，也不投射，会返回当前collection中所有的document<br>db.accounts.find().pretty()<br>筛选<br>{ <field> : {$<operator> : value} } // field筛选的字段，operator操作符，value(进行筛选的条件值)</li>
 </ul>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications" target="_blank" rel="noopener">自定义上传图标/文件缩略图/文件上传进度条/拖放上传文件</a></li>
-<li><a href="https://segmentfault.com/q/1010000014834091" target="_blank" rel="noopener">nodejs 保存 base64 图片</a></li>
-<li><a href="https://github.com/expressjs/multer" target="_blank" rel="noopener">multer</a></li>
-<li><a href="https://github.com/mscdex/busboy" target="_blank" rel="noopener">busboy</a></li>
+<p>比较操作符<br><code>$eq/$ne/$gt/$gte/$lt/$lte</code> (等于、不等于、大于、大于等于、小于、小于等于)<br><code>$in</code> selects the documents where the value of a field equals any value in the specified array.<br>{ field: { $in: [<value1>, <value2>, … <valueN> ] } }<br><code>$nin</code></p>
+<p>逻辑操作符<br><code>$not/$and/$or/$nor</code></p>
+<p>element query operators<br><code>$exists</code>    Matches documents that have the specified field.<br><code>$type</code>    Selects documents if a field is of the specified type.</p>
+<p>数组操作符<br><code>$all</code>    Matches arrays that contain all elements specified in the query.<br><code>$elemMatch</code>    Selects documents if element in the array field matches all the specified $elemMatch conditions.<br><code>$size</code>    Selects documents if the array field is a specified size.</p>
+<p>运算操作符(Evaluation Query Operators)<br><code>$expr</code>    Allows use of aggregation expressions within the query language.<br>匹配正则表达式语法<br><code>$jsonSchema</code>    Validate documents against the given JSON Schema.<br><code>$mod</code>    Performs a modulo operation on the value of a field and selects documents with a specified result.<br><code>$regex</code>    Selects documents where values match a specified regular expression.<br><code>$text</code>    Performs text search.<br><code>$where</code>    Matches documents that satisfy a JavaScript expression.</p>
+<p>db.accounts.find({name : {$eq:’bob’})<br>db.accounts.find({balance: {$gt : 100})<br>db.accounts.find({name:{$in:[‘bob’,’jim’]}}) //读取name值为bob和jim的账户<br>db.accounts.find({balance:{$not:{$lt:300}}}) // 读取银行账户余额大于500的账户<br>// 找到tags数组字段中包含appliance、school、book的文档<br>db.inventory.find( { tags: { $all: [ “appliance”, “school”, “book” ] } } )</p>
+<p>cursor 操作<br>cursor.forEach()    Applies a JavaScript function for every document in a cursor.<br>cursor.hasNext()    Returns true if the cursor has documents and can be iterated.<br>cursor.next()    Returns the next document in a cursor.<br>cursor.skip()    Returns a cursor that begins returning results only after passing or skipping a number of documents.<br>cursor.sort()    Returns results ordered according to a sort specification.<br>cursor.count()    Modifies the cursor to return the number of documents in the result set rather than the documents themselves.</p>
+<p>var myCursor = db.accounts.find({name: ‘bob’})<br>while( myCursor.hasNext()){<br>    printjson(myCursor.next())<br>}<br>注意游标操作的顺序，以下操作不会按照书写顺序执行，会先执行skip命令，skip命令优先于limit命令<br>db.accounts.find().limit(5).skip(3)</p>
+<p>projection<br>投影可以有选择性的返回文档中的部分字段<br>{field:inclusion} 1表示返回该字段，0表示不返回字段<br>db.accounts.find({},{name:1,_id:0})<br>db.accounts.find({},{name:1,balance:0}) 这种写法是错误的<br>在投影字段中，除了<code>_id:0</code> 可以混合使用之外，其它的字段是不可以混合使用的，意思是，要么全使用 1 列出所有要返回的字段，要么使用 0 列出所有不需要返回的字段即可。<br>投影操作符(以下三个操作符都是针对投影中的数组字段进行操作的)<br><code>$slice</code> specifies the number of elements in an array to return in the query result.<br><code>$</code> The positional $ operator limits the contents of an <array> to return either:<br>The first element that matches the query condition on the array.<br>The first element if no query condition is specified for the array (Starting in MongoDB 4.4).<br><code>$elemMatch</code> The $elemMatch operator limits the contents of an <array> field from the query results to contain only the first element matching the $elemMatch condition.</p>
+<p>db.inventory.find( {}, { _id: 0, “details.colors”: { $slice: 1 } } )<br>Return an Array with 3 Elements After Skipping the First Element<br>db.posts.find( {}, { comments: { $slice: [ 1, 3 ] } } )<br>db.schools.find( { zipcode: “63109” },<br>                 { students: { $elemMatch: { school: 102, age: { $gt: 10} } } } )</p>
+<ul>
+<li>update操作<br><code>db.collection.update/db.collection.findAndModify/db.collection.save</code><br>db.collection.update(query, update, options)<br>db.collection.update注意事项<br>如果不提供options选项，则视为 更新整篇文档，MongoDB会使用update文档内容完全替换query筛选出的第一篇文档<br>文档主键 _id是不可更改的，如果一定要在update中写入_id值，它必须和更新之前的值一样，否则会报 writeError 错误，因为_id是immutable的<br>在更新文档时候，不管查询条件会筛选到几个文档，只有第一篇文档会被更新，更新整篇文档的操作只能用在单一文档上面</li>
 </ul>
+<p>更新特定字段(提供options选项,不提供update文档对象)<br>更新操作符<br><code>$set</code>    Sets the value of a field in a document.<br>{ $set: { <field1>: <value1>, … } }<br><code>$rename</code>    Renames a field.<br><code>$unset</code>    Removes the specified field from a document.<br>db.products.update({ _id: 200 },{ name: “lee” }) // 更新整篇文档(替换)<br>db.products.update({ _id: 100 },{ $set: { “details.make”: “zzz” } })<br>db.accounts.update({name:”bob”},{$set:{contact.0: “12345678”}) //更新contact数组第一个元素</p>
 
     </div>
 <div class='posthr'></div>
@@ -326,8 +318,7 @@ reader<span class="token punctuation">.</span><span class="token function">readA
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/ajax/" rel="tag"># ajax</a>
-              <a href="/tags/node/" rel="tag"># node</a>
+              <a href="/tags/mongodb/" rel="tag"># mongodb</a>
           </div>
 
         
@@ -336,12 +327,12 @@ reader<span class="token punctuation">.</span><span class="token function">readA
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/14/ajax/" rel="prev" title="ajax">
-      <i class="fa fa-chevron-left"></i> ajax
+    <a href="/2020/05/27/qian-duan-xing-neng-you-hua/" rel="prev" title="前端性能优化">
+      <i class="fa fa-chevron-left"></i> 前端性能优化
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/20/koa-middleware/" rel="next" title="koa-middleware">
-      koa-middleware <i class="fa fa-chevron-right"></i>
+    <a href="/2020/09/15/api/api/" rel="next" title="api/api">
+      api/api <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -408,7 +399,6 @@ reader<span class="token punctuation">.</span><span class="token function">readA
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ajax上传文件"><span class="nav-number">1.</span> <span class="nav-text">ajax上传文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建文件预览链接的两种方式"><span class="nav-number">1.1.</span> <span class="nav-text">创建文件预览链接的两种方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台处理-express为例"><span class="nav-number">2.</span> <span class="nav-text">后台处理(express为例)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">2.1.</span> <span class="nav-text">参考链接</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -563,9 +553,9 @@ reader<span class="token punctuation">.</span><span class="token function">readA
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://zonglinlee.top/2020/05/14/image-upload/";
-    this.page.identifier = "2020/05/14/image-upload/";
-    this.page.title = "ajax上传文件";
+    this.page.url = "https://zonglinlee.top/2020/06/14/mongodb1/";
+    this.page.identifier = "2020/06/14/mongodb1/";
+    this.page.title = "mongodb1";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
