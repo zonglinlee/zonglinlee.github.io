@@ -115,6 +115,23 @@
   </entry>
   
   <entry>
+    <title>web术语</title>
+    <link href="https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/"/>
+    <id>https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/</id>
+    <published>2020-09-15T07:37:02.255Z</published>
+    <updated>2020-09-15T07:37:02.256Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端有关web术语&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>工具库简介</title>
     <link href="https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/"/>
     <id>https://zonglinlee.top/2020/09/15/qian-duan-gong-ju-he-ji/</id>
@@ -151,28 +168,11 @@
   </entry>
   
   <entry>
-    <title>web术语</title>
-    <link href="https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/"/>
-    <id>https://zonglinlee.top/2020/09/15/ming-ci-jie-shi/</id>
-    <published>2020-09-15T07:37:02.255Z</published>
-    <updated>2020-09-15T07:37:02.256Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前端有关web术语&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>vue-cli的使用</title>
     <link href="https://zonglinlee.top/2020/09/15/vue-cli-huan-jing-da-jian/"/>
     <id>https://zonglinlee.top/2020/09/15/vue-cli-huan-jing-da-jian/</id>
     <published>2020-09-15T07:37:02.254Z</published>
-    <updated>2020-09-15T07:37:02.255Z</updated>
+    <updated>2020-10-15T09:04:55.289Z</updated>
     
     <summary type="html">
     
@@ -187,11 +187,11 @@
   </entry>
   
   <entry>
-    <title>nginx</title>
-    <link href="https://zonglinlee.top/2020/09/15/nginx/"/>
-    <id>https://zonglinlee.top/2020/09/15/nginx/</id>
+    <title>mysql-1</title>
+    <link href="https://zonglinlee.top/2020/09/15/mysql-1/"/>
+    <id>https://zonglinlee.top/2020/09/15/mysql-1/</id>
     <published>2020-09-15T07:37:02.253Z</published>
-    <updated>2020-09-15T07:37:02.253Z</updated>
+    <updated>2020-09-16T07:51:45.541Z</updated>
     
     <summary type="html">
     
@@ -199,7 +199,7 @@
       
         
         
-          &lt;h2 id=&quot;windows-nginx指南&quot;&gt;&lt;a href=&quot;#windows-nginx指南&quot; class=&quot;headerlink&quot; title=&quot;windows nginx指南&quot;&gt;&lt;/a&gt;windows nginx指南&lt;/h2&gt;&lt;p&gt;&lt;a
+          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
         
       
     
@@ -207,7 +207,9 @@
     
     
     
-      <category term="nginx" scheme="https://zonglinlee.top/tags/nginx/"/>
+      <category term="sql" scheme="https://zonglinlee.top/tags/sql/"/>
+    
+      <category term="mysql" scheme="https://zonglinlee.top/tags/mysql/"/>
     
   </entry>
   
@@ -237,11 +239,11 @@
   </entry>
   
   <entry>
-    <title>mysql-1</title>
-    <link href="https://zonglinlee.top/2020/09/15/mysql-1/"/>
-    <id>https://zonglinlee.top/2020/09/15/mysql-1/</id>
+    <title>nginx</title>
+    <link href="https://zonglinlee.top/2020/09/15/nginx/"/>
+    <id>https://zonglinlee.top/2020/09/15/nginx/</id>
     <published>2020-09-15T07:37:02.253Z</published>
-    <updated>2020-09-16T07:51:45.541Z</updated>
+    <updated>2020-09-15T07:37:02.253Z</updated>
     
     <summary type="html">
     
@@ -249,7 +251,7 @@
       
         
         
-          &lt;h2 id=&quot;mysql安装&quot;&gt;&lt;a href=&quot;#mysql安装&quot; class=&quot;headerlink&quot; title=&quot;mysql安装&quot;&gt;&lt;/a&gt;mysql安装&lt;/h2&gt;&lt;p&gt;&lt;a
+          &lt;h2 id=&quot;windows-nginx指南&quot;&gt;&lt;a href=&quot;#windows-nginx指南&quot; class=&quot;headerlink&quot; title=&quot;windows nginx指南&quot;&gt;&lt;/a&gt;windows nginx指南&lt;/h2&gt;&lt;p&gt;&lt;a
         
       
     
@@ -257,9 +259,7 @@
     
     
     
-      <category term="sql" scheme="https://zonglinlee.top/tags/sql/"/>
-    
-      <category term="mysql" scheme="https://zonglinlee.top/tags/mysql/"/>
+      <category term="nginx" scheme="https://zonglinlee.top/tags/nginx/"/>
     
   </entry>
   
@@ -452,7 +452,7 @@ export const login = () =&gt; post(url,
     <link href="https://zonglinlee.top/2020/06/14/mongodb1/"/>
     <id>https://zonglinlee.top/2020/06/14/mongodb1/</id>
     <published>2020-06-14T07:55:54.000Z</published>
-    <updated>2020-10-13T06:18:22.900Z</updated>
+    <updated>2020-10-14T06:19:08.140Z</updated>
     
     <summary type="html">
     
