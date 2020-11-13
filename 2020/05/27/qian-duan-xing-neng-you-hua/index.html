@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zonglinlee.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="浏览器加载资源的过程优化点  dns是否可以通过缓存减少dns查询时间？ 网络请求的过程走最近的网络环境？ 相同的静态资源是否可以缓存？ 能否减少请求http请求大小？ 减少http请求 服务端渲染  资源合并与压缩优化点：减少HTTP请求、减小请求资源的大小  html压缩&#x2F;css压缩&#x2F;js的压缩和混乱&#x2F;文件合并&#x2F;开启gzip：html压缩效率不是很高，但css&#x2F;js压缩效率是很高的。还有由于前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能优化">
+<meta property="og:url" content="https://zonglinlee.top/2020/05/27/qian-duan-xing-neng-you-hua/index.html">
+<meta property="og:site_name" content="zonglinLee">
+<meta property="og:description" content="浏览器加载资源的过程优化点  dns是否可以通过缓存减少dns查询时间？ 网络请求的过程走最近的网络环境？ 相同的静态资源是否可以缓存？ 能否减少请求http请求大小？ 减少http请求 服务端渲染  资源合并与压缩优化点：减少HTTP请求、减小请求资源的大小  html压缩&#x2F;css压缩&#x2F;js的压缩和混乱&#x2F;文件合并&#x2F;开启gzip：html压缩效率不是很高，但css&#x2F;js压缩效率是很高的。还有由于前">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-27T12:13:05.000Z">
+<meta property="article:modified_time" content="2020-09-15T07:37:02.255Z">
+<meta property="article:author" content="zonglinlee">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://zonglinlee.top/2020/05/27/qian-duan-xing-neng-you-hua/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端性能优化 | zonglinLee</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3cf2ba04786ec43f607967d2bcd6a389";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="zonglinLee" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">zonglinLee</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">zonglinlee.top</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zonglinlee" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zonglinlee.top/2020/05/27/qian-duan-xing-neng-you-hua/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="zonglinlee">
+      <meta itemprop="description" content="Hello world!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zonglinLee">
+    </span>
+      <header class="post-header">
+      
+        <h1 class="post-title" itemprop="name headline">
+          前端性能优化
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-27 20:13:05" itemprop="dateCreated datePublished" datetime="2020-05-27T20:13:05+08:00">2020-05-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 15:37:02" itemprop="dateModified" datetime="2020-09-15T15:37:02+08:00">2020-09-15</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/27/qian-duan-xing-neng-you-hua/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/27/qian-duan-xing-neng-you-hua/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="浏览器加载资源的过程"><a href="#浏览器加载资源的过程" class="headerlink" title="浏览器加载资源的过程"></a>浏览器加载资源的过程</h2><p>优化点</p>
+<ul>
+<li>dns是否可以通过缓存减少dns查询时间？</li>
+<li>网络请求的过程走最近的网络环境？</li>
+<li>相同的静态资源是否可以缓存？</li>
+<li>能否减少请求http请求大小？</li>
+<li>减少http请求</li>
+<li>服务端渲染</li>
+</ul>
+<h2 id="资源合并与压缩"><a href="#资源合并与压缩" class="headerlink" title="资源合并与压缩"></a>资源合并与压缩</h2><p>优化点：减少HTTP请求、减小请求资源的大小</p>
+<ul>
+<li>html压缩/css压缩/js的压缩和混乱/文件合并/开启gzip：html压缩效率不是很高，但css/js压缩效率是很高的。还有由于前端的源代码对于用户来说是透明的，js混乱还可以保证页面的安全性，保护业务JS逻辑</li>
+</ul>
+<p>文件合并产生的问题：</p>
+<ul>
+<li>首屏渲染问题：合并之后文件更大，加载时间更长</li>
+<li>缓存失效问题：一般文件名会带一个hash标明文件内容是否改动，文件合并之后，任意一个单独文件的变动都会导致整个合并后的文件内容变化，从而导致用户缓存失效，需要重新从服务器请求文件。实际操作中一般会对不会经常变动的公共库进行合并。</li>
+</ul>
+<p>浏览器并发请求数量受限于域名？？？并发数上限？<br>fis3 构建工具</p>
+<h2 id="图片的优化"><a href="#图片的优化" class="headerlink" title="图片的优化"></a>图片的优化</h2><p>png8/png24/png32之间的区别</p>
+<ul>
+<li>png8 —— 256色 + 支持透明  (只有256种颜色，适用于图片色彩比较单一的情况)</li>
+<li>png24 —— 2^24色 + 不支持透明 (支持更多的色彩，适用于图片颜色比较丰富的场景)</li>
+<li>png32 —— 2^24色 + 支持透明 </li>
+</ul>
+<p>不同格式图片常用的业务场景</p>
+<ul>
+<li>jpg有损压缩，压缩率高，不支持透明</li>
+<li>png支持透明，浏览器兼容好</li>
+<li>webp压缩程度更好，在ios webview有兼容性问题 ：Google开发的图片格式，解码和压缩都比较快，在Android中支持比较好</li>
+<li>svg矢量图，代码内嵌，相对较小，图片样式相对简单的场景：内嵌HTML中，不用发起HTTP请求</li>
+</ul>
+<p>CSS雪碧图<br>把你的网站上用到的一些图片整合到一张单独的图片中，减少你的网站的HTTP请求数量，缺点是整合的图片如果比较大，一次加载速度比较慢，如果加载失败，会导致页面上许多引用此图片的地方都产生图片失效问题。现在一般用的较少了。</p>
+<p>Image-inline<br>图片内嵌，较小的图片可以转成 base-64 内嵌到HTML中，但是这会增加HTML文件的大小。</p>
+<p>在安卓下使用webp<br>WebP 的优势体现在它具有更优的图像数据压缩算法，能带来更小的图片体积，而且拥有肉眼识别无差异的图像质量；同时具备了无损和有损的压缩模式、Alpha 透明以及动画的特性，在 JPEG 和 PNG 上的转化效果都非常优秀、稳定和统一。</p>
+<p>网站同时提供了两种类型格式的图片，后台根据浏览器是否支持webp格式进行判断，如果支持，就返回webp格式(图片较小)，如果不支持，就返回jpg格式(文件较大)<br>配合自动化构建工具，前端压缩 UI 提供的原始图片,前端将 png/jpg格式转成相对较小的 webp格式<br>在PS中合并小图标为雪碧图,借助在线网站spritecow，可以生成雪碧图的样式</p>
+<p>在线图片压缩网站：tinypng.com<br>在线png/jpg转webp网站：智图<br>在线雪碧图网站：<a href="http://www.spritecow.com" target="_blank" rel="noopener">www.spritecow.com</a></p>
+<h2 id="css-js-的加载与执行"><a href="#css-js-的加载与执行" class="headerlink" title="css/js 的加载与执行"></a>css/js 的加载与执行</h2><p>浏览器加载特点</p>
+<ul>
+<li>顺序执行、并发加载：HTML文档从上到下采用词法分析，构建DOM树和CSSOM树，并且并发加载外部css/js资源，并发加载会受到浏览器对同一个域名资源请求数量的限制<br>是否阻塞<br>依赖关系<br>引入方式</li>
+</ul>
+<p>CSS阻塞<br>css head中阻塞页面的渲染 ：会等待css加载完成<br>css阻塞js的执行：后续js可能会依赖css中的一些属性，所以等css加载完成之后js执行<br>css不阻塞外部脚本的加载</p>
+<p>JS阻塞<br>直接引入的js阻塞页面的渲染<br>js不阻塞资源的加载 ：webkit内核中有 资源预先扫描器 ，会预先扫描后续文档中的 外链资源并加载<br>js顺序执行，阻塞后续js逻辑的执行 ：JS单线程从头到尾依次执行</p>
+<p>JS引入方式<br>直接引入<br>defer<br>async<br>异步动态引入js</p>
+<p>依赖关系<br>页面渲染依赖于css的加载<br>js的执行顺序的依赖关系<br>js逻辑对于dom节点的依赖关系</p>
+<p>加载和执行的一些优化点<br>css 样式表置顶<br>用 link 代替 import<br>js 脚本置底<br>合理使用 js 的异步加载能力</p>
+<h2 id="懒加载-VS-预加载"><a href="#懒加载-VS-预加载" class="headerlink" title="懒加载 VS 预加载"></a>懒加载 VS 预加载</h2><p>懒加载：一般针对于图片，图片进入可视区域之后才加载图片。减少无效资源加载。懒加载需要预先对图片尺寸设置占位，预先定义好图片大小。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// html结构 将img的src置空，定义一个data-original属性存放img的真实链接</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">""</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"image-item"</span> lazyload<span class="token operator">=</span><span class="token string">"true"</span> data<span class="token operator">-</span>original<span class="token operator">=</span><span class="token string">"http://example.jpg"</span> <span class="token operator">/</span><span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">//js 实现</span>
+<span class="token keyword">var</span> viewHeight <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight <span class="token comment" spellcheck="true">// 可视区域的高度</span>
+
+<span class="token keyword">function</span> lazyload <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> eles <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'img[data-original][lazyload]'</span><span class="token punctuation">)</span>
+  Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>forEach<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>eles<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> rect
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>original <span class="token operator">===</span> <span class="token string">''</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span>
+    rect <span class="token operator">=</span> item<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//判断图片是否进入可视区域</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>rect<span class="token punctuation">.</span>bottom <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> rect<span class="token punctuation">.</span>top <span class="token operator">&lt;</span> viewHeight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token operator">!</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        img<span class="token punctuation">.</span>src <span class="token operator">=</span> item<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>original
+        img<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          item<span class="token punctuation">.</span>src <span class="token operator">=</span> img<span class="token punctuation">.</span>src
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//移除自定义属性。</span>
+        item<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">'data-original'</span><span class="token punctuation">)</span>
+        item<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">'lazyload'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">lazyload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//首屏图片需要先调用一次函数</span>
+
+document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'scroll'</span><span class="token punctuation">,</span> lazyload<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//滚动监听实现懒加载</span></code></pre>
+<p>预加载： 预先加载资源，等到资源使用时候立即可以从缓存中读取，无需加载，提升用户体验。预加载页面必备的支持资源。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 方法一 用图片标签请求，样式设置为不可见</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"example.jpg"</span> style<span class="token operator">=</span><span class="token string">"display: none"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token comment" spellcheck="true">//方法二  使用Image对象</span>
+<span class="token keyword">var</span> image <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+image<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"http://example.jpg"</span>
+<span class="token comment" spellcheck="true">//方法三 使用xhr加载 好处是使加载过程更加可控，但会涉及到跨域问题</span>
+<span class="token comment" spellcheck="true">//方法四 使用 preload.js 库</span></code></pre>
+<h2 id="重绘与回流"><a href="#重绘与回流" class="headerlink" title="重绘与回流"></a>重绘与回流</h2><p>重绘：当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为重绘。</p>
+<p>回流：当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。当页面布局和几何属性改变时就需要回流<br>回流必将引起重绘，而重绘不一定会引起回流</p>
+<p>频繁触发重绘与回流，会导致UI频繁渲染，最终导致JS执行变慢。(js执行会依赖css中的一些属性，所以UI渲染的时候，js其实是挂起状态的)<br>优化点：避免使用触发重绘与回流的 CSS样式，将回流和重绘的影响范围限制在 单独的图层 之内。<br>工具：利用GoogleChrome 控制台中的performance工具查看页面重绘与回流的时长，分析可以优化的部分。利用GoogleChrome 控制台中的 layers 工具查看当前页面中的图层分布情况。利用chrome中Rendering工具查看哪些图层正在重绘。</p>
+<p>chrome中绘制图层的情况(与CSS z-index不是一个概念)：</p>
+<blockquote>
+<p>3D或透视变换CSS属性(perspective transform)<br>使用加速视屏解码的video标签<br>拥有3D(WebGL)上下文或加速的2D上下文的canvas<br>混合插件如（如Flash）<br>对自己的opacity做CSS动画或使用一个动画webkit变换的元素<br>拥有加速CSS过滤器的元素（GPU加速）<br>元素有一个包含复合层的后代节点<br>元素有一个z-index较低且包含一个复合层的兄弟元素<br>will-change: transform;</p>
+</blockquote>
+<p>具体展示：</p>
+<ul>
+<li>translate 代替 top ：top会触发回流，但是translate不会</li>
+<li>opacity代替visibility ：visibility会触发重绘，opacity既不会触发重绘也不会触发回流(前提是使用opacity的元素单独在一个图层之上)</li>
+<li>将多条CSS属性通过classname一次性设置给元素，不要单独一条一条设置，其实浏览器内部对于多次设置CSS会进行合并，进行节流处理，但最好我们在代码组织层面处理好回流与重绘。</li>
+<li>把DOM离线后修改 ：比如先把元素设置为 display：none(有一次reflow)，然后可以多次修改样式，再把它显示出来</li>
+<li>不要把 DOM 节点的属性值 放在for循环里当成循环里的变量(offsetWidth/offsetHeight),会破坏回流的缓冲机制。</li>
+<li>不要使用table布局，很小的改动都可能会造成table的重新布局</li>
+<li>动画实现的速度选择，选择一个合适的动画间隔时间</li>
+<li>对于自定义动画新建一个chrome图层</li>
+<li>启用GPU加速：css中使用translate3d会开启GPU硬件加速，会将一部分CPU的计算负荷转给GPU计算，代价是需要进行数据从CPU传递到GPU。</li>
+</ul>
+<p>参考链接：<a href="https://juejin.im/post/5a9372895188257a6b06132e" target="_blank" rel="noopener">reflow和repaint引发的性能问题</a></p>
+
+    </div>
+<div class='posthr'></div>
+    
+    
+    
+        <div class="reward-container">
+  <div>您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="zonglinlee 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="zonglinlee 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/26/vue/" rel="prev" title="vue">
+      <i class="fa fa-chevron-left"></i> vue
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/14/mongodb1/" rel="next" title="mongodb1">
+      mongodb1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器加载资源的过程"><span class="nav-number">1.</span> <span class="nav-text">浏览器加载资源的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源合并与压缩"><span class="nav-number">2.</span> <span class="nav-text">资源合并与压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片的优化"><span class="nav-number">3.</span> <span class="nav-text">图片的优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-js-的加载与执行"><span class="nav-number">4.</span> <span class="nav-text">css&#x2F;js 的加载与执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载-VS-预加载"><span class="nav-number">5.</span> <span class="nav-text">懒加载 VS 预加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重绘与回流"><span class="nav-number">6.</span> <span class="nav-text">重绘与回流</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zonglinlee"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">zonglinlee</p>
+  <div class="site-description" itemprop="description">Hello world!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zonglinlee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zonglinlee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:173389705@qq.com" title="E-Mail → mailto:173389705@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://google.com/" title="http:&#x2F;&#x2F;google.com" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://developer.mozilla.org/en-US/" title="https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;" rel="noopener" target="_blank">MDN</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com&#x2F;" rel="noopener" target="_blank">GitHub</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zonglinlee</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://tumbleweed-top.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://zonglinlee.top/2020/05/27/qian-duan-xing-neng-you-hua/";
+    this.page.identifier = "2020/05/27/qian-duan-xing-neng-you-hua/";
+    this.page.title = "前端性能优化";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://tumbleweed-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
